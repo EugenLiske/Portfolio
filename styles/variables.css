@@ -1,0 +1,8 @@
+:root {
+    --bg-color: rgba(38, 46, 52, 1);
+    --primary-color: rgba(137, 188, 217, 1);
+    --secondary-color: rgba(248, 245, 236, 1);
+    --active-color: rgba(38, 46, 52, 0.12);
+    --error-color: rgba(228, 76, 54, 1);
+    --done-color: rgba(151, 225, 99, 1);
+}

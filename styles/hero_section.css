@@ -1,0 +1,61 @@
+.hero-section {
+    min-height: 100dvh;
+    background-color: var(--bg-color);
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    /* padding-bottom: 24px; */
+}
+
+.hero-content {
+    border: 2px solid red;
+}
+
+.hero-img-wrapper {
+    position: relative;
+}
+
+.bg-shape-default,
+.bg-shape-hover {
+    z-index: 1;
+    width: 594px;
+    height: auto;
+    transform: rotate(-45deg);
+
+    position: absolute;
+    top: 124px;
+    left: 56px;
+
+    transition: opacity 0.4s ease-in-out;
+}
+
+.bg-shape-hover {
+    opacity: 0;
+}
+
+.hero-img-wrapper:hover .bg-shape-hover {
+    opacity: 1;
+}
+
+.hero-img-wrapper:hover .bg-shape-default {
+    opacity: 0;
+}
+
+.hero-img {
+    z-index: 2;
+    width: 536px;
+    height: auto;
+
+    position: absolute;
+    left: 80px;
+}
+
+.hero-nav {
+    border: 2px solid blue;
+
+    background-color: var(--primary-color);
+
+    height: 104px;
+    position: sticky;
+    top: 0;
+}
