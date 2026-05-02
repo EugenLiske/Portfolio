@@ -1,5 +1,5 @@
 .hero-section {
-    min-height: 100dvh;
+    min-height: calc(100dvh - 104px);
     background-color: var(--bg-color);
 
     display: grid;
@@ -58,4 +58,9 @@
     height: 104px;
     position: sticky;
     top: 0;
+}
+
+.test-div {
+    height: 2000px;
+    background-color: green;
 }
