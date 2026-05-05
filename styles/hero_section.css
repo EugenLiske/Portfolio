@@ -13,8 +13,11 @@
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    gap: 80px;
+    /* gap: 80px; */
+
+    padding-inline: 64px;
 }
 
 /* left side of the hero section */
@@ -61,6 +64,7 @@
 }
 
 /* right side of the hero section */
+
 
 .hero-information-wrapper {
     /* flex: 1; */
@@ -164,6 +168,7 @@
 }
 
 .social-media-icon-wrapper:hover .social-media-icon-hover {
+    cursor: pointer;
     opacity: 1;
 }
 
@@ -175,7 +180,8 @@
 
 .nav-arrow-position-wrapper {
     position: absolute;
-    bottom: 24px;
+    top: calc(100% + 128px);
+    /* top: 100%; */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -211,15 +217,96 @@
     opacity: 0;
 }
 
-.hero-nav {
+/* header / nav bar */
+
+.header-wrapper {
+    background-color: var(--primary-color);
+}
+
+header {
     background-color: var(--primary-color);
 
     height: 104px;
+
     position: sticky;
     top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+
+    padding-inline: 64px;
+}
+
+.nav-logo-title {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--bg-color);
+}
+
+.nav-link-wrapper {
+    display: flex;
+    gap: clamp(40px, 8vw, 248px);
+}
+
+.nav-link {
+    position: relative;
+    z-index: 1;
+
+    padding: 8px 20px;
+
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--bg-color);
+    transition: color 0.3s ease;
+}
+
+.nav-link:visited {
+    color: var(--bg-color);
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    inset: -8px -18px;
+
+    background-image: url("../assets/icons/button_active.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0;
+    z-index: -1;
+}
+
+.nav-link:active::before {
+    opacity: 1;
+}
+
+.nav-translate-function {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-translate-function span {
+    color: var(--bg-color);
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .test-div {
     height: 2000px;
     background-color: green;
+}
+
+.why-me-section {
+    scroll-margin-top: 104px;
 }
