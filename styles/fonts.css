@@ -140,15 +140,25 @@
 h1 {
     font-family: 'Anta';
     font-size: 88px;
-    text-align: center;
-}
-
-.hero-section h1,h2 {
     color: white;
     font-weight: 400;
+    text-align: center;
 }
 
 .hero-section h2 {
     font-size: 40px;
+    color: white;
+    font-weight: 400;
     text-align: center;
+}
+
+.why-me-section h2 {
+    font-family: 'Anta';
+    font-size: 60px;
+    color: var(--primary-color);
+    font-weight: 400;
+    text-align: center;
+
+    /* padding-top: 80px; */
+    padding-bottom: 64px;
 }

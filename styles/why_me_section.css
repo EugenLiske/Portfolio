@@ -1,0 +1,117 @@
+.why-me-section {
+    scroll-margin-top: 104px;
+    background-color: var(--bg-color);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.why-me-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 64px;
+
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+/* animated information on the left side */
+
+.animated-information-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    flex: 0 0 520px;
+
+    transform: translateY(-48px);
+}
+
+.animated-info-icon {
+    width: 72px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.animated-info-icon.visible {
+    opacity: 1;
+}
+
+.animated-info-text {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.animated-info-prefix {
+    color: var(--primary-color);
+}
+
+.animated-info-dynamic {
+    color: white;
+}
+
+.animated-info-cursor {
+    color: white;
+    animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* personal information on the right side */
+
+.personal-information-wrapper {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.personal-information {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+
+.lets-talk-button-wrapper {
+    position: relative;
+    width: 134px;
+    height: 48px;
+} 
+
+/* let's talk button */
+
+.lets-talk-button-default,
+.lets-talk-button-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: opacity 0.4s ease-in-out;
+}
+
+.lets-talk-button-hover {
+    opacity: 0;
+}
+
+.lets-talk-button-wrapper:hover .lets-talk-button-hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.lets-talk-button-wrapper:hover .lets-talk-button-default{
+    opacity: 0;
+}
