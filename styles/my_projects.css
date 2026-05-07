@@ -1,0 +1,199 @@
+.my-projects-section {
+    scroll-margin-top: 104px;
+    background-color: var(--bg-color);
+    padding-top: 40px;
+}
+
+/* project nav bar */
+
+.project-navigation-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 128px;
+
+    color: var(--primary-color);
+}
+
+.project-navigation-wrapper button {
+    display: block;
+
+    font-size: 30px;
+    font-weight: 500;
+    color: inherit;
+
+    background-color: transparent;
+    border: none;
+    padding: 32px 0;
+
+    cursor: pointer;
+
+    transition: color 0.4s ease-in-out;
+}
+
+.project-navigation-wrapper li:hover {
+    color: white;
+}
+
+.project-navigation-wrapper li{
+    font-size: 30px;
+    transition: color 0.4s ease-in-out;
+}
+
+/* project content */
+
+.project-outer-content-wrapper {
+    background-color: var(--project-bg-color);
+}
+
+.project-inner-content-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 128px;
+
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* project information  - left side*/
+
+.project-information-wrapper {
+    margin: 0;
+    padding: 0;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    list-style: none;
+}
+
+.project-information-wrapper li {
+    position: relative;
+}
+
+.project-information-wrapper li::before {
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: -2px;
+
+    width: 28px;
+    height: 28px;
+
+    background-image: url("../assets/icons/my_projects_section/bullepoint_shape.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.project-info-single-bulletpoint {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-info-single-bulletpoint h3 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.project-info-single-bulletpoint span,
+.project-info-single-bulletpoint p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.project-info-bulletpoint-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* project preview  - right side*/
+
+.project-preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.technologies-and-mockup-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.technologies-and-mockup-wrapper p {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+.technology-icons {
+    display: flex;
+    gap: 32px;
+}
+
+.project-preview-img {
+    width: 460px;
+    height: auto;
+    border-radius: 18px;
+}
+
+.live-test-buttons-wrapper {
+    display: flex;
+    gap: 64px;
+}
+
+.live-test-button {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--bg-color);
+
+    width: 132px;
+    height: 48px;
+    background-color: var(--primary-color);
+    border-radius: 999px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.4s ease-in-out;
+}
+
+.live-test-button:hover {
+    background-color: var(--button-hover-1);
+}
+
+.github-button {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--primary-color);
+
+    width: 132px;
+    height: 48px;
+    background-color: transparent;
+    border-radius: 999px;
+    border: 1px solid var(--primary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.4s ease-in-out;
+}
+
+.github-button:hover {
+    background-color: var(--button-hover-2);
+}

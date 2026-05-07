@@ -153,7 +153,8 @@ h1 {
 }
 
 .why-me-section h2,
-.my-skills-section h2 {
+.my-skills-section h2,
+.my-projects-section h2 {
     font-family: 'Anta';
     font-size: 60px;
     color: var(--primary-color);

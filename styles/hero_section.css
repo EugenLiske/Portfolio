@@ -269,12 +269,9 @@ header {
     font-size: 26px;
     font-weight: 500;
     color: var(--bg-color);
-    transition: color 0.3s ease;
+    transition: color 0.4s ease-in-out;
 }
 
-.nav-link:visited {
-    color: var(--bg-color);
-}
 
 .nav-link:hover {
     color: white;
