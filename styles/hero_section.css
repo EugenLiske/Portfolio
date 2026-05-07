@@ -226,17 +226,16 @@
 /* header / nav bar */
 
 .header-wrapper {
+    z-index: 2;
     background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
 }
 
 header {
-    z-index: 2;
     background-color: var(--primary-color);
 
     height: 104px;
-
-    position: sticky;
-    top: 0;
 
     display: flex;
     align-items: center;
@@ -286,7 +285,7 @@ header {
     position: absolute;
     inset: -8px -18px;
 
-    background-image: url("../assets/icons/button_active.svg");
+    background-image: url("../assets/icons/hero_section/button_active.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

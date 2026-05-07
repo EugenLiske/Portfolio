@@ -1,16 +1,16 @@
 const animatedItems = [
     {
-        icon: "./assets/icons/located_in_icon.svg",
+        icon: "./assets/icons/why_me_section/located_in_icon.svg",
         fullText: "I am located in Munich..."
     },
 
     {
-        icon: "./assets/icons/work_remote_icon.svg",
+        icon: "./assets/icons/why_me_section/work_remote_icon.svg",
         fullText: "I am open to work remote..."
     },
 
     {
-        icon: "./assets/icons/relocate_icon.svg",
+        icon: "./assets/icons/why_me_section/relocate_icon.svg",
         fullText: "I am open to relocate..."
     }
 ];

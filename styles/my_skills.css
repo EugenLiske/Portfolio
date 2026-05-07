@@ -1,0 +1,74 @@
+.my-skills-section {
+    scroll-margin-top: 104px;
+    background-color: var(--bg-color);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.my-skills-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 128px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 64px; */
+}
+
+/* left side with skills icons */
+
+.skills-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    justify-items: center;  
+    align-items: center;
+
+    gap: 40px;
+}
+
+/* right side with bg-shape and hover */
+
+.current-learning-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    flex: 0 1 380px;
+    aspect-ratio: 1 / 1;
+}
+
+.current-learning-wrapper p {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+
+.current-learning-bg-shape-default,
+.current-learning-bg-shape-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.current-learning-bg-shape-hover {
+    opacity: 0;
+}
+
+.current-learning-wrapper:hover .current-learning-bg-shape-hover {
+    opacity: 1;
+}
+
+.current-learning-wrapper:hover .current-learning-bg-shape-default {
+    opacity: 0;
+}
+
+

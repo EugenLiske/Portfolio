@@ -152,13 +152,12 @@ h1 {
     text-align: center;
 }
 
-.why-me-section h2 {
+.why-me-section h2,
+.my-skills-section h2 {
     font-family: 'Anta';
     font-size: 60px;
     color: var(--primary-color);
     font-weight: 400;
     text-align: center;
-
-    /* padding-top: 80px; */
-    padding-bottom: 64px;
+    padding-bottom: 80px;
 }
