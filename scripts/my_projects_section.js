@@ -9,6 +9,7 @@ let projectTechnologyTwoRef = document.getElementById('projectTechnologyTwoID');
 let projectTechnologyThreeRef = document.getElementById('projectTechnologyThreeID');
 
 let projectMockupRef = document.getElementById('projectMockupID');
+let githubLinkRef = document.getElementById('githubLinkID');
 
 const projectNavItemsRef = document.querySelectorAll('.project-nav-item');
 
@@ -21,7 +22,8 @@ let exchangeableProjectContent = [
         technologyOne: "./assets/icons/my_projects_section/html_project_icon.svg",
         technologyTwo: "./assets/icons/my_projects_section/javascript_project_icon.svg",
         technologyThree: "./assets/icons/my_projects_section/css_project_icon.svg",
-        projectMockup: "./assets/icons/my_projects_section/el_pollo_loco_preview.png"
+        projectMockup: "./assets/icons/my_projects_section/el_pollo_loco_preview.png",
+        githubLink: "https://github.com/EugenLiske/el_pollo_loco.git"
     },
 
     {
@@ -32,7 +34,8 @@ let exchangeableProjectContent = [
         technologyOne: "./assets/icons/my_projects_section/typescript_project_icon.svg",
         technologyTwo: "./assets/icons/my_projects_section/angular_project_icon.svg",
         technologyThree: "./assets/icons/my_projects_section/javascript_project_icon.svg",
-        projectMockup: "./assets/icons/my_projects_section/join_preview.png"
+        projectMockup: "./assets/icons/my_projects_section/join_preview.png",
+        githubLink: "https://github.com/EugenLiske/join.git"
     },
 
     {
@@ -43,7 +46,8 @@ let exchangeableProjectContent = [
         technologyOne: "./assets/icons/my_projects_section/supabase_project_icon.svg",
         technologyTwo: "./assets/icons/my_projects_section/firebase_project_icon.svg",
         technologyThree: "./assets/icons/my_projects_section/html_project_icon.svg",
-        projectMockup: "./assets/icons/my_projects_section/pokemon_preview.png"
+        projectMockup: "./assets/icons/my_projects_section/pokemon_preview.png",
+        githubLink: "https://github.com/EugenLiske/Pokedex.git"
     }
 ];
 
@@ -67,4 +71,5 @@ function displayProjectContent(i) {
     projectTechnologyThreeRef.src = selectedProject.technologyThree;
 
     projectMockupRef.src = selectedProject.projectMockup;
+    githubLinkRef.href = selectedProject.githubLink;
 }
