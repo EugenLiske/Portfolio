@@ -8,15 +8,13 @@
 
 .project-navigation-wrapper {
     display: flex;
-    align-items: stretch;
-    gap: 200px;
+    gap: 128px;
 
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
     padding: 0 128px;
-    padding-left: calc(128px - 36px);
-
+    padding-left: calc(128px - 58px);
     color: var(--primary-color);
 
     list-style: none;
@@ -46,11 +44,11 @@
 }
 
 .project-nav-item:hover {
-    color: white;
+    color: var(--secondary-color);
 }
 
 .project-nav-item.active-project {
-    color: white;
+    color: var(--secondary-color);
     background-color: var(--project-bg-color);
 }
 
@@ -89,7 +87,7 @@
     margin: 0;
     padding: 0;
 
-    color: white;
+    color: var(--secondary-color);
 
     display: flex;
     flex-direction: column;
@@ -159,7 +157,6 @@
 .technologies-and-mockup-wrapper p {
     font-size: 18px;
     font-weight: 400;
-    color: white;
 }
 .technology-icons {
     display: flex;

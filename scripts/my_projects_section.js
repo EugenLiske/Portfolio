@@ -4,6 +4,8 @@ let projectBulletpointOneRef = document.getElementById('projectBulletpointOneID'
 let projectBulletpointTwoRef = document.getElementById('projectBulletpointTwoID');
 let projectBulletpointThreeRef = document.getElementById('projectBulletpointThreeID');
 
+let additionalProjectInformationRef = document.getElementById('additionalProjectInformationID');
+
 let projectTechnologyOneRef = document.getElementById('projectTechnologyOneID');
 let projectTechnologyTwoRef = document.getElementById('projectTechnologyTwoID');
 let projectTechnologyThreeRef = document.getElementById('projectTechnologyThreeID');
@@ -19,6 +21,7 @@ let exchangeableProjectContent = [
         bulletpointOne: "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
         bulletpointTwo: "How do you keep your code clean and maintainable? Have you broken the project down into reusable modules or components? Focus on documentation,naming files, variables, classes and testing.",
         bulletpointThree: "How many people were in the team and what was your role? Describe your tasks in 1-2 sentences, for example: login form, dashboard or chat functionality. What technologies did you use? It is nice to mention good teamwork and cooperation.",
+        additionalProjectInformation: "What I have learned",
         technologyOne: "./assets/icons/my_projects_section/html_project_icon.svg",
         technologyTwo: "./assets/icons/my_projects_section/javascript_project_icon.svg",
         technologyThree: "./assets/icons/my_projects_section/css_project_icon.svg",
@@ -31,6 +34,7 @@ let exchangeableProjectContent = [
         bulletpointOne: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptate atque itaque culpa doloremque ratione velit consectetur quam aspernatur deleniti, vitae incidunt molestiae illum veritatis corporis nemo rerum cupiditate eum.",
         bulletpointTwo: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptate atque itaque culpa doloremque ratione velit consectetur quam aspernatur deleniti, vitae incidunt molestiae illum veritatis corporis nemo rerum cupiditate eum.",
         bulletpointThree: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptate atque itaque culpa doloremque ratione velit consectetur quam aspernatur deleniti, vitae incidunt molestiae illum veritatis corporis nemo rerum cupiditate eum.",
+        additionalProjectInformation: "My group work experience",
         technologyOne: "./assets/icons/my_projects_section/typescript_project_icon.svg",
         technologyTwo: "./assets/icons/my_projects_section/angular_project_icon.svg",
         technologyThree: "./assets/icons/my_projects_section/javascript_project_icon.svg",
@@ -43,6 +47,7 @@ let exchangeableProjectContent = [
         bulletpointOne: "blabla dududu bing bong dum dum tata Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptate atque itaque culpa doloremque ratione velit consectetur quam aspernatur deleniti, vitae incidunt molestiae illum veritatis corporis nemo rerum cupiditate eum.",
         bulletpointTwo: "blabla dududu bing bong dum dum tata Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptate atque itaque culpa doloremque ratione velit consectetur quam aspernatur deleniti, vitae incidunt molestiae illum veritatis corporis nemo rerum cupiditate eum.",
         bulletpointThree: "blabla dududu bing bong dum dum tata Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptate atque itaque culpa doloremque ratione velit consectetur quam aspernatur deleniti, vitae incidunt molestiae illum veritatis corporis nemo rerum cupiditate eum.",
+        additionalProjectInformation: "What I have learned",
         technologyOne: "./assets/icons/my_projects_section/supabase_project_icon.svg",
         technologyTwo: "./assets/icons/my_projects_section/firebase_project_icon.svg",
         technologyThree: "./assets/icons/my_projects_section/html_project_icon.svg",
@@ -65,6 +70,8 @@ function displayProjectContent(i) {
     projectBulletpointOneRef.textContent = selectedProject.bulletpointOne;
     projectBulletpointTwoRef.textContent = selectedProject.bulletpointTwo;
     projectBulletpointThreeRef.textContent = selectedProject.bulletpointThree;
+
+    additionalProjectInformationRef.textContent = selectedProject.additionalProjectInformation;
 
     projectTechnologyOneRef.src = selectedProject.technologyOne;
     projectTechnologyTwoRef.src = selectedProject.technologyTwo;

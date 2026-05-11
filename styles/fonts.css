@@ -135,19 +135,18 @@
 
 * {
     font-family: 'Josefin Sans';
+    color: var(--secondary-color);
 }
 
 h1 {
     font-family: 'Anta';
     font-size: 88px;
-    color: white;
     font-weight: 400;
     text-align: center;
 }
 
 .hero-section h2 {
     font-size: 40px;
-    color: white;
     font-weight: 400;
     text-align: center;
 }

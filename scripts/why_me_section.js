@@ -21,7 +21,7 @@ const prefix = document.querySelector(".animated-info-prefix");
 
 const dynamicText = document.querySelector(".animated-info-dynamic");
 
-function sleep(ms) {
+function wait(ms) {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve();
@@ -57,7 +57,7 @@ async function typeText(fullText) {
 
         updateStyledText(currentText);
 
-        await sleep(70);
+        await wait(70);
     }
 }
 
@@ -69,7 +69,7 @@ async function deleteText(fullText) {
 
         updateStyledText(currentText);
 
-        await sleep(40);
+        await wait(40);
     }
 }
 
@@ -89,17 +89,17 @@ async function startTypewriterLoop() {
 
         icon.classList.add("visible");
 
-        await sleep(500);
+        await wait(500);
 
         await typeText(item.fullText);
 
-        await sleep(1200);
+        await wait(1200);
 
         await deleteText(item.fullText);
 
         icon.classList.remove("visible");
 
-        await sleep(500);
+        await wait(600);
 
         index = (index + 1) % animatedItems.length;
     }

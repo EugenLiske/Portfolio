@@ -1,0 +1,87 @@
+.references-section {
+    background-color: var(--bg-color);
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.references-intro-text {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--primary-color);
+    text-align: center;
+    padding-bottom: 56px;
+}
+
+.references-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 128px;
+
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.single-reference-wrapper {
+    position: relative;
+
+    flex: 0 1 400px;
+    aspect-ratio: 1 / 1;
+
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.reference-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reference-card-header h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.reference-card-project-name {
+    color: var(--primary-color);
+}
+
+.single-reference-wrapper a {
+    padding-top: 16px;
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.4s ease-in-out;
+}
+
+.single-reference-wrapper a:hover {
+    color: var(--secondary-color);
+}
+
+.reference-bg-shape-default,
+.reference-bg-shape-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.reference-bg-shape-hover {
+    opacity: 0;
+}
+
+.single-reference-wrapper:hover .reference-bg-shape-hover {
+    opacity: 1;
+}
+
+.single-reference-wrapper:hover .reference-bg-shape-default {
+    opacity: 0;
+}

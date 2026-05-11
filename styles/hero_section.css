@@ -131,7 +131,6 @@
     font-family: 'Anta';
     font-weight: 400;
     font-size: 16px;
-    color: white;
 }
 
 .logo-title {
@@ -187,7 +186,6 @@
 .nav-arrow-position-wrapper {
     position: absolute;
     top: calc(100% + 128px);
-    /* top: 100%; */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -232,7 +230,7 @@
     top: 0;
 }
 
-header {
+.hero-section-sticky-header {
     background-color: var(--primary-color);
 
     height: 104px;
@@ -274,7 +272,7 @@ header {
 
 
 .nav-link:hover {
-    color: white;
+    color: var(--secondary-color);
 }
 
 .nav-link::before {
