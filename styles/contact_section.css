@@ -1,0 +1,80 @@
+.contact-section {
+    scroll-margin-top: 104px;
+    background-color: var(--bg-color);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 128px;
+}
+
+.contact-upper-part {
+    display: flex;
+    align-items: start;
+    gap: 36px;
+}
+
+.contact-upper-part p {
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 50%;
+}
+
+.contact-links-wrapper {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+}
+
+.single-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.single-link-wrapper span {
+    font-size: 20px;
+    font-weight: 400;
+    transition: color 0.4s ease-in-out;
+}
+
+.link-icon-wrapper {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.link-icon-default,
+.link-icon-hover {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    transition: opacity 0.4s ease-in-out;
+}
+
+.link-icon-hover {
+    opacity: 0;
+}
+
+.single-link-wrapper:hover .link-icon-hover {
+    opacity: 1;
+}
+
+.single-link-wrapper:hover .link-icon-default {
+    opacity: 0;
+}
+
+.single-link-wrapper:hover span {
+    color: var(--primary-color);
+}
+

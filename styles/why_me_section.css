@@ -49,10 +49,6 @@
     color: var(--primary-color);
 }
 
-.animated-info-dynamic {
-
-}
-
 .animated-info-cursor {
     color: var(--secondary-color);
     animation: cursorBlink 0.8s infinite;
