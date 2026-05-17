@@ -332,16 +332,16 @@
                     </p>
 
                     <div class="contact-links-wrapper">
-                        <a href="" class="single-link-wrapper">
+                        <button type="button" class="single-link-wrapper" onclick="focusForm()">
                             <div class="link-icon-wrapper">
                                 <img class="link-icon-default" src="./assets/icons/contact_section/contact_email_icon_default.svg" alt="contact_email_icon_default">
                                 <img class="link-icon-hover" src="./assets/icons/contact_section/contact_email_icon_active.svg" alt="contact_email_icon_active">
                             </div>
 
                             <span>E-mail: eugen.liske@yahoo.de</span>
-                        </a>
+                        </button>
 
-                        <a href="" class="single-link-wrapper">
+                        <a href="tel:017663452473" class="single-link-wrapper">
                             <div class="link-icon-wrapper">
                                 <img class="link-icon-default" src="./assets/icons/contact_section/contact_phone_icon_default.svg" alt="contact_phone_icon_default">
                                 <img class="link-icon-hover" src="./assets/icons/contact_section/contact_phone_icon_hover.svg" alt="contact_phone_icon_hover">
@@ -359,7 +359,7 @@
                                 Your name
                             </label>
 
-                            <div class="input-wrapper">
+                            <div class="input-wrapper" id="name-input-wrapper">
                                 <input type="text" class="input-field" id="name-input">
                                 <img class="input-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                             </div>
@@ -370,11 +370,43 @@
                                 Your Email
                             </label>
 
-                            <div class="input-wrapper">
+                            <div class="input-wrapper" id="email-input-wrapper">
                                 <input type="email" class="input-field" id="email-input">
                                 <img class="input-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                             </div>
                         </div>
+                    </div>
+
+                    <div class="label-and-message-wrapper">
+                        <label for="message-input" class="label-text" id="message-input-label">
+                            Your message
+                        </label>
+
+                        <div class="message-wrapper" id="message-input-wrapper">
+                            <textarea class="message-field" name="message" id="message-input"></textarea>
+                            <img class="message-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
+                        </div>
+                    </div>
+
+                    <label for="checkbox-input" class="checkbox-wrapper" id="checkbox-wrapper-ID">
+                        <input class="checkbox-field" type="checkbox" id="checkbox-input" onchange="checkPrivacyPolicy()">
+
+                        <div class="custom-checkbox-icon-wrapper">
+                            <img class="checkbox-icon-default" src="./assets/icons/contact_section/checkbox-icon-default.svg" alt="checkbox-icon-default">
+                            <img class="checkbox-icon-hover" src="./assets/icons/contact_section/checkbox-icon-hover.svg" alt="checkbox-icon-hover.svg">
+                            <img class="checkbox-icon-checked" src="./assets/icons/contact_section/checkbox-icon-checked.svg" alt="checkbox-icon-checked.svg">
+                            <img class="checkbox-icon-error" src="./assets/icons/contact_section/checkbox-icon-error.svg" alt="checkbox-icon-error.svg">
+                        </div>
+
+                        <span class="privacy-policy-text">
+                            I've read the <a href="">privacy policy</a> and agree to the processing of my data as outlined.
+                        </span>
+                    </label>
+
+                    <div class="send-form-button-wrapper">
+                        <button type="submit" class="send-form-button">
+                            Send
+                        </button>
                     </div>
 
                 </form>
@@ -385,4 +417,5 @@
 </body>
 <script src="./scripts/why_me_section.js"></script>
 <script src="./scripts/my_projects_section.js"></script>
+<script src="./scripts/contact_section.js"></script>
 </html>

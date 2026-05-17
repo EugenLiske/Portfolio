@@ -9,4 +9,5 @@
     --button-hover-1: rgba(248, 245, 236, 1);
     --button-hover-2: rgba(248, 245, 236, 0.12);
     --input-text-color: rgba(255, 253, 253, 1);
+    --deactivated-send-button: rgba(248, 245, 236, 0.5);
 }

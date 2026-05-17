@@ -37,9 +37,18 @@
 }
 
 .single-link-wrapper {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    background: transparent;
+    padding: 0;
+
     display: flex;
     align-items: center;
     gap: 16px;
+
+    cursor: pointer;
 }
 
 .single-link-wrapper span {
@@ -85,13 +94,15 @@
 /*----- contact form -----*/
 
 .contact-form {
-
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .name-email-wrapper {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 36px;
 }
 
 .label-and-input-wrapper {
@@ -127,7 +138,7 @@
     background: transparent;
 
     box-shadow: none;
-    padding: 0 24px;
+    padding: 0 48px 0 24px;
 
     font-size: 18px;
     font-weight: 400;
@@ -135,7 +146,7 @@
 }
 
 .input-check-icon {
-    /* display: none; */
+    display: none;
 
     position: absolute;
     top: 50%;
@@ -147,6 +158,172 @@
     display: block;
 }
 
-.label-and-input-wrapper:focus-within .input-field {
+.input-field:focus {
     background-color: rgb(49,63,72);
+}
+
+.label-and-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+}
+
+.message-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.message-field {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 100%;
+    min-height: 150px;
+
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+    background: transparent;
+
+    box-shadow: none;
+    resize: none;
+
+    padding: 24px 48px 24px 24px;
+
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--input-text-color);
+}
+
+.message-field:focus {
+    background-color: rgb(49,63,72);
+}
+
+.message-check-icon {
+    display: none;
+
+    position: absolute;
+    top: 24px;
+    right: 12px;
+}
+
+.message-wrapper.valid .message-check-icon {
+    display: block;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.checkbox-field {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-checkbox-icon-wrapper {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.checkbox-icon-default {
+    position: absolute;
+    top: 51%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+.checkbox-icon-hover,
+.checkbox-icon-checked,
+.checkbox-icon-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.checkbox-icon-default {
+    opacity: 1;
+}
+
+.checkbox-wrapper:hover .checkbox-icon-default {
+    opacity: 0;
+}
+
+.checkbox-wrapper:hover .checkbox-icon-hover {
+    opacity: 1;
+}
+
+.checkbox-wrapper.checked .checkbox-icon-default,
+.checkbox-wrapper.checked .checkbox-icon-hover {
+    opacity: 0;
+}
+
+.checkbox-wrapper.checked .checkbox-icon-checked {
+    opacity: 1;
+}
+
+.checkbox-wrapper.error .checkbox-icon-default,
+.checkbox-wrapper.error .checkbox-icon-hover,
+.checkbox-wrapper.error .checkbox-icon-checked {
+    opacity: 0;
+}
+
+.checkbox-wrapper.error .checkbox-icon-error {
+    opacity: 1;
+}
+
+.privacy-policy-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.privacy-policy-text a {
+    color: var(--primary-color);
+}
+
+.privacy-policy-text a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.send-form-button-wrapper {
+    display: flex;
+    justify-content: end;
+}
+
+.send-form-button {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--deactivated-send-button);
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1px solid var(--deactivated-send-button);
+    border-radius: 999px;
+
+    width: 100px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: none;
+    background: transparent;
+    box-shadow: none;
 }
