@@ -308,16 +308,13 @@
 .send-form-button {
     font-size: 18px;
     font-weight: 400;
-    color: var(--deactivated-send-button);
-
+    
     appearance: none;
     -webkit-appearance: none;
 
-    border: 1px solid var(--deactivated-send-button);
-    border-radius: 999px;
-
     width: 100px;
     height: 48px;
+    border-radius: 999px;
 
     display: flex;
     align-items: center;
@@ -326,4 +323,31 @@
     outline: none;
     background: transparent;
     box-shadow: none;
+}
+
+.send-form-button.deactivated {
+    color: var(--deactivated-send-button);
+    border: 1px solid var(--deactivated-send-button);
+}
+
+.send-form-button.activated {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.error {
+    border: 1px solid var(--error-color);
+}
+
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus,
+.input-field:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--input-text-color);
+    caret-color: var(--input-text-color);
+
+    box-shadow: 0 0 0 1000px var(--bg-color) inset;
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-color) inset;
+
+    transition: background-color 9999s ease-in-out 0s;
 }

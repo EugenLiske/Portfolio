@@ -360,7 +360,7 @@
                             </label>
 
                             <div class="input-wrapper" id="name-input-wrapper">
-                                <input type="text" class="input-field" id="name-input">
+                                <input oninput="validateForm()" type="text" class="input-field" id="name-input-field">
                                 <img class="input-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                             </div>
                         </div>
@@ -371,7 +371,7 @@
                             </label>
 
                             <div class="input-wrapper" id="email-input-wrapper">
-                                <input type="email" class="input-field" id="email-input">
+                                <input oninput="validateForm()" type="email" class="input-field" id="email-input-field">
                                 <img class="input-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                             </div>
                         </div>
@@ -383,13 +383,13 @@
                         </label>
 
                         <div class="message-wrapper" id="message-input-wrapper">
-                            <textarea class="message-field" name="message" id="message-input"></textarea>
+                            <textarea oninput="validateForm()" class="message-field" name="message" id="message-input-field"></textarea>
                             <img class="message-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                         </div>
                     </div>
 
-                    <label for="checkbox-input" class="checkbox-wrapper" id="checkbox-wrapper-ID">
-                        <input class="checkbox-field" type="checkbox" id="checkbox-input" onchange="checkPrivacyPolicy()">
+                    <label for="checkbox-input-field" class="checkbox-wrapper" id="checkbox-wrapper-ID">
+                        <input class="checkbox-field" type="checkbox" id="checkbox-input-field" onchange="checkPrivacyPolicy(); validateForm()">
 
                         <div class="custom-checkbox-icon-wrapper">
                             <img class="checkbox-icon-default" src="./assets/icons/contact_section/checkbox-icon-default.svg" alt="checkbox-icon-default">
@@ -404,7 +404,7 @@
                     </label>
 
                     <div class="send-form-button-wrapper">
-                        <button type="submit" class="send-form-button">
+                        <button type="submit" class="send-form-button deactivated" id="send-form-button">
                             Send
                         </button>
                     </div>
