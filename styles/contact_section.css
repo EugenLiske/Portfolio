@@ -146,15 +146,17 @@
 }
 
 .input-check-icon {
-    display: none;
-
     position: absolute;
     top: 50%;
     right: 12px;
     transform: translateY(-50%);
 }
 
-.input-wrapper.valid .input-check-icon {
+.input-check-icon.deactivated {
+    display: none;
+}
+
+.input-check-icon.activated {
     display: block;
 }
 
@@ -201,14 +203,16 @@
 }
 
 .message-check-icon {
-    display: none;
-
     position: absolute;
     top: 24px;
     right: 12px;
 }
 
-.message-wrapper.valid .message-check-icon {
+.message-check-icon.deactivated {
+    display: none;
+}
+
+.message-check-icon.activated {
     display: block;
 }
 
@@ -335,8 +339,12 @@
     border: 1px solid var(--primary-color);
 }
 
-.error {
-    border: 1px solid var(--error-color);
+.error-border {
+    border: 1px solid var(--error-color);  
+}
+
+.error-label {
+    color: var(--error-color);
 }
 
 .input-field:-webkit-autofill,

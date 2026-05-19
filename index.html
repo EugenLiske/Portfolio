@@ -356,12 +356,12 @@
                     <div class="name-email-wrapper">
                         <div class="label-and-input-wrapper">
                             <label for="name-input" class="label-text" id="name-input-label">
-                                Your name
+                                Your Name
                             </label>
 
                             <div class="input-wrapper" id="name-input-wrapper">
-                                <input oninput="validateForm()" type="text" class="input-field" id="name-input-field">
-                                <img class="input-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
+                                <input oninput="validateForm()" onblur="checkIfNameIsFilled()" type="text" class="input-field" id="name-input-field">
+                                <img id="name-check-icon" class="input-check-icon deactivated" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                             </div>
                         </div>
 
@@ -371,20 +371,20 @@
                             </label>
 
                             <div class="input-wrapper" id="email-input-wrapper">
-                                <input oninput="validateForm()" type="email" class="input-field" id="email-input-field">
-                                <img class="input-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
+                                <input oninput="validateForm()" onblur="checkIfMailIsFilledAndValid()" onfocus="clearEmailError()" type="email" class="input-field" id="email-input-field">
+                                <img id="email-check-icon" class="input-check-icon deactivated" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                             </div>
                         </div>
                     </div>
 
                     <div class="label-and-message-wrapper">
                         <label for="message-input" class="label-text" id="message-input-label">
-                            Your message
+                            Your Message
                         </label>
 
                         <div class="message-wrapper" id="message-input-wrapper">
-                            <textarea oninput="validateForm()" class="message-field" name="message" id="message-input-field"></textarea>
-                            <img class="message-check-icon" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
+                            <textarea oninput="validateForm()" onblur="checkIfMessageIsFilled()" class="message-field" name="message" id="message-input-field"></textarea>
+                            <img id="message-check-icon" class="message-check-icon deactivated" src="./assets/icons/contact_section/input_check_icon.svg" alt="input_check_icon">
                         </div>
                     </div>
 
