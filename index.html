@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="./styles/my_projects_section.css" />
     <link rel="stylesheet" href="./styles/reference_section.css" />
     <link rel="stylesheet" href="./styles/contact_section.css" />
+    <link rel="stylesheet" href="./styles/footer.css">
   </head>
   <body>
-    <section class="hero-section">
+    <section class="hero-section" id="hero-section-ID">
       <div class="hero-content">
         <div class="hero-img-wrapper">
           <img
@@ -169,7 +170,7 @@
               laudantium perferendis.
             </p>
 
-            <div class="lets-talk-button-wrapper">
+            <a href="#contact-section-ID" class="lets-talk-button-wrapper">
               <img
                 class="lets-talk-button-default"
                 src="./assets/icons/why_me_section/lets_talk_button_default.svg"
@@ -180,7 +181,7 @@
                 src="./assets/icons/why_me_section/lets_talk_button_hover.svg"
                 alt="lets_talk_button_hover"
               />
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -477,6 +478,13 @@
       </section>
 
       <section class="contact-section" id="contact-section-ID">
+        <a href="#hero-section-ID" class="nav-arrow-up-position-wrapper">
+          <div class="nav-arrow-up-img-wrapper">
+            <img class="nav-arrow-up-default" src="./assets/icons/contact_section/contact_section_arrow_up_icon_default.svg" alt="contact_section_arrow_up_icon_default">
+            <img class="nav-arrow-up-hover" src="./assets/icons/contact_section/contact_section_arrow_up_icon_hover.svg" alt="contact_section_arrow_up_icon_hover">
+          </div>
+        </a>
+
         <h2>Contact me</h2>
 
         <div class="contact-content">
@@ -661,7 +669,10 @@
                   processing of my data as outlined.
                 </span>
 
-                <span id="privacy-policy-error" class="privacy-policy-error deactivated">
+                <span
+                  id="privacy-policy-error"
+                  class="privacy-policy-error deactivated"
+                >
                   Please accept the privacy policy.
                 </span>
               </div>
@@ -680,6 +691,12 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="footer-content">
+
+      </div>
+    </footer>
   </body>
   <script src="./scripts/why_me_section.js"></script>
   <script src="./scripts/my_projects_section.js"></script>

@@ -3,7 +3,47 @@
     background-color: var(--bg-color);
     padding-top: 40px;
     padding-bottom: 40px;
+
+    position: relative;
 }
+
+.nav-arrow-up-position-wrapper {
+    position: absolute;
+    top: 40px;
+    right: 64px;
+
+    width: 38px;
+    height: 89px;
+}
+
+.nav-arrow-up-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-arrow-up-default,
+.nav-arrow-up-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transition: opacity 0.4s ease-in-out;
+}
+
+.nav-arrow-up-hover {
+    opacity: 0;
+}
+
+.nav-arrow-up-position-wrapper:hover .nav-arrow-up-hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.nav-arrow-up-position-wrapper:hover .nav-arrow-up-default {
+    opacity: 0;
+}
+
 
 .contact-content {
     max-width: 1440px;
