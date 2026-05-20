@@ -5,6 +5,7 @@ const emailInputField = document.getElementById('email-input-field');
 const messageInputField = document.getElementById('message-input-field')
 const checkboxWrapper = document.getElementById('checkbox-wrapper-ID');
 const checkboxInputField = document.getElementById('checkbox-input-field');
+const privacyPolicyError = document.getElementById('privacy-policy-error');
 const sendFormButton = document.getElementById('send-form-button');
 
 const nameCheckIcon = document.getElementById('name-check-icon');
@@ -15,7 +16,7 @@ const nameInputLabel = document.getElementById('name-input-label');
 const emailInputLabel = document.getElementById('email-input-label');
 const messageInputLabel = document.getElementById('message-input-label');
 
-const NAME_MISSING_MSG = "Your name is required";
+const NAME_MISSING_MSG = "Your Name is required";
 const EMAIL_MISSING_MSG = "Your Email is required";
 const MESSAGE_MISSING_MSG = "Your Message is requred";
 const PRIVACY_POLICY_MISSING_MSG = "Please accept the privacy policy."
@@ -31,11 +32,16 @@ function focusForm(){
     nameInputField.focus();
 }
 
-function checkPrivacyPolicy(){
+function checkPrivacyPolicy() {
     checkboxWrapper.classList.toggle('checked', checkboxInputField.checked);
+
+    if (checkboxInputField.checked) {
+        checkboxWrapper.classList.remove('error');
+        privacyPolicyError.classList.add('deactivated');
+    }
 }
 
-function validateForm(){
+function validateFormInput(){
     const formInput = readFormInput();
     const evaluatedFormInput = evaluateFormInput(formInput);
     setSendButtonState(evaluatedFormInput.allValid);
@@ -125,8 +131,75 @@ function checkIfMessageIsFilled(){
     }
 }
 
+function clearNameError(){
+    nameInputField.classList.remove('error-border');
+    nameInputLabel.classList.remove('error-label');
+    nameInputLabel.textContent = NAME_DEFAULT_LABEL;
+}
+
 function clearEmailError(){
     emailInputField.classList.remove('error-border');
     emailInputLabel.classList.remove('error-label');
     emailInputLabel.textContent = EMAIL_DEFAULT_LABEL;
 }
+
+function clearMessageError(){
+    messageInputField.classList.remove('error-border');
+    messageInputLabel.classList.remove('error-label');
+    messageInputLabel.textContent = MESSAGE_DEFAULT_LABEL;
+}
+
+function checkFormAndSend(event) {
+    event.preventDefault();
+    const formInput = readFormInput();
+    const evaluatedFormInput = evaluateFormInput(formInput);
+
+    renderSubmitErrors(evaluatedFormInput);
+    setSendButtonState(evaluatedFormInput.allValid);
+
+    if (!evaluatedFormInput.allValid) {
+        return false;
+    }
+
+    // hier später echte Sendelogik
+    return false;
+}
+
+function renderSubmitErrors(evaluatedFormInput) {
+    if (!evaluatedFormInput.nameFilled) {
+        nameInputField.classList.add('error-border');
+        nameInputLabel.classList.add('error-label');
+        nameInputLabel.textContent = NAME_MISSING_MSG;
+        nameCheckIcon.classList.add('deactivated');
+        nameCheckIcon.classList.remove('activated');
+    }
+
+    if (!evaluatedFormInput.emailFilled) {
+        emailInputField.classList.add('error-border');
+        emailInputLabel.classList.add('error-label');
+        emailInputLabel.textContent = EMAIL_MISSING_MSG;
+        emailCheckIcon.classList.add('deactivated');
+        emailCheckIcon.classList.remove('activated');
+    } else if (!evaluatedFormInput.emailFormatValid) {
+        emailInputField.classList.add('error-border');
+        emailInputLabel.classList.add('error-label');
+        emailInputLabel.textContent = EMAIL_INVALID_MSG;
+        emailCheckIcon.classList.add('deactivated');
+        emailCheckIcon.classList.remove('activated');
+    }
+
+    if (!evaluatedFormInput.messageFilled) {
+        messageInputField.classList.add('error-border');
+        messageInputLabel.classList.add('error-label');
+        messageInputLabel.textContent = MESSAGE_MISSING_MSG;
+        messageCheckIcon.classList.add('deactivated');
+        messageCheckIcon.classList.remove('activated');
+    }
+
+    if (!evaluatedFormInput.checkboxIsChecked) {
+        checkboxWrapper.classList.add('error');
+        checkboxWrapper.classList.remove('checked');
+        privacyPolicyError.classList.remove('deactivated');
+    }
+}
+

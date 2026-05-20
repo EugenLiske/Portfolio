@@ -238,25 +238,42 @@
 
 .checkbox-icon-default {
     position: absolute;
-    top: 51%;
+    top: 14%;
     left: 52%;
     transform: translate(-50%, -50%);
 
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 }
 
-
-.checkbox-icon-hover,
-.checkbox-icon-checked,
-.checkbox-icon-error {
+.checkbox-icon-hover {
     position: absolute;
-    top: 50%;
+    top: 12%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.checkbox-icon-checked {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.checkbox-icon-error {
+    position: absolute;
+    top: 15%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
 }
 
 .checkbox-icon-default {
@@ -288,6 +305,27 @@
 
 .checkbox-wrapper.error .checkbox-icon-error {
     opacity: 1;
+}
+
+.privacy-policy-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.privacy-policy-error {
+    margin-top: 8px;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--error-color);
+}
+
+.privacy-policy-error.activated {
+    visibility: visible;
+}
+
+.privacy-policy-error.deactivated {
+    visibility: hidden;
 }
 
 .privacy-policy-text {
@@ -347,10 +385,7 @@
     color: var(--error-color);
 }
 
-.input-field:-webkit-autofill,
-.input-field:-webkit-autofill:hover,
-.input-field:-webkit-autofill:focus,
-.input-field:-webkit-autofill:active {
+.input-field:-webkit-autofill {
     -webkit-text-fill-color: var(--input-text-color);
     caret-color: var(--input-text-color);
 
@@ -358,4 +393,12 @@
     -webkit-box-shadow: 0 0 0 1000px var(--bg-color) inset;
 
     transition: background-color 9999s ease-in-out 0s;
+}
+
+.input-field:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--input-text-color);
+    caret-color: var(--input-text-color);
+
+    box-shadow: 0 0 0 1000px rgb(49,63,72) inset;
+    -webkit-box-shadow: 0 0 0 1000px rgb(49,63,72) inset;
 }
