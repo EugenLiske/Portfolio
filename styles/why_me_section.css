@@ -1,19 +1,10 @@
 .why-me-section {
-    scroll-margin-top: 104px;
     background-color: var(--bg-color);
-    padding-top: 80px;
-    padding-bottom: 40px;
 }
 
 .why-me-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
-
     display: flex;
     align-items: center;
-    gap: 64px;
 }
 
 /* animated information on the left side */

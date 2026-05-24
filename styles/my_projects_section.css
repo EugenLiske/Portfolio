@@ -1,21 +1,10 @@
 .my-projects-section {
-    scroll-margin-top: 104px;
     background-color: var(--bg-color);
-    padding-top: 40px;
-    padding-bottom: 40px;
 }
 
 /* project nav bar */
 
 .project-navigation-wrapper {
-    display: flex;
-    gap: 128px;
-
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
-    padding-left: calc(128px - 58px);
     color: var(--primary-color);
 
     list-style: none;
@@ -69,17 +58,6 @@
 
 .project-outer-content-wrapper {
     background-color: var(--project-bg-color);
-}
-
-.project-inner-content-wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 40px 128px;
-
-    display: flex;
-    align-items: start;
-    gap: 80px;
 }
 
 /* project information  - left side*/
@@ -159,6 +137,7 @@
     font-size: 18px;
     font-weight: 400;
 }
+
 .technology-icons {
     display: flex;
     gap: 32px;

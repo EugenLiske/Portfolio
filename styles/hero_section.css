@@ -1,5 +1,4 @@
 .hero-section {
-    min-height: calc(100dvh - 104px);
     background-color: var(--bg-color);
     position: relative;
 
@@ -10,14 +9,9 @@
 /* actual content with limitation */
 
 .hero-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 64px;
 }
 
 /* left side of the hero section */
@@ -65,7 +59,6 @@
 }
 
 /* right side of the hero section */
-
 
 .hero-information-wrapper {
     /* flex: 1; */
@@ -235,17 +228,9 @@
 .hero-section-sticky-header {
     background-color: var(--primary-color);
 
-    height: 104px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-
-    padding: 0 64px;
 }
 
 .nav-logo-name {
@@ -282,7 +267,6 @@
 .nav-link:link {
     color: var(--bg-color);
 }
-
 
 .nav-link:hover {
     color: var(--secondary-color);

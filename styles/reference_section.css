@@ -1,7 +1,5 @@
 .references-section {
     background-color: var(--bg-color);
-    padding-top: 40px;
-    padding-bottom: 40px;
 }
 
 .references-intro-text {
@@ -13,14 +11,8 @@
 }
 
 .references-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
-
     display: flex;
     align-items: center;
-    gap: 80px;
 }
 
 .single-reference-wrapper {

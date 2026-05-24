@@ -1,56 +1,24 @@
-/*----- global margins, padding and gaps -----*/
+/*----- global layout containers -----*/
 
-
-.hero-section {
-    min-height: calc(100dvh - 104px);
-}
-
-.hero-content {
+.hero-content,
+.hero-section-sticky-header,
+.footer-content {
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 64px;
+    padding-inline: 64px;
 }
 
-.hero-section-sticky-header {
-    height: 104px;
+.why-me-content,
+.my-skills-content,
+.references-content,
+.contact-content,
+.project-navigation-wrapper,
+.project-inner-content-wrapper {
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 64px;
-}
-
-.why-me-section {
-    scroll-margin-top: 104px;
-    padding-top: 80px;
-    padding-bottom: 40px;
-}
-
-.why-me-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
-    gap: 64px;
-}
-
-.my-skills-section {
-    scroll-margin-top: 104px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.my-skills-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
-}
-
-.my-projects-section {
-    scroll-margin-top: 104px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-inline: 128px;
 }
 
 .project-navigation-wrapper {
@@ -60,7 +28,7 @@
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 128px;
+    padding-inline: 128px;
     padding-left: calc(128px - 58px);
 }
 
@@ -75,56 +43,50 @@
     gap: 80px;
 }
 
+/*----- section spacing -----*/
+
+.why-me-section,
+.contact-section {
+    scroll-margin-top: 104px;
+    padding-top: 80px;
+}
+
+.my-skills-section,
+.my-projects-section,
 .references-section {
-    background-color: var(--bg-color);
+    scroll-margin-top: 104px;
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-.references-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
-
-    display: flex;
-    align-items: center;
-    gap: 80px;
+.why-me-section {
+    padding-bottom: 40px;
 }
 
 .contact-section {
-    scroll-margin-top: 104px;
-    background-color: var(--bg-color);
-    padding-top: 80px;
     padding-bottom: 160px;
-
-    position: relative;
 }
 
-.contact-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 128px;
+/*----- special layout spacing -----*/
 
-    display: flex;
-    flex-direction: column;
+.why-me-content {
     gap: 64px;
 }
 
-footer {
-    height: 214px;
-    background-color: var(--primary-color);
+.project-navigation-wrapper {
+    gap: 128px;
+    padding-left: calc(128px - 58px);
 }
 
-.footer-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    padding: 0 64px;
+.project-inner-content-wrapper {
+    padding-block: 40px;
+    gap: 80px;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.references-content {
+    gap: 80px;
+}
+
+.contact-content {
+    gap: 64px;
 }
