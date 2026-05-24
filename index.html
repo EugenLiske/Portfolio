@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Eugen Liske</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/hero_section/portfolio_logo_default.svg">
 
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
@@ -126,10 +127,10 @@
         </div>
 
         <nav class="nav-link-wrapper">
-          <a href="#why-me-section-ID" class="nav-link">Why me</a>
-          <a href="#my-skills-section-ID" class="nav-link">Skills</a>
-          <a href="#my-projects-section-ID" class="nav-link">Projects</a>
-          <a href="#contact-section-ID" class="nav-link">Contact</a>
+          <a href="#why-me-section-ID" class="nav-link">Über mich</a>
+          <a href="#my-skills-section-ID" class="nav-link">Fähigkeiten</a>
+          <a href="#my-projects-section-ID" class="nav-link">Projekte</a>
+          <a href="#contact-section-ID" class="nav-link">Kontakt</a>
         </nav>
 
         <div class="nav-translate-function">
@@ -141,7 +142,7 @@
 
     <main>
       <section class="why-me-section" id="why-me-section-ID">
-        <h2>Why me</h2>
+        <h2>Über mich</h2>
 
         <div class="why-me-content">
           <div class="animated-information-wrapper">
@@ -159,35 +160,35 @@
           </div>
 
           <div class="personal-information-wrapper">
-            <p class="personal-information">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-              necessitatibus tenetur placeat earum quam eveniet vel nihil
-              facilis sapiente quo repellat, iste laborum. Quidem ex quis
-              deleniti voluptatibus possimus temporibus! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Deleniti tempora doloremque
-              dolorem deserunt natus facilis, hic ipsum! Ab libero quae
-              molestiae dolor, totam, quidem incidunt animi in architecto
-              laudantium perferendis.
-            </p>
+            <div class="personal-information">
+              <p>
+                Programmieren begeistert mich, weil es analytisches Denken mit kreativer
+                Problemlösung verbindet. Besonders spannend finde ich es, komplexe
+                Anforderungen in klare und benutzerfreundliche Lösungen zu übersetzen.
+              </p>
 
-            <a href="#contact-section-ID" class="lets-talk-button-wrapper">
-              <img
-                class="lets-talk-button-default"
-                src="./assets/icons/why_me_section/lets_talk_button_default.svg"
-                alt="lets_talk_button_default"
-              />
-              <img
-                class="lets-talk-button-hover"
-                src="./assets/icons/why_me_section/lets_talk_button_hover.svg"
-                alt="lets_talk_button_hover"
-              />
+              <p>
+                Durch meine strukturierte Arbeitsweise und starke Kommunikation behalte ich
+                auch in Teamprojekten stets den Überblick. Dabei ist mir wichtig,
+                zuverlässig zu arbeiten, offen Feedback anzusprechen und gemeinsam gute
+                Lösungen zu entwickeln.
+              </p>
+
+              <p>
+                Sprachen, Logik und klare Strukturen haben mich schon immer fasziniert –
+                genau deshalb begeistert mich auch die Arbeit mit Code.
+              </p>
+            </div>
+
+            <a href="#contact-section-ID" class="lets-talk-button">
+              Kontakt
             </a>
           </div>
         </div>
       </section>
 
       <section class="my-skills-section" id="my-skills-section-ID">
-        <h2>My Skills</h2>
+        <h2>Meine Fähigkeiten</h2>
 
         <div class="my-skills-content">
           <div class="skills-overview">
@@ -239,36 +240,47 @@
               src="./assets/icons/my_skills_section/current_learning_bg_shape_default.svg"
               alt="current_learning_bg_shape_default"
             />
+
             <img
               class="current-learning-bg-shape-hover"
               src="./assets/icons/my_skills_section/current_learning_bg_shape_hover.svg"
               alt="current_learning_bg_shape_hover"
             />
 
-            <p>I am currently learning</p>
+            <p class="current-learning-headline">
+              Aktuell vertiefe ich
+            </p>
 
             <div class="current-learning-skills-icons">
               <img
                 src="./assets/icons/my_skills_section/react_icon.svg"
                 alt="react_icon"
               />
+
               <img
                 src="./assets/icons/my_skills_section/vue_js_icon.svg"
                 alt="vue_js_icon"
               />
             </div>
 
-            <p>
-              Show that you are motivated to continually improve your skills,
-              implement innovative solutions and stay abreast of new
-              technologies.
-            </p>
+            <div class="current-learning-text">
+              <p>
+                Mit React und Vue.js erweitere ich aktuell mein Verständnis
+                für moderne Frontend-Frameworks.
+              </p>
+
+              <p>
+                Besonders spannend finde ich die Entwicklung performanter
+                und interaktiver Benutzeroberflächen.
+              </p>
+            </div>
           </div>
+
         </div>
       </section>
 
       <section class="my-projects-section" id="my-projects-section-ID">
-        <h2>My Projects</h2>
+        <h2>Meine Projekte</h2>
 
         <ol class="project-navigation-wrapper">
           <li class="project-nav-item active-project">
@@ -290,27 +302,24 @@
               <li>
                 <div class="project-info-single-bulletpoint">
                   <div class="project-info-bulletpoint-header">
-                    <h3>About the project</h3>
-                    <span id="projectDurationID">Duration: 3 weeks</span>
+                    <h3>Projektübersicht</h3>
+                    <span id="projectDurationID">Dauer: 3 Wochen</span>
                   </div>
 
                   <p id="projectBulletpointOneID">
-                    This App is a Slack Clone App. It revolutionizes team
-                    communication and collaboration with its intuitive
-                    interface, real-time messaging, and robust channel
-                    organization.
+                    El Pollo Loco ist ein 2D-Jump-and-Run-Spiel, in dem der Spieler Pepe durch eine Wüstenlandschaft steuert,
+                    Münzen sammelt, Gegnern ausweicht und sich mit Salsaflaschen gegen Hühner und den Endboss verteidigt.
                   </p>
                 </div>
               </li>
 
               <li>
                 <div class="project-info-single-bulletpoint">
-                  <h3>How I have organised my work process</h3>
+                  <h3>Arbeitsweise</h3>
                   <p id="projectBulletpointTwoID">
-                    How do you keep your code clean and maintainable? Have you
-                    broken the project down into reusable modules or components?
-                    Focus on documentation,naming files, variables, classes and
-                    testing.
+                    Zur Strukturierung des Projekts habe ich Trello genutzt, um Aufgaben, Fortschritt und offene Punkte
+                    übersichtlich zu organisieren. Der Code ist in mehrere Klassen und Controller aufgeteilt, zum Beispiel für
+                    Spielfigur, Gegner, Audio, Eingaben und Rendering.
                   </p>
                 </div>
               </li>
@@ -318,14 +327,12 @@
               <li>
                 <div class="project-info-single-bulletpoint">
                   <h3 id="additionalProjectInformationID">
-                    What I have learned
+                    Was ich gelernt habe
                   </h3>
                   <p id="projectBulletpointThreeID">
-                    How many people were in the team and what was your role?
-                    Describe your tasks in 1-2 sentences, for example: login
-                    form, dashboard or chat functionality. What technologies did
-                    you use? It is nice to mention good teamwork and
-                    cooperation.
+                    In diesem Projekt habe ich besonders viel über objektorientierte JavaScript-Strukturen, Canvas-Rendering,
+                    Animationen, Kollisionen, Spielzustände und Eingabesteuerung gelernt. Eine wichtige Erfahrung war es,
+                    viele einzelne Spielmechaniken zu einem funktionierenden Gesamtspiel zusammenzuführen.
                   </p>
                 </div>
               </li>
@@ -333,7 +340,7 @@
 
             <div class="project-preview-wrapper">
               <div class="technologies-and-mockup-wrapper">
-                <p>Technologies</p>
+                <p>Technologien</p>
 
                 <div class="technology-icons">
                   <img
@@ -378,7 +385,7 @@
 
       <section class="references-section">
         <p class="references-intro-text">
-          Need a teamplayer? Here’s what my colleagues say about me
+          Das sagen andere über die Zusammenarbeit mit mir.
         </p>
 
         <div class="references-content">
@@ -387,19 +394,18 @@
               <h2>Anne Sanewski</h2>
 
               <div>
-                <span>Project</span>
+                <span>Projekt</span>
                 <span class="reference-card-project-name">Join</span>
               </div>
             </header>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              et assumenda numquam iure inventore autem voluptate quod
-              exercitationem itaque corporis? Deleniti laborum non nulla omnis
-              quis facere obcaecati a illo?
+              Bei der Zusammenarbeit mit Eugen sind mir besonders seine starke Kommunikation und strukturierte Arbeitsweise aufgefallen.
+              Man konnte sich stets auf die zuverlässige Umsetzung vereinbarter Aufgaben verlassen. Besonders positiv war sein
+              respektvoller und konstruktiver Umgang mit Feedback und schwierigen Themen.
             </p>
 
-            <a href="">LinkedIn Profile</a>
+            <a href="https://github.com/Saki63" target="_blank">GitHub Profile</a>
 
             <img
               class="reference-bg-shape-default"
@@ -415,53 +421,20 @@
 
           <div class="single-reference-wrapper">
             <header class="reference-card-header">
-              <h2>Anne Sanewski</h2>
+              <h2>Martin Freimuth</h2>
 
               <div>
-                <span>Project</span>
+                <span>Projekt</span>
                 <span class="reference-card-project-name">Join</span>
               </div>
             </header>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              et assumenda numquam iure inventore autem voluptate quod
-              exercitationem itaque corporis? Deleniti laborum non nulla omnis
-              quis facere obcaecati a illo?
+              Im Gruppenprojekt übernahm Eugen eine strukturierte und koordinierende Rolle, wodurch die Zusammenarbeit im
+              Team sehr effizient verlief. Durch den regelmäßigen Austausch konnten wir das Projekt erfolgreich umsetzen.
             </p>
 
-            <a href="">LinkedIn Profile</a>
-
-            <img
-              class="reference-bg-shape-default"
-              src="./assets/icons/references_section/reference-bg-shape-default.svg"
-              alt="reference-bg-shape-default"
-            />
-            <img
-              class="reference-bg-shape-hover"
-              src="./assets/icons/references_section/reference-bg-shape-hover.svg"
-              alt="reference-bg-shape-hover"
-            />
-          </div>
-
-          <div class="single-reference-wrapper">
-            <header class="reference-card-header">
-              <h2>Anne Sanewski</h2>
-
-              <div>
-                <span>Project</span>
-                <span class="reference-card-project-name">Join</span>
-              </div>
-            </header>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              et assumenda numquam iure inventore autem voluptate quod
-              exercitationem itaque corporis? Deleniti laborum non nulla omnis
-              quis facere obcaecati a illo?
-            </p>
-
-            <a href="">LinkedIn Profile</a>
+            <a href="https://www.linkedin.com/in/martin-freimuth/" target="_blank">LinkedIn Profile</a>
 
             <img
               class="reference-bg-shape-default"
@@ -485,16 +458,27 @@
           </div>
         </a>
 
-        <h2>Contact me</h2>
+        <h2>Kontakt</h2>
 
         <div class="contact-content">
           <div class="contact-upper-part">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. In,
-              omnis adipisci? Nostrum deserunt voluptatem iure dicta veniam et,
-              tempora minus, corrupti pariatur magnam eius a, officia
-              necessitatibus. Quibusdam, eos blanditiis
-            </p>
+            <div class="contact-intro-text">
+              <p>
+                Ich freue mich über den Austausch zu Frontend-Entwicklung,
+                spannenden Projekten oder neuen beruflichen Möglichkeiten.
+              </p>
+
+              <p>
+                Besonders interessant finde ich die Arbeit an modernen und
+                benutzerfreundlichen Webanwendungen, bei denen saubere Strukturen,
+                gute Zusammenarbeit und kreative Lösungen gefragt sind.
+              </p>
+
+              <p>
+                Wenn Sie glauben, dass ich gut zu Ihrem Team oder Projekt passe,
+                freue ich mich auf Ihre Nachricht.
+              </p>
+            </div>
 
             <div class="contact-links-wrapper">
               <button
@@ -549,7 +533,7 @@
                   class="label-text"
                   id="name-input-label"
                 >
-                  Your Name
+                  Ihr Name
                 </label>
 
                 <div class="input-wrapper" id="name-input-wrapper">
@@ -576,7 +560,7 @@
                   class="label-text"
                   id="email-input-label"
                 >
-                  Your Email
+                  Ihre E-Mail-Adresse
                 </label>
 
                 <div class="input-wrapper" id="email-input-wrapper">
@@ -604,7 +588,7 @@
                 class="label-text"
                 id="message-input-label"
               >
-                Your Message
+                Ihre Nachricht
               </label>
 
               <div class="message-wrapper" id="message-input-wrapper">
@@ -665,15 +649,11 @@
 
               <div class="privacy-policy-content">
                 <span class="privacy-policy-text">
-                  I've read the <a href="">privacy policy</a> and agree to the
-                  processing of my data as outlined.
+                  Ich habe die <a href="">Datenschutzerklärung</a> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.
                 </span>
 
-                <span
-                  id="privacy-policy-error"
-                  class="privacy-policy-error deactivated"
-                >
-                  Please accept the privacy policy.
+                <span id="privacy-policy-error" class="privacy-policy-error deactivated">
+                  Bitte stimmen Sie der Datenschutzerklärung zu.
                 </span>
               </div>
             </label>
@@ -684,7 +664,7 @@
                 class="send-form-button deactivated"
                 id="send-form-button"
               >
-                Send
+                Senden
               </button>
             </div>
           </form>

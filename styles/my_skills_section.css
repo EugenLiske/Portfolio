@@ -24,27 +24,25 @@
 
 .current-learning-wrapper {
     position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+
+    gap: 12px;
 
     flex: 0 1 380px;
     aspect-ratio: 1 / 1;
 }
 
-.current-learning-wrapper p {
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-}
-
 .current-learning-bg-shape-default,
 .current-learning-bg-shape-hover {
     position: absolute;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
     transition: opacity 0.4s ease-in-out;
 }
@@ -61,8 +59,37 @@
     opacity: 0;
 }
 
+.current-learning-headline {
+    max-width: 300px;
+
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.25;
+}
+
 .current-learning-skills-icons {
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+.current-learning-skills-icons img {
+    width: 40px;
+    height: auto;
+}
+
+.current-learning-text {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    max-width: 285px;
+}
+
+.current-learning-text p {
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.3;
 }

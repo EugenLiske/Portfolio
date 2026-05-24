@@ -154,7 +154,9 @@
     gap: 64px;
 }
 
-.live-test-button {
+.live-test-button,
+.live-test-button:link,
+.live-test-button:visited {
     font-size: 18px;
     font-weight: 400;
     color: var(--bg-color);
@@ -175,7 +177,9 @@
     background-color: var(--button-hover-1);
 }
 
-.github-button {
+.github-button,
+.github-button:link,
+.github-button:visited {
     font-size: 18px;
     font-weight: 400;
     color: var(--primary-color);

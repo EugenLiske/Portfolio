@@ -1,5 +1,13 @@
 /*----- global layout containers -----*/
 
+.hero-section {
+    min-height: calc(100dvh - 104px);
+}
+
+.hero-section-sticky-header {
+    height: 104px;
+}
+
 .hero-content,
 .hero-section-sticky-header,
 .footer-content {

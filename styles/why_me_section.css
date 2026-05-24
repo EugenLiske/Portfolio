@@ -14,7 +14,7 @@
     align-items: center;
     gap: 16px;
 
-    flex: 0 1 520px;
+    flex: 0 0 620px;
 
     transform: translateY(-48px);
 }
@@ -34,6 +34,8 @@
     margin: 0;
     font-size: 30px;
     font-weight: 500;
+
+    white-space: nowrap;
 }
 
 .animated-info-prefix {
@@ -67,36 +69,36 @@
 }
 
 .personal-information {
+    max-width: 620px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
     font-size: 18px;
     font-weight: 400;
+    line-height: 1.45;
 }
 
-.lets-talk-button-wrapper {
-    position: relative;
+.lets-talk-button,
+.lets-talk-button:visited {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--primary-color);
+
     width: 134px;
     height: 48px;
-} 
+    background-color: transparent;
+    border-radius: 999px;
+    border: 1px solid var(--primary-color);
 
-/* let's talk button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.lets-talk-button-default,
-.lets-talk-button-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    transition: opacity 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
-.lets-talk-button-hover {
-    opacity: 0;
-}
-
-.lets-talk-button-wrapper:hover .lets-talk-button-hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.lets-talk-button-wrapper:hover .lets-talk-button-default{
-    opacity: 0;
+.lets-talk-button:hover {
+    background-color: var(--button-hover-2);
 }

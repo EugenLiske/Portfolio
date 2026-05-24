@@ -1,17 +1,17 @@
 const animatedItems = [
     {
         icon: "./assets/icons/why_me_section/located_in_icon.svg",
-        fullText: "I am located in Munich..."
+        fullText: "Ich bin in München zuhause..."
     },
 
     {
         icon: "./assets/icons/why_me_section/work_remote_icon.svg",
-        fullText: "I am open to work remote..."
+        fullText: "Ich bin offen für Remote-Arbeit..."
     },
 
     {
         icon: "./assets/icons/why_me_section/relocate_icon.svg",
-        fullText: "I am open to relocate..."
+        fullText: "Ich bin flexibel für neue Standorte..."
     }
 ];
 
@@ -31,11 +31,11 @@ function wait(ms) {
 
 function updateStyledText(currentText) {
 
-    if (currentText.startsWith("I am")) {
+    if (currentText.startsWith("Ich bin")) {
 
-        const prefixPart = currentText.slice(0, 4);
+        const prefixPart = currentText.slice(0, 8);
 
-        const dynamicPart = currentText.slice(4);
+        const dynamicPart = currentText.slice(8);
 
         prefix.textContent = prefixPart;
 

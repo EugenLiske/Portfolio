@@ -16,15 +16,15 @@ const nameInputLabel = document.getElementById('name-input-label');
 const emailInputLabel = document.getElementById('email-input-label');
 const messageInputLabel = document.getElementById('message-input-label');
 
-const NAME_MISSING_MSG = "Your Name is required";
-const EMAIL_MISSING_MSG = "Your Email is required";
-const MESSAGE_MISSING_MSG = "Your Message is requred";
-const PRIVACY_POLICY_MISSING_MSG = "Please accept the privacy policy."
-const EMAIL_INVALID_MSG = "Please enter a valid email address.";
+const NAME_MISSING_MSG = "Bitte geben Sie Ihren Namen ein.";
+const EMAIL_MISSING_MSG = "Bitte geben Sie Ihre E-Mail-Adresse ein.";
+const MESSAGE_MISSING_MSG = "Bitte geben Sie eine Nachricht ein.";
+const PRIVACY_POLICY_MISSING_MSG = "Bitte akzeptieren Sie die Datenschutzerklärung.";
+const EMAIL_INVALID_MSG = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
 
-const NAME_DEFAULT_LABEL = "Your Name";
-const EMAIL_DEFAULT_LABEL = "Your Email";
-const MESSAGE_DEFAULT_LABEL = "Your Message";
+const NAME_DEFAULT_LABEL = "Ihr Name";
+const EMAIL_DEFAULT_LABEL = "Ihre E-Mail-Adresse";
+const MESSAGE_DEFAULT_LABEL = "Ihre Nachricht";
 
 
 
