@@ -17,9 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    /* gap: 80px; */
-
     padding: 0 64px;
 }
 
@@ -155,6 +152,11 @@
     position: relative;
     width: 30px;
     height: 30px;
+
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .social-media-icon-default,
@@ -246,9 +248,15 @@
     padding: 0 64px;
 }
 
+.nav-logo-name {
+    font-family: 'Anta';
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .nav-logo-title {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--bg-color);
 }
 
@@ -268,6 +276,11 @@
     font-weight: 500;
     color: var(--bg-color);
     transition: color 0.4s ease-in-out;
+}
+
+.nav-link:visited,
+.nav-link:link {
+    color: var(--bg-color);
 }
 
 

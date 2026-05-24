@@ -57,7 +57,7 @@
             </div>
 
             <div class="hero-social-media-icons">
-              <div class="social-media-icon-wrapper">
+              <button type="button" class="social-media-icon-wrapper" onclick="focusForm()">
                 <img
                   class="social-media-icon-default"
                   src="./assets/icons/hero_section/mail_icon_default.svg"
@@ -66,9 +66,9 @@
                   class="social-media-icon-hover"
                   src="./assets/icons/hero_section/mail_icon_hover.svg"
                 />
-              </div>
+              </button>
 
-              <div class="social-media-icon-wrapper">
+              <a href="https://github.com/EugenLiske" target="_blank" class="social-media-icon-wrapper">
                 <img
                   class="social-media-icon-default"
                   src="./assets/icons/hero_section/github_icon_default.svg"
@@ -77,9 +77,9 @@
                   class="social-media-icon-hover"
                   src="./assets/icons/hero_section/github_icon_hover.svg"
                 />
-              </div>
+              </a>
 
-              <div class="social-media-icon-wrapper">
+              <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="social-media-icon-wrapper">
                 <img
                   class="social-media-icon-default"
                   src="./assets/icons/hero_section/linkedin_icon_default.svg"
@@ -88,7 +88,7 @@
                   class="social-media-icon-hover"
                   src="./assets/icons/hero_section/linkedin_icon_hover.svg"
                 />
-              </div>
+              </a>
             </div>
           </div>
 
@@ -121,7 +121,7 @@
             src="./assets/icons/hero_section/portfolio_logo_dark.svg"
             alt="portfolio_logo_dark"
           />
-          <span class="logo-name">E.Liske</span>
+          <span class="nav-logo-name">E.Liske</span>
           <span class="nav-logo-title">developer</span>
         </div>
 
@@ -694,6 +694,35 @@
 
     <footer>
       <div class="footer-content">
+          <div class="legal-notice-and-name-wrapper">
+            <a href="" target="_blank">Impressum</a>
+            <span>© Eugen Liske 2026</span>
+          </div>
+
+          <div class="footer-logo-wrapper">
+            <img src="./assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark"
+            />
+
+            <span class="footer-logo-name">E.Liske</span>
+            <span class="footer-logo-title">developer</span>
+          </div>
+
+          <div class="footer-social-media-links-wrapper">
+            <a href="https://github.com/EugenLiske" target="_blank" class="footer-social-media-icon-wrapper">
+              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_github_icon_default.svg" alt="footer_github_icon_default">
+              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_github_icon_hover.svg" alt="footer_github_icon_hover">
+            </a>
+
+            <button class="footer-social-media-icon-wrapper" onclick="focusForm()">
+              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_email_icon_default.svg" alt="footer_email_icon_default">
+              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_email_icon_hover.svg" alt="footer_email_icon_hover">
+            </button>
+
+            <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="footer-social-media-icon-wrapper">
+              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_linkedin_icon_default.svg" alt="footer_linkedin_icon_default">
+              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_linkedin_icon_hover.svg" alt="footer_linkedin_icon_hover">
+            </a>
+          </div>
 
       </div>
     </footer>

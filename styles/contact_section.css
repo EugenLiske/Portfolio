@@ -1,8 +1,8 @@
 .contact-section {
     scroll-margin-top: 104px;
     background-color: var(--bg-color);
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 160px;
 
     position: relative;
 }
@@ -83,6 +83,9 @@
     border: none;
     background: transparent;
     padding: 0;
+
+    color: inherit;
+    font: inherit;
 
     display: flex;
     align-items: center;
@@ -320,11 +323,11 @@
     opacity: 1;
 }
 
-.checkbox-wrapper:hover .checkbox-icon-default {
+.custom-checkbox-icon-wrapper:hover .checkbox-icon-default {
     opacity: 0;
 }
 
-.checkbox-wrapper:hover .checkbox-icon-hover {
+.custom-checkbox-icon-wrapper:hover .checkbox-icon-hover {
     opacity: 1;
 }
 
@@ -379,7 +382,7 @@
 
 .privacy-policy-text a:hover {
     color: var(--secondary-color);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .send-form-button-wrapper {
