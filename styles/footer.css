@@ -21,6 +21,10 @@ footer {
     gap: 16px;
 }
 
+.legal-notice-and-name-wrapper a:hover {
+    color: var(--secondary-color);
+}
+
 .footer-logo-wrapper {
     display: flex;
     flex-direction: column;

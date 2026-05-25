@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Eugen Liske</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/hero_section/portfolio_logo_default.svg">
+
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/hero_section.css" />
+    <link rel="stylesheet" href="./styles/why_me_section.css" />
+    <link rel="stylesheet" href="./styles/my_skills_section.css" />
+    <link rel="stylesheet" href="./styles/my_projects_section.css" />
+    <link rel="stylesheet" href="./styles/reference_section.css" />
+    <link rel="stylesheet" href="./styles/contact_section.css" />
+    <link rel="stylesheet" href="./styles/footer.css">
+  </head>
+  <body>
+    <section class="hero-section" id="hero-section-ID">
+      <div class="hero-content">
+        <div class="hero-img-wrapper">
+          <img
+            class="bg-shape-default"
+            src="./assets/icons/hero_section/hero_picture_bg_shape_default.svg"
+          />
+          <img
+            class="bg-shape-hover"
+            src="./assets/icons/hero_section/hero_picture_bg_shape_hover.svg"
+          />
+          <img
+            class="hero-img"
+            src="./assets/img/hero_section_picture_chatgpt_test.png"
+            alt="picture-of-eugen-liske"
+          />
+        </div>
+
+        <div class="hero-information-wrapper">
+          <div class="hero-icon-area">
+            <div class="hero-main-logo">
+              <div class="logo-wrapper">
+                <img
+                  class="portfolio-logo-default"
+                  src="./assets/icons/hero_section/portfolio_logo_default_1.svg"
+                  alt="portfolio_logo_default"
+                />
+                <img
+                  class="portfolio-logo-hover"
+                  src="./assets/icons/hero_section/portfolio_logo_hover_1.svg"
+                  alt="portfolio_logo_hover"
+                />
+              </div>
+
+              <span class="logo-name">E.Liske</span>
+              <span class="logo-title">developer</span>
+            </div>
+
+            <div class="hero-social-media-icons">
+              <button type="button" class="social-media-icon-wrapper" onclick="focusForm()">
+                <img
+                  class="social-media-icon-default"
+                  src="./assets/icons/hero_section/mail_icon_default.svg"
+                />
+                <img
+                  class="social-media-icon-hover"
+                  src="./assets/icons/hero_section/mail_icon_hover.svg"
+                />
+              </button>
+
+              <a href="https://github.com/EugenLiske" target="_blank" class="social-media-icon-wrapper">
+                <img
+                  class="social-media-icon-default"
+                  src="./assets/icons/hero_section/github_icon_default.svg"
+                />
+                <img
+                  class="social-media-icon-hover"
+                  src="./assets/icons/hero_section/github_icon_hover.svg"
+                />
+              </a>
+
+              <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="social-media-icon-wrapper">
+                <img
+                  class="social-media-icon-default"
+                  src="./assets/icons/hero_section/linkedin_icon_default.svg"
+                />
+                <img
+                  class="social-media-icon-hover"
+                  src="./assets/icons/hero_section/linkedin_icon_hover.svg"
+                />
+              </a>
+            </div>
+          </div>
+
+          <h1>Eugen Liske</h1>
+
+          <h2 data-i18n="heroJobTitle">FRONTEND ENTWICKLER</h2>
+
+          <a href="#why-me-section-ID" class="nav-arrow-position-wrapper">
+            <div class="nav-arrow-wrapper">
+              <img
+                class="nav-arrow-down-default"
+                src="./assets/icons/hero_section/hero_section_arrow_down_icon_default.svg"
+                alt="hero_section_arrow_down_icon_default"
+              />
+              <img
+                class="nav-arrow-down-hover"
+                src="./assets/icons/hero_section/hero_section_arrow_down_icon_hover.svg"
+                alt="hero_section_arrow_down_icon_hover"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="header-wrapper">
+      <header class="hero-section-sticky-header">
+        <div class="hero-main-logo">
+          <img
+            src="./assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
+          <span class="nav-logo-name">E.Liske</span>
+          <span class="nav-logo-title">developer</span>
+        </div>
+
+        <nav class="nav-link-wrapper">
+          <a href="#why-me-section-ID" class="nav-link" data-i18n="navAbout">Über mich</a>
+          <a href="#my-skills-section-ID" class="nav-link" data-i18n="navSkills">Fähigkeiten</a>
+          <a href="#my-projects-section-ID" class="nav-link" data-i18n="navProjects">Projekte</a>
+          <a href="#contact-section-ID" class="nav-link" data-i18n="navContact">Kontakt</a>
+        </nav>
+
+        <div class="nav-translate-function">
+          <button type="button" class="translate-button active-language" data-language="de" onclick="translateToGerman()">DE</button>
+          <button type="button" class="translate-button" data-language="en" onclick="translateToEnglish()">EN</button>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section class="why-me-section" id="why-me-section-ID">
+        <h2 data-i18n="aboutHeadline">Über mich</h2>
+
+        <div class="why-me-content">
+          <div class="animated-information-wrapper">
+            <img
+              class="animated-info-icon"
+              src="./assets/icons/why_me_section/located_in_icon.svg"
+              alt="located_in_icon"
+            />
+
+            <p class="animated-info-text">
+              <span class="animated-info-prefix"></span>
+              <span class="animated-info-dynamic"></span>
+              <span class="animated-info-cursor">|</span>
+            </p>
+          </div>
+
+          <div class="personal-information-wrapper">
+            <div class="personal-information">
+              <p data-i18n="aboutTextOne">
+                Programmieren begeistert mich, weil es analytisches Denken mit kreativer
+                Problemlösung verbindet. Besonders spannend finde ich es, komplexe
+                Anforderungen in klare und benutzerfreundliche Lösungen zu übersetzen.
+              </p>
+
+              <p data-i18n="aboutTextTwo">
+                Durch meine strukturierte Arbeitsweise und starke Kommunikation behalte ich
+                auch in Teamprojekten stets den Überblick. Dabei ist mir wichtig,
+                zuverlässig zu arbeiten, offen Feedback anzusprechen und gemeinsam gute
+                Lösungen zu entwickeln.
+              </p>
+
+              <p data-i18n="aboutTextThree">
+                Sprachen, Logik und klare Strukturen haben mich schon immer fasziniert –
+                genau deshalb begeistert mich auch die Arbeit mit Code.
+              </p>
+            </div>
+
+            <a href="#contact-section-ID" class="lets-talk-button" data-i18n="aboutContactButton">
+              Kontakt
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-skills-section" id="my-skills-section-ID">
+        <h2 data-i18n="skillsHeadline">Meine Fähigkeiten</h2>
+
+        <div class="my-skills-content">
+          <div class="skills-overview">
+            <img
+              src="./assets/icons/my_skills_section/angular_icon.svg"
+              alt="angular_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/typescript_icon.svg"
+              alt="typescript_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/javascript_icon.svg"
+              alt="javascript_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/html_icon.svg"
+              alt="html_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/css_icon.svg"
+              alt="css_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/rest_api_icon.svg"
+              alt="rest_api_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/supabase_icon.svg"
+              alt="supabase_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/git_icon.svg"
+              alt="git_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/material_design_icon.svg"
+              alt="material_design_icon"
+            />
+            <img
+              src="./assets/icons/my_skills_section/scrum_icon.svg"
+              alt="scrum_icon"
+            />
+          </div>
+
+          <div class="current-learning-wrapper">
+            <img
+              class="current-learning-bg-shape-default"
+              src="./assets/icons/my_skills_section/current_learning_bg_shape_default.svg"
+              alt="current_learning_bg_shape_default"
+            />
+
+            <img
+              class="current-learning-bg-shape-hover"
+              src="./assets/icons/my_skills_section/current_learning_bg_shape_hover.svg"
+              alt="current_learning_bg_shape_hover"
+            />
+
+            <p class="current-learning-headline" data-i18n="currentLearningHeadline">
+              Aktuell vertiefe ich
+            </p>
+
+            <div class="current-learning-skills-icons">
+              <img
+                src="./assets/icons/my_skills_section/react_icon.svg"
+                alt="react_icon"
+              />
+
+              <img
+                src="./assets/icons/my_skills_section/vue_js_icon.svg"
+                alt="vue_js_icon"
+              />
+            </div>
+
+            <div class="current-learning-text">
+              <p data-i18n="currentLearningTextOne">
+                Mit React und Vue.js erweitere ich aktuell mein Verständnis
+                für moderne Frontend-Frameworks.
+              </p>
+
+              <p data-i18n="currentLearningTextTwo">
+                Besonders spannend finde ich die Entwicklung performanter
+                und interaktiver Benutzeroberflächen.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="my-projects-section" id="my-projects-section-ID">
+        <h2 data-i18n="projectsHeadline">Meine Projekte</h2>
+
+        <ol class="project-navigation-wrapper">
+          <li class="project-nav-item active-project">
+            <button onclick="displayTranslatedProjectContent(0)" data-i18n="projectNavElPolloLoco">El Pollo Loco</button>
+          </li>
+
+          <li class="project-nav-item">
+            <button onclick="displayTranslatedProjectContent(1)" data-i18n="projectNavJoin">Join</button>
+          </li>
+
+          <li class="project-nav-item">
+            <button onclick="displayTranslatedProjectContent(2)" data-i18n="projectNavPokedex">Pokédex</button>
+          </li>
+        </ol>
+
+        <div class="project-outer-content-wrapper">
+          <div class="project-inner-content-wrapper">
+            <ul class="project-information-wrapper">
+              <li>
+                <div class="project-info-single-bulletpoint">
+                  <div class="project-info-bulletpoint-header">
+                    <h3 data-i18n="projectOverviewHeadline">Projektübersicht</h3>
+                    <span id="projectDurationID" data-i18n="projectDurationElPolloLoco">Dauer: 3 Wochen</span>
+                  </div>
+
+                  <p data-i18n="projectBulletpointOneElPolloLoco" id="projectBulletpointOneID">
+                    El Pollo Loco ist ein 2D-Jump-and-Run-Spiel, in dem der Spieler Pepe durch eine Wüstenlandschaft steuert,
+                    Münzen sammelt, Gegnern ausweicht und sich mit Salsaflaschen gegen Hühner und den Endboss verteidigt.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="project-info-single-bulletpoint">
+                  <h3 data-i18n="projectWorkingMethodHeadline">Arbeitsweise</h3>
+                  <p data-i18n="projectBulletpointTwoElPolloLoco" id="projectBulletpointTwoID">
+                    Zur Strukturierung des Projekts habe ich Trello genutzt, um Aufgaben, Fortschritt und offene Punkte
+                    übersichtlich zu organisieren. Der Code ist in mehrere Klassen und Controller aufgeteilt, zum Beispiel für
+                    Spielfigur, Gegner, Audio, Eingaben und Rendering.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="project-info-single-bulletpoint">
+                  <h3 id="additionalProjectInformationID" data-i18n="projectAdditionalHeadlineElPolloLoco">
+                    Was ich gelernt habe
+                  </h3>
+                  <p data-i18n="projectBulletpointThreeElPolloLoco" id="projectBulletpointThreeID">
+                    In diesem Projekt habe ich besonders viel über objektorientierte JavaScript-Strukturen, Canvas-Rendering,
+                    Animationen, Kollisionen, Spielzustände und Eingabesteuerung gelernt. Eine wichtige Erfahrung war es,
+                    viele einzelne Spielmechaniken zu einem funktionierenden Gesamtspiel zusammenzuführen.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="project-preview-wrapper">
+              <div class="technologies-and-mockup-wrapper">
+                <p data-i18n="projectTechnologiesLabel">Technologien</p>
+
+                <div class="technology-icons">
+                  <img
+                    id="projectTechnologyOneID"
+                    src="./assets/icons/my_projects_section/html_project_icon.svg"
+                    alt="html_project_icon"
+                  />
+                  <img
+                    id="projectTechnologyTwoID"
+                    src="./assets/icons/my_projects_section/javascript_project_icon.svg"
+                    alt="javascript_project_icon"
+                  />
+                  <img
+                    id="projectTechnologyThreeID"
+                    src="./assets/icons/my_projects_section/css_project_icon.svg"
+                    alt="css_project_icon"
+                  />
+                </div>
+
+                <img
+                  id="projectMockupID"
+                  class="project-preview-img"
+                  src="./assets/icons/my_projects_section/el_pollo_loco_preview.png"
+                  alt="el_pollo_loco_preview"
+                />
+              </div>
+
+              <div class="live-test-buttons-wrapper">
+                <a class="live-test-button" href="" data-i18n="projectLiveTestButton">Live Test</a>
+                <a
+                  id="githubLinkID"
+                  class="github-button"
+                  data-i18n="projectGithubButton"
+                  target="_blank"
+                  href="https://github.com/EugenLiske/el_pollo_loco.git"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="references-section">
+        <p class="references-intro-text" data-i18n="referencesIntroText">
+          Das sagen andere über die Zusammenarbeit mit mir.
+        </p>
+
+        <div class="references-content">
+          <div class="single-reference-wrapper">
+            <header class="reference-card-header">
+              <h2>Anne Sanewski</h2>
+
+              <div>
+                <span data-i18n="referenceProjectLabel">Projekt</span>
+                <span class="reference-card-project-name">Join</span>
+              </div>
+            </header>
+
+            <p data-i18n="referenceAnneText">
+              Bei der Zusammenarbeit mit Eugen sind mir besonders seine starke Kommunikation und strukturierte Arbeitsweise aufgefallen.
+              Man konnte sich stets auf die zuverlässige Umsetzung vereinbarter Aufgaben verlassen. Besonders positiv war sein
+              respektvoller und konstruktiver Umgang mit Feedback und schwierigen Themen.
+            </p>
+
+            <a href="https://github.com/Saki63" target="_blank" data-i18n="referenceGithubProfile">GitHub Profile</a>
+
+            <img
+              class="reference-bg-shape-default"
+              src="./assets/icons/references_section/reference-bg-shape-default.svg"
+              alt="reference-bg-shape-default"
+            />
+            <img
+              class="reference-bg-shape-hover"
+              src="./assets/icons/references_section/reference-bg-shape-hover.svg"
+              alt="reference-bg-shape-hover"
+            />
+          </div>
+
+          <div class="single-reference-wrapper">
+            <header class="reference-card-header">
+              <h2>Martin Freimuth</h2>
+
+              <div>
+                <span data-i18n="referenceProjectLabel">Projekt</span>
+                <span class="reference-card-project-name">Join</span>
+              </div>
+            </header>
+
+            <p data-i18n="referenceMartinText">
+              Im Gruppenprojekt übernahm Eugen eine strukturierte und koordinierende Rolle, wodurch die Zusammenarbeit im
+              Team sehr effizient verlief. Durch den regelmäßigen Austausch konnten wir das Projekt erfolgreich umsetzen.
+            </p>
+
+            <a href="https://www.linkedin.com/in/martin-freimuth/" target="_blank" data-i18n="referenceLinkedInProfile">LinkedIn Profile</a>
+
+            <img
+              class="reference-bg-shape-default"
+              src="./assets/icons/references_section/reference-bg-shape-default.svg"
+              alt="reference-bg-shape-default"
+            />
+            <img
+              class="reference-bg-shape-hover"
+              src="./assets/icons/references_section/reference-bg-shape-hover.svg"
+              alt="reference-bg-shape-hover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact-section-ID">
+        <a href="#hero-section-ID" class="nav-arrow-up-position-wrapper">
+          <div class="nav-arrow-up-img-wrapper">
+            <img class="nav-arrow-up-default" src="./assets/icons/contact_section/contact_section_arrow_up_icon_default.svg" alt="contact_section_arrow_up_icon_default">
+            <img class="nav-arrow-up-hover" src="./assets/icons/contact_section/contact_section_arrow_up_icon_hover.svg" alt="contact_section_arrow_up_icon_hover">
+          </div>
+        </a>
+
+        <h2 data-i18n="contactHeadline">Kontakt</h2>
+
+        <div class="contact-content">
+          <div class="contact-upper-part">
+            <div class="contact-intro-text">
+              <p data-i18n="contactIntroTextOne">
+                Ich freue mich über den Austausch zu Frontend-Entwicklung,
+                spannenden Projekten oder neuen beruflichen Möglichkeiten.
+              </p>
+
+              <p data-i18n="contactIntroTextTwo">
+                Besonders interessant finde ich die Arbeit an modernen und
+                benutzerfreundlichen Webanwendungen, bei denen saubere Strukturen,
+                gute Zusammenarbeit und kreative Lösungen gefragt sind.
+              </p>
+
+              <p data-i18n="contactIntroTextThree">
+                Wenn Sie glauben, dass ich gut zu Ihrem Team oder Projekt passe,
+                freue ich mich auf Ihre Nachricht.
+              </p>
+            </div>
+
+            <div class="contact-links-wrapper">
+              <button
+                type="button"
+                class="single-link-wrapper"
+                onclick="focusForm()"
+              >
+                <div class="link-icon-wrapper">
+                  <img
+                    class="link-icon-default"
+                    src="./assets/icons/contact_section/contact_email_icon_default.svg"
+                    alt="contact_email_icon_default"
+                  />
+                  <img
+                    class="link-icon-hover"
+                    src="./assets/icons/contact_section/contact_email_icon_active.svg"
+                    alt="contact_email_icon_active"
+                  />
+                </div>
+
+                <span data-i18n="contactEmailLabel">E-mail: eugen.liske@yahoo.de</span>
+              </button>
+
+              <a href="tel:017663452473" class="single-link-wrapper">
+                <div class="link-icon-wrapper">
+                  <img
+                    class="link-icon-default"
+                    src="./assets/icons/contact_section/contact_phone_icon_default.svg"
+                    alt="contact_phone_icon_default"
+                  />
+                  <img
+                    class="link-icon-hover"
+                    src="./assets/icons/contact_section/contact_phone_icon_hover.svg"
+                    alt="contact_phone_icon_hover"
+                  />
+                </div>
+
+                <span data-i18n="contactPhoneLabel">Tel: 0176 634 524 73</span>
+              </a>
+            </div>
+          </div>
+
+          <form
+            action=""
+            class="contact-form"
+            onsubmit="checkFormAndSend(event)"
+          >
+            <div class="name-email-wrapper">
+              <div class="label-and-input-wrapper">
+                <label
+                  for="name-input"
+                  class="label-text"
+                  id="name-input-label"
+                  data-i18n="formNameLabel"
+                >
+                  Ihr Name
+                </label>
+
+                <div class="input-wrapper" id="name-input-wrapper">
+                  <input
+                    oninput="validateFormInput()"
+                    onblur="checkIfNameIsFilled()"
+                    onfocus="clearNameError()"
+                    type="text"
+                    class="input-field"
+                    id="name-input-field"
+                  />
+                  <img
+                    id="name-check-icon"
+                    class="input-check-icon deactivated"
+                    src="./assets/icons/contact_section/input_check_icon.svg"
+                    alt="input_check_icon"
+                  />
+                </div>
+              </div>
+
+              <div class="label-and-input-wrapper">
+                <label
+                  for="email-input"
+                  class="label-text"
+                  id="email-input-label"
+                  data-i18n="formEmailLabel"
+                >
+                  Ihre E-Mail-Adresse
+                </label>
+
+                <div class="input-wrapper" id="email-input-wrapper">
+                  <input
+                    oninput="validateFormInput()"
+                    onblur="checkIfMailIsFilledAndValid()"
+                    onfocus="clearEmailError()"
+                    type="email"
+                    class="input-field"
+                    id="email-input-field"
+                  />
+                  <img
+                    id="email-check-icon"
+                    class="input-check-icon deactivated"
+                    src="./assets/icons/contact_section/input_check_icon.svg"
+                    alt="input_check_icon"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="label-and-message-wrapper">
+              <label
+                for="message-input"
+                class="label-text"
+                id="message-input-label"
+                data-i18n="formMessageLabel"
+              >
+                Ihre Nachricht
+              </label>
+
+              <div class="message-wrapper" id="message-input-wrapper">
+                <textarea
+                  oninput="validateFormInput()"
+                  onblur="checkIfMessageIsFilled()"
+                  onfocus="clearMessageError()"
+                  class="message-field"
+                  name="message"
+                  id="message-input-field"
+                ></textarea>
+                <img
+                  id="message-check-icon"
+                  class="message-check-icon deactivated"
+                  src="./assets/icons/contact_section/input_check_icon.svg"
+                  alt="input_check_icon"
+                />
+              </div>
+            </div>
+
+            <label
+              for="checkbox-input-field"
+              class="checkbox-wrapper"
+              id="checkbox-wrapper-ID"
+            >
+              <input
+                class="checkbox-field"
+                type="checkbox"
+                id="checkbox-input-field"
+                onchange="
+                  checkPrivacyPolicy();
+                  validateFormInput();
+                "
+              />
+
+              <div class="custom-checkbox-icon-wrapper">
+                <img
+                  class="checkbox-icon-default"
+                  src="./assets/icons/contact_section/checkbox-icon-default.svg"
+                  alt="checkbox-icon-default"
+                />
+                <img
+                  class="checkbox-icon-hover"
+                  src="./assets/icons/contact_section/checkbox-icon-hover.svg"
+                  alt="checkbox-icon-hover.svg"
+                />
+                <img
+                  class="checkbox-icon-checked"
+                  src="./assets/icons/contact_section/checkbox-icon-checked.svg"
+                  alt="checkbox-icon-checked.svg"
+                />
+                <img
+                  class="checkbox-icon-error"
+                  src="./assets/icons/contact_section/checkbox-icon-error.svg"
+                  alt="checkbox-icon-error.svg"
+                />
+              </div>
+
+              <div class="privacy-policy-content">
+                <span class="privacy-policy-text" data-i18n="privacyPolicyText" data-i18n-html="true">
+                  Ich habe die <a href="">Datenschutzerklärung</a> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.
+                </span>
+
+                <span id="privacy-policy-error" class="privacy-policy-error deactivated" data-i18n="privacyPolicyError">
+                  Bitte stimmen Sie der Datenschutzerklärung zu.
+                </span>
+              </div>
+            </label>
+
+            <div class="send-form-button-wrapper">
+              <button
+                type="submit"
+                class="send-form-button deactivated"
+                id="send-form-button"
+                data-i18n="sendButton"
+              >
+                Senden
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+          <div class="legal-notice-and-name-wrapper">
+            <a href="./pages/imprint.html" data-i18n="footerLegalNotice">Impressum</a>
+            <span data-i18n="footerCopyright">© Eugen Liske 2026</span>
+          </div>
+
+          <div class="footer-logo-wrapper">
+            <img src="./assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark"
+            />
+
+            <span class="footer-logo-name">E.Liske</span>
+            <span class="footer-logo-title">developer</span>
+          </div>
+
+          <div class="footer-social-media-links-wrapper">
+            <a href="https://github.com/EugenLiske" target="_blank" class="footer-social-media-icon-wrapper">
+              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_github_icon_default.svg" alt="footer_github_icon_default">
+              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_github_icon_hover.svg" alt="footer_github_icon_hover">
+            </a>
+
+            <button class="footer-social-media-icon-wrapper" onclick="focusForm()">
+              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_email_icon_default.svg" alt="footer_email_icon_default">
+              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_email_icon_hover.svg" alt="footer_email_icon_hover">
+            </button>
+
+            <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="footer-social-media-icon-wrapper">
+              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_linkedin_icon_default.svg" alt="footer_linkedin_icon_default">
+              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_linkedin_icon_hover.svg" alt="footer_linkedin_icon_hover">
+            </a>
+          </div>
+
+      </div>
+    </footer>
+    <script src="./scripts/translate.js"></script>
+  </body>
+  <script src="./scripts/why_me_section.js"></script>
+  <script src="./scripts/my_projects_section.js"></script>
+  <script src="./scripts/contact_section.js"></script>
+</html>

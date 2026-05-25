@@ -1,53 +1,93 @@
 // ---- DOM elements ---- //
 
-const nameInputField = document.getElementById('name-input-field');
-const emailInputField = document.getElementById('email-input-field');
-const messageInputField = document.getElementById('message-input-field')
-const checkboxWrapper = document.getElementById('checkbox-wrapper-ID');
-const checkboxInputField = document.getElementById('checkbox-input-field');
-const privacyPolicyError = document.getElementById('privacy-policy-error');
-const sendFormButton = document.getElementById('send-form-button');
+const nameInputField = document.getElementById("name-input-field");
+const emailInputField = document.getElementById("email-input-field");
+const messageInputField = document.getElementById("message-input-field");
 
-const nameCheckIcon = document.getElementById('name-check-icon');
-const emailCheckIcon = document.getElementById('email-check-icon');
-const messageCheckIcon = document.getElementById('message-check-icon');
+const checkboxWrapper = document.getElementById("checkbox-wrapper-ID");
+const checkboxInputField = document.getElementById("checkbox-input-field");
+const privacyPolicyError = document.getElementById("privacy-policy-error");
 
-const nameInputLabel = document.getElementById('name-input-label');
-const emailInputLabel = document.getElementById('email-input-label');
-const messageInputLabel = document.getElementById('message-input-label');
+const sendFormButton = document.getElementById("send-form-button");
 
-const NAME_MISSING_MSG = "Bitte geben Sie Ihren Namen ein.";
-const EMAIL_MISSING_MSG = "Bitte geben Sie Ihre E-Mail-Adresse ein.";
-const MESSAGE_MISSING_MSG = "Bitte geben Sie eine Nachricht ein.";
-const PRIVACY_POLICY_MISSING_MSG = "Bitte akzeptieren Sie die Datenschutzerklärung.";
-const EMAIL_INVALID_MSG = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+const nameCheckIcon = document.getElementById("name-check-icon");
+const emailCheckIcon = document.getElementById("email-check-icon");
+const messageCheckIcon = document.getElementById("message-check-icon");
 
-const NAME_DEFAULT_LABEL = "Ihr Name";
-const EMAIL_DEFAULT_LABEL = "Ihre E-Mail-Adresse";
-const MESSAGE_DEFAULT_LABEL = "Ihre Nachricht";
+const nameInputLabel = document.getElementById("name-input-label");
+const emailInputLabel = document.getElementById("email-input-label");
+const messageInputLabel = document.getElementById("message-input-label");
 
 
+// ---- language state ---- //
 
-function focusForm(){
+let currentFormLanguage = "de";
+
+const formTranslations = {
+    de: {
+        nameMissing: "Bitte geben Sie Ihren Namen ein.",
+        emailMissing: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+        messageMissing: "Bitte geben Sie eine Nachricht ein.",
+        privacyPolicyMissing: "Bitte stimmen Sie der Datenschutzerklärung zu.",
+        emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+
+        nameDefault: "Ihr Name",
+        emailDefault: "Ihre E-Mail-Adresse",
+        messageDefault: "Ihre Nachricht"
+    },
+
+    en: {
+        nameMissing: "Please enter your name.",
+        emailMissing: "Please enter your email address.",
+        messageMissing: "Please enter a message.",
+        privacyPolicyMissing: "Please accept the privacy policy.",
+        emailInvalid: "Please enter a valid email address.",
+
+        nameDefault: "Your name",
+        emailDefault: "Your email address",
+        messageDefault: "Your message"
+    }
+};
+
+function setFormLanguage(language) {
+    currentFormLanguage = language;
+    privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
+}
+
+function getFormTranslation(key) {
+    return formTranslations[currentFormLanguage][key];
+}
+
+
+// ---- focus helper ---- //
+
+function focusForm() {
     nameInputField.focus();
 }
 
+
+// ---- checkbox ---- //
+
 function checkPrivacyPolicy() {
-    checkboxWrapper.classList.toggle('checked', checkboxInputField.checked);
+    checkboxWrapper.classList.toggle("checked", checkboxInputField.checked);
 
     if (checkboxInputField.checked) {
-        checkboxWrapper.classList.remove('error');
-        privacyPolicyError.classList.add('deactivated');
+        checkboxWrapper.classList.remove("error");
+        privacyPolicyError.classList.add("deactivated");
     }
 }
 
-function validateFormInput(){
+
+// ---- validation overview ---- //
+
+function validateFormInput() {
     const formInput = readFormInput();
     const evaluatedFormInput = evaluateFormInput(formInput);
+
     setSendButtonState(evaluatedFormInput.allValid);
 }
 
-function readFormInput(){
+function readFormInput() {
     return {
         name: nameInputField.value.trim(),
         email: emailInputField.value.trim(),
@@ -56,14 +96,14 @@ function readFormInput(){
     };
 }
 
-function evaluateFormInput(formInput){
+function evaluateFormInput(formInput) {
     const nameFilled = formInput.name !== "";
     const emailFilled = formInput.email !== "";
     const emailFormatValid = isEmailValid(formInput.email);
     const messageFilled = formInput.message !== "";
-    const allFieldsFilled = formInput.name !== "" && formInput.email !== "" && formInput.message !== "";
+    const allFieldsFilled = nameFilled && emailFilled && messageFilled;
     const checkboxIsChecked = formInput.checkbox;
-    
+
     return {
         nameFilled: nameFilled,
         emailFilled: emailFilled,
@@ -72,85 +112,99 @@ function evaluateFormInput(formInput){
         allFieldsFilled: allFieldsFilled,
         checkboxIsChecked: checkboxIsChecked,
         allValid: allFieldsFilled && checkboxIsChecked && emailFormatValid
-    }
+    };
 }
 
 function isEmailValid(email) {
-  let regularExpression = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
-  return regularExpression.test(email);
+    const regularExpression = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+    return regularExpression.test(email);
 }
 
-function setSendButtonState(isFormValid){
-    if(isFormValid){
-        sendFormButton.classList.remove('deactivated');
-        sendFormButton.classList.add('activated');
+
+// ---- send button ---- //
+
+function setSendButtonState(isFormValid) {
+    if (isFormValid) {
+        sendFormButton.classList.remove("deactivated");
+        sendFormButton.classList.add("activated");
     } else {
-        sendFormButton.classList.remove('activated');
-        sendFormButton.classList.add('deactivated');
+        sendFormButton.classList.remove("activated");
+        sendFormButton.classList.add("deactivated");
     }
 }
 
-function checkIfNameIsFilled(){
-    if(nameInputField.value !== ""){
-        nameCheckIcon.classList.remove('deactivated');
-        nameCheckIcon.classList.add('activated');
+
+// ---- single field validation ---- //
+
+function checkIfNameIsFilled() {
+    if (nameInputField.value.trim() !== "") {
+        nameCheckIcon.classList.remove("deactivated");
+        nameCheckIcon.classList.add("activated");
     } else {
-        nameCheckIcon.classList.add('deactivated');
-        nameCheckIcon.classList.remove('activated');
+        nameCheckIcon.classList.add("deactivated");
+        nameCheckIcon.classList.remove("activated");
     }
 }
 
-function checkIfMailIsFilledAndValid(){
+function checkIfMailIsFilledAndValid() {
     const emailValue = emailInputField.value.trim();
 
     const emailFilled = emailValue !== "";
     const emailValid = isEmailValid(emailValue);
 
-    if(emailFilled && emailValid){
-        emailCheckIcon.classList.remove('deactivated');
-        emailCheckIcon.classList.add('activated');
+    if (emailFilled && emailValid) {
+        emailCheckIcon.classList.remove("deactivated");
+        emailCheckIcon.classList.add("activated");
     } else if (emailFilled && !emailValid) {
-        emailCheckIcon.classList.add('deactivated');
-        emailCheckIcon.classList.remove('activated');
-        emailInputField.classList.add('error-border');
-        emailInputLabel.classList.add('error-label');
-        emailInputLabel.textContent = EMAIL_INVALID_MSG;
+        emailCheckIcon.classList.add("deactivated");
+        emailCheckIcon.classList.remove("activated");
+
+        emailInputField.classList.add("error-border");
+        emailInputLabel.classList.add("error-label");
+        emailInputLabel.textContent = getFormTranslation("emailInvalid");
     } else {
-        emailCheckIcon.classList.add('deactivated');
-        emailCheckIcon.classList.remove('activated');
+        emailCheckIcon.classList.add("deactivated");
+        emailCheckIcon.classList.remove("activated");
     }
 }
 
-function checkIfMessageIsFilled(){
-    if(messageInputField.value !== ""){
-        messageCheckIcon.classList.remove('deactivated');
-        messageCheckIcon.classList.add('activated');
+function checkIfMessageIsFilled() {
+    if (messageInputField.value.trim() !== "") {
+        messageCheckIcon.classList.remove("deactivated");
+        messageCheckIcon.classList.add("activated");
     } else {
-        messageCheckIcon.classList.add('deactivated');
-        messageCheckIcon.classList.remove('activated');
+        messageCheckIcon.classList.add("deactivated");
+        messageCheckIcon.classList.remove("activated");
     }
 }
 
-function clearNameError(){
-    nameInputField.classList.remove('error-border');
-    nameInputLabel.classList.remove('error-label');
-    nameInputLabel.textContent = NAME_DEFAULT_LABEL;
+
+// ---- clear errors ---- //
+
+function clearNameError() {
+    nameInputField.classList.remove("error-border");
+    nameInputLabel.classList.remove("error-label");
+    nameInputLabel.textContent = getFormTranslation("nameDefault");
 }
 
-function clearEmailError(){
-    emailInputField.classList.remove('error-border');
-    emailInputLabel.classList.remove('error-label');
-    emailInputLabel.textContent = EMAIL_DEFAULT_LABEL;
+function clearEmailError() {
+    emailInputField.classList.remove("error-border");
+    emailInputLabel.classList.remove("error-label");
+    emailInputLabel.textContent = getFormTranslation("emailDefault");
 }
 
-function clearMessageError(){
-    messageInputField.classList.remove('error-border');
-    messageInputLabel.classList.remove('error-label');
-    messageInputLabel.textContent = MESSAGE_DEFAULT_LABEL;
+function clearMessageError() {
+    messageInputField.classList.remove("error-border");
+    messageInputLabel.classList.remove("error-label");
+    messageInputLabel.textContent = getFormTranslation("messageDefault");
 }
+
+
+// ---- submit ---- //
 
 function checkFormAndSend(event) {
     event.preventDefault();
+
     const formInput = readFormInput();
     const evaluatedFormInput = evaluateFormInput(formInput);
 
@@ -167,39 +221,44 @@ function checkFormAndSend(event) {
 
 function renderSubmitErrors(evaluatedFormInput) {
     if (!evaluatedFormInput.nameFilled) {
-        nameInputField.classList.add('error-border');
-        nameInputLabel.classList.add('error-label');
-        nameInputLabel.textContent = NAME_MISSING_MSG;
-        nameCheckIcon.classList.add('deactivated');
-        nameCheckIcon.classList.remove('activated');
+        nameInputField.classList.add("error-border");
+        nameInputLabel.classList.add("error-label");
+        nameInputLabel.textContent = getFormTranslation("nameMissing");
+
+        nameCheckIcon.classList.add("deactivated");
+        nameCheckIcon.classList.remove("activated");
     }
 
     if (!evaluatedFormInput.emailFilled) {
-        emailInputField.classList.add('error-border');
-        emailInputLabel.classList.add('error-label');
-        emailInputLabel.textContent = EMAIL_MISSING_MSG;
-        emailCheckIcon.classList.add('deactivated');
-        emailCheckIcon.classList.remove('activated');
+        emailInputField.classList.add("error-border");
+        emailInputLabel.classList.add("error-label");
+        emailInputLabel.textContent = getFormTranslation("emailMissing");
+
+        emailCheckIcon.classList.add("deactivated");
+        emailCheckIcon.classList.remove("activated");
     } else if (!evaluatedFormInput.emailFormatValid) {
-        emailInputField.classList.add('error-border');
-        emailInputLabel.classList.add('error-label');
-        emailInputLabel.textContent = EMAIL_INVALID_MSG;
-        emailCheckIcon.classList.add('deactivated');
-        emailCheckIcon.classList.remove('activated');
+        emailInputField.classList.add("error-border");
+        emailInputLabel.classList.add("error-label");
+        emailInputLabel.textContent = getFormTranslation("emailInvalid");
+
+        emailCheckIcon.classList.add("deactivated");
+        emailCheckIcon.classList.remove("activated");
     }
 
     if (!evaluatedFormInput.messageFilled) {
-        messageInputField.classList.add('error-border');
-        messageInputLabel.classList.add('error-label');
-        messageInputLabel.textContent = MESSAGE_MISSING_MSG;
-        messageCheckIcon.classList.add('deactivated');
-        messageCheckIcon.classList.remove('activated');
+        messageInputField.classList.add("error-border");
+        messageInputLabel.classList.add("error-label");
+        messageInputLabel.textContent = getFormTranslation("messageMissing");
+
+        messageCheckIcon.classList.add("deactivated");
+        messageCheckIcon.classList.remove("activated");
     }
 
     if (!evaluatedFormInput.checkboxIsChecked) {
-        checkboxWrapper.classList.add('error');
-        checkboxWrapper.classList.remove('checked');
-        privacyPolicyError.classList.remove('deactivated');
+        checkboxWrapper.classList.add("error");
+        checkboxWrapper.classList.remove("checked");
+
+        privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
+        privacyPolicyError.classList.remove("deactivated");
     }
 }
-

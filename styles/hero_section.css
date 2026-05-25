@@ -295,8 +295,53 @@
     gap: 16px;
 }
 
-.nav-translate-function span {
+.translate-button {
+    position: relative;
+    z-index: 1;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    background: transparent;
+    padding: 4px 8px;
+
     color: var(--bg-color);
     font-size: 18px;
     font-weight: 400;
+    font-family: inherit;
+
+    cursor: pointer;
+    transition: color 0.4s ease-in-out;
+}
+
+.translate-button:hover {
+    color: var(--secondary-color);
+}
+
+.translate-button::before {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 36px;
+
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+
+    background-image: url("../assets/icons/hero_section/button_active.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0;
+    z-index: -1;
+}
+
+.translate-button.active-language::before {
+    opacity: 1;
+}
+
+.translate-button.active-language {
+    color: var(--secondary-color);
 }
