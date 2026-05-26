@@ -27,5 +27,13 @@ main {
     font-weight: 700;
     color: var(--primary-color);
     text-align: start;
+    margin-bottom: 8px;
 }
 
+.imprint-section {
+    margin-bottom: 24px;
+}
+
+p {
+    line-height: 1.4;
+}
