@@ -51,7 +51,7 @@ const formTranslations = {
 
 function setFormLanguage(language) {
     currentFormLanguage = language;
-    privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
+    updateVisibleFormErrors();
 }
 
 function getFormTranslation(key) {
@@ -260,5 +260,40 @@ function renderSubmitErrors(evaluatedFormInput) {
 
         privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
         privacyPolicyError.classList.remove("deactivated");
+    }
+}
+
+function updateVisibleFormErrors() {
+    const formInput = readFormInput();
+    const evaluatedFormInput = evaluateFormInput(formInput);
+
+    if (nameInputLabel.classList.contains("error-label")) {
+        if (!evaluatedFormInput.nameFilled) {
+            nameInputLabel.textContent = getFormTranslation("nameMissing");
+        } else {
+            nameInputLabel.textContent = getFormTranslation("nameDefault");
+        }
+    }
+
+    if (emailInputLabel.classList.contains("error-label")) {
+        if (!evaluatedFormInput.emailFilled) {
+            emailInputLabel.textContent = getFormTranslation("emailMissing");
+        } else if (!evaluatedFormInput.emailFormatValid) {
+            emailInputLabel.textContent = getFormTranslation("emailInvalid");
+        } else {
+            emailInputLabel.textContent = getFormTranslation("emailDefault");
+        }
+    }
+
+    if (messageInputLabel.classList.contains("error-label")) {
+        if (!evaluatedFormInput.messageFilled) {
+            messageInputLabel.textContent = getFormTranslation("messageMissing");
+        } else {
+            messageInputLabel.textContent = getFormTranslation("messageDefault");
+        }
+    }
+
+    if (!privacyPolicyError.classList.contains("deactivated")) {
+        privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
     }
 }

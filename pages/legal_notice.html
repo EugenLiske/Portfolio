@@ -30,15 +30,32 @@
             </a>
 
             <nav class="nav-link-wrapper">
-                <a href="../index.html" class="nav-link">Über mich</a>
-                <a href="../index.html#my-skills-section-ID" class="nav-link">Fähigkeiten</a>
-                <a href="../index.html#my-projects-section-ID" class="nav-link">Projekte</a>
-                <a href="../index.html#contact-section-ID" class="nav-link">Kontakt</a>
+                <a href="../index.html" class="nav-link" data-i18n="navAbout">Über mich</a>
+                <a href="../index.html#my-skills-section-ID" class="nav-link" data-i18n="navSkills">Fähigkeiten</a>
+                <a href="../index.html#my-projects-section-ID" class="nav-link" data-i18n="navProjects">Projekte</a>
+                <a href="../index.html#contact-section-ID" class="nav-link" data-i18n="navContact">Kontakt</a>
             </nav>
 
             <div class="nav-translate-function">
-                <button type="button" class="translate-button active-language">DE</button>
-                <button type="button" class="translate-button">EN</button>
+                <button
+                    id="translate-german-button"
+                    type="button"
+                    class="translate-button active-language"
+                    data-language="de"
+                    onclick="translateToGerman()"
+                >
+                    DE
+                </button>
+
+                <button
+                    id="translate-english-button"
+                    type="button"
+                    class="translate-button"
+                    data-language="en"
+                    onclick="translateToEnglish()"
+                >
+                    EN
+                </button>
             </div>
         </header>
     </div>
@@ -232,5 +249,7 @@
 
       </div>
 </footer>
+<script src="../scripts/translation_text_object.js"></script>
+<script src="../scripts/translate.js"></script>
 </body>
 </html>
