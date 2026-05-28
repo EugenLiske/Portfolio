@@ -122,7 +122,7 @@ const translations = {
         formMessageLabel: "Ihre Nachricht",
 
         privacyPolicyText: `
-            Ich habe die <a href="">Datenschutzerklärung</a> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.
+            Ich habe die <a href="./pages/privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.
         `,
 
         privacyPolicyError: "Bitte stimmen Sie der Datenschutzerklärung zu.",
@@ -132,7 +132,7 @@ const translations = {
         footerLegalNotice: "Impressum",
 
         imprintHeadline: "Impressum",
-        imprintLegalInformationHeadline: "Angaben gemäß § 5 TMG",
+        imprintLegalInformationHeadline: "Angaben gemäß § 5 DDG",
         imprintName: "Evgenij (Eugen) Liske",
         imprintStreet: "Mooswiesenstraße 11a",
         imprintCity: "81245 München",
@@ -322,7 +322,7 @@ const translations = {
         formMessageLabel: "Your message",
 
         privacyPolicyText: `
-            I have read the <a href="">privacy policy</a> and agree to the processing of my data as described there.
+            I have read the <a href="./pages/privacy_policy.html">privacy policy</a> and agree to the processing of my data as described there.
         `,
 
         privacyPolicyError: "Please accept the privacy policy.",
@@ -332,7 +332,7 @@ const translations = {
         footerLegalNotice: "Legal Notice",
 
         imprintHeadline: "Legal Notice",
-        imprintLegalInformationHeadline: "Information according to Section 5 TMG",
+        imprintLegalInformationHeadline: "Information according to Section 5 DDG",
         imprintName: "Evgenij (Eugen) Liske",
         imprintStreet: "Mooswiesenstraße 11a",
         imprintCity: "81245 Munich",

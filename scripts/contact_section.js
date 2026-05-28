@@ -270,8 +270,6 @@ function updateVisibleFormErrors() {
     if (nameInputLabel.classList.contains("error-label")) {
         if (!evaluatedFormInput.nameFilled) {
             nameInputLabel.textContent = getFormTranslation("nameMissing");
-        } else {
-            nameInputLabel.textContent = getFormTranslation("nameDefault");
         }
     }
 
@@ -280,16 +278,12 @@ function updateVisibleFormErrors() {
             emailInputLabel.textContent = getFormTranslation("emailMissing");
         } else if (!evaluatedFormInput.emailFormatValid) {
             emailInputLabel.textContent = getFormTranslation("emailInvalid");
-        } else {
-            emailInputLabel.textContent = getFormTranslation("emailDefault");
         }
     }
 
     if (messageInputLabel.classList.contains("error-label")) {
         if (!evaluatedFormInput.messageFilled) {
             messageInputLabel.textContent = getFormTranslation("messageMissing");
-        } else {
-            messageInputLabel.textContent = getFormTranslation("messageDefault");
         }
     }
 
