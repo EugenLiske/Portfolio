@@ -1,397 +1,782 @@
 const translations = {
-    de: {
-        heroJobTitle: "FRONTEND ENTWICKLER",
+  de: {
+    heroJobTitle: "FRONTEND ENTWICKLER",
 
-        navAbout: "Über mich",
-        navSkills: "Fähigkeiten",
-        navProjects: "Projekte",
-        navContact: "Kontakt",
+    navAbout: "Über mich",
+    navSkills: "Fähigkeiten",
+    navProjects: "Projekte",
+    navContact: "Kontakt",
 
-        aboutHeadline: "Über mich",
+    aboutHeadline: "Über mich",
 
-        aboutTextOne: `
+    aboutTextOne: `
             Programmieren begeistert mich, weil es analytisches Denken mit kreativer
             Problemlösung verbindet. Besonders spannend finde ich es, komplexe
             Anforderungen in klare und benutzerfreundliche Lösungen zu übersetzen.
         `,
 
-        aboutTextTwo: `
+    aboutTextTwo: `
             Durch meine strukturierte Arbeitsweise und starke Kommunikation behalte ich
             auch in Teamprojekten stets den Überblick. Dabei ist mir wichtig,
             zuverlässig zu arbeiten, offen Feedback anzusprechen und gemeinsam gute
             Lösungen zu entwickeln.
         `,
 
-        aboutTextThree: `
+    aboutTextThree: `
             Sprachen, Logik und klare Strukturen haben mich schon immer fasziniert –
             genau deshalb begeistert mich auch die Arbeit mit Code.
         `,
 
-        contactButton: "Kontakt",
+    contactButton: "Kontakt",
 
-        skillsHeadline: "Meine Fähigkeiten",
+    skillsHeadline: "Meine Fähigkeiten",
 
-        currentLearningHeadline: "Aktuell vertiefe ich",
+    currentLearningHeadline: "Aktuell vertiefe ich",
 
-        currentLearningTextOne: `
+    currentLearningTextOne: `
             Mit React und Vue.js erweitere ich aktuell mein Verständnis
             für moderne Frontend-Frameworks.
         `,
 
-        currentLearningTextTwo: `
+    currentLearningTextTwo: `
             Besonders spannend finde ich die Entwicklung performanter
             und interaktiver Benutzeroberflächen.
         `,
 
-        projectsHeadline: "Meine Projekte",
+    projectsHeadline: "Meine Projekte",
 
-        projectNavElPolloLoco: "El Pollo Loco",
-        projectNavJoin: "Join",
-        projectNavPokedex: "Pokédex",
+    projectNavElPolloLoco: "El Pollo Loco",
+    projectNavJoin: "Join",
+    projectNavPokedex: "Pokédex",
 
-        projectOverviewHeadline: "Projektübersicht",
-        projectWorkingMethodHeadline: "Arbeitsweise",
-        projectAdditionalHeadlineElPolloLoco: "Was ich gelernt habe",
-        projectTechnologiesLabel: "Technologien",
+    projectOverviewHeadline: "Projektübersicht",
+    projectWorkingMethodHeadline: "Arbeitsweise",
+    projectAdditionalHeadlineElPolloLoco: "Was ich gelernt habe",
+    projectTechnologiesLabel: "Technologien",
 
-        projectDurationElPolloLoco: "Dauer: 3 Wochen",
+    projectDurationElPolloLoco: "Dauer: 3 Wochen",
 
-        projectBulletpointOneElPolloLoco: `
+    projectBulletpointOneElPolloLoco: `
             El Pollo Loco ist ein 2D-Jump-and-Run-Spiel, in dem der Spieler Pepe durch eine Wüstenlandschaft steuert,
             Münzen sammelt, Gegnern ausweicht und sich mit Salsaflaschen gegen Hühner und den Endboss verteidigt.
         `,
 
-        projectBulletpointTwoElPolloLoco: `
+    projectBulletpointTwoElPolloLoco: `
             Zur Strukturierung des Projekts habe ich Trello genutzt, um Aufgaben, Fortschritt und offene Punkte
             übersichtlich zu organisieren. Der Code ist in mehrere Klassen und Controller aufgeteilt, zum Beispiel für
             Spielfigur, Gegner, Audio, Eingaben und Rendering.
         `,
 
-        projectBulletpointThreeElPolloLoco: `
+    projectBulletpointThreeElPolloLoco: `
             In diesem Projekt habe ich besonders viel über objektorientierte JavaScript-Strukturen, Canvas-Rendering,
             Animationen, Kollisionen, Spielzustände und Eingabesteuerung gelernt. Eine wichtige Erfahrung war es,
             viele einzelne Spielmechaniken zu einem funktionierenden Gesamtspiel zusammenzuführen.
         `,
 
-        projectLiveTestButton: "Live Test",
-        projectGithubButton: "GitHub",
+    projectLiveTestButton: "Live Test",
+    projectGithubButton: "GitHub",
 
-        referencesIntroText: "Das sagen andere über die Zusammenarbeit mit mir.",
+    referencesIntroText: "Das sagen andere über die Zusammenarbeit mit mir.",
 
-        referenceProjectLabel: "Projekt",
+    referenceProjectLabel: "Projekt",
 
-        referenceAnneText: `
+    referenceAnneText: `
             Bei der Zusammenarbeit mit Eugen sind mir besonders seine starke Kommunikation
             und strukturierte Arbeitsweise aufgefallen. Man konnte sich stets auf die
             zuverlässige Umsetzung vereinbarter Aufgaben verlassen. Besonders positiv war
             sein respektvoller und konstruktiver Umgang mit Feedback und schwierigen Themen.
         `,
 
-        referenceMartinText: `
+    referenceMartinText: `
             Im Gruppenprojekt übernahm Eugen eine strukturierte und koordinierende Rolle,
             wodurch die Zusammenarbeit im Team sehr effizient verlief. Durch den regelmäßigen
             Austausch konnten wir das Projekt erfolgreich umsetzen.
         `,
 
-        referenceGithubProfile: "GitHub-Profil",
-        referenceLinkedInProfile: "LinkedIn-Profil",
+    referenceGithubProfile: "GitHub-Profil",
+    referenceLinkedInProfile: "LinkedIn-Profil",
 
-        contactHeadline: "Kontakt",
+    contactHeadline: "Kontakt",
 
-        contactIntroTextOne: `
+    contactIntroTextOne: `
             Ich freue mich über den Austausch zu Frontend-Entwicklung,
             spannenden Projekten oder neuen beruflichen Möglichkeiten.
         `,
 
-        contactIntroTextTwo: `
+    contactIntroTextTwo: `
             Besonders interessant finde ich die Arbeit an modernen und
             benutzerfreundlichen Webanwendungen, bei denen saubere Strukturen,
             gute Zusammenarbeit und kreative Lösungen gefragt sind.
         `,
 
-        contactIntroTextThree: `
+    contactIntroTextThree: `
             Wenn Sie glauben, dass ich gut zu Ihrem Team oder Projekt passe,
             freue ich mich auf Ihre Nachricht.
         `,
 
-        contactEmailLabel: "E-Mail: eugen.liske@yahoo.de",
-        contactPhoneLabel: "Tel: 0176 634 524 73",
+    contactEmailLabel: "E-Mail: eugen.liske@yahoo.de",
+    contactPhoneLabel: "Tel: 0176 634 524 73",
 
-        formNameLabel: "Ihr Name",
-        formEmailLabel: "Ihre E-Mail-Adresse",
-        formMessageLabel: "Ihre Nachricht",
+    formNameLabel: "Ihr Name",
+    formEmailLabel: "Ihre E-Mail-Adresse",
+    formMessageLabel: "Ihre Nachricht",
 
-        privacyPolicyText: `
+    privacyPolicyText: `
             Ich habe die <a href="./pages/privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.
         `,
 
-        privacyPolicyError: "Bitte stimmen Sie der Datenschutzerklärung zu.",
+    privacyPolicyError: "Bitte stimmen Sie der Datenschutzerklärung zu.",
 
-        sendButton: "Senden",
+    sendButton: "Senden",
 
-        footerLegalNotice: "Impressum",
+    footerLegalNotice: "Impressum",
+    footerPrivacyPolicy: "Datenschutzerklärung",
 
-        imprintHeadline: "Impressum",
-        imprintLegalInformationHeadline: "Angaben gemäß § 5 DDG",
-        imprintName: "Evgenij (Eugen) Liske",
-        imprintStreet: "Mooswiesenstraße 11a",
-        imprintCity: "81245 München",
-        imprintCountry: "Deutschland",
-        imprintContactHeadline: "Kontakt",
-        imprintEmailLabel: "E-Mail:",
-        imprintPhoneLabel: "Telefon:",
-        imprintPurposeHeadline: "Zweck dieser Website",
+    imprintHeadline: "Impressum",
+    imprintLegalInformationHeadline: "Angaben gemäß § 5 DDG",
+    imprintName: "Evgenij (Eugen) Liske",
+    imprintStreet: "Mooswiesenstraße 11a",
+    imprintCity: "81245 München",
+    imprintCountry: "Deutschland",
+    imprintContactHeadline: "Kontakt",
+    imprintEmailLabel: "E-Mail:",
+    imprintPhoneLabel: "Telefon:",
+    imprintPurposeHeadline: "Zweck dieser Website",
 
-        imprintPurposeTextOne: `
+    imprintPurposeTextOne: `
             Diese Website dient als persönliche digitale Bewerbungs- und
             Projektmappe zur Präsentation meiner fachlichen Qualifikationen,
             Kenntnisse und Projekte im Bereich Frontend-Entwicklung.
         `,
 
-        imprintPurposeTextTwo: `
+    imprintPurposeTextTwo: `
             Sie bietet einen Überblick über ausgewählte Entwicklungsprojekte,
             technische Fähigkeiten sowie beruflich relevante Informationen
             zu meiner Person.
         `,
 
-        imprintCopyrightHeadline: "Urheberrecht",
+    imprintCopyrightHeadline: "Urheberrecht",
 
-        imprintCopyrightTextOne: `
+    imprintCopyrightTextOne: `
             Die technische Umsetzung, Frontend-Entwicklung sowie die
             Programmierung dieser Website erfolgten eigenständig.
         `,
 
-        imprintCopyrightTextTwo: `
+    imprintCopyrightTextTwo: `
             Das zugrunde liegende Design, die visuelle Konzeption sowie
             einzelne Gestaltungsvorlagen basieren auf Materialien der
             Developer Akademie GmbH.
         `,
 
-        imprintCopyrightTextThree: `
+    imprintCopyrightTextThree: `
             Eine Vervielfältigung, Weitergabe oder anderweitige Nutzung
             der bereitgestellten Designvorlagen außerhalb des vorgesehenen
             Lern- und Projektkontextes ist nicht gestattet.
         `,
 
-        imprintContentHeadline: "Hinweise zu den Inhalten",
+    imprintContentHeadline: "Hinweise zu den Inhalten",
 
-        imprintContentText: `
+    imprintContentText: `
             Die Inhalte dieser Website dienen ausschließlich der
             Präsentation meiner beruflichen Qualifikationen,
             Projekte und technischen Fähigkeiten im Rahmen meiner
             persönlichen Bewerbungsunterlagen.
         `,
 
-        imprintTechnicalHeadline: "Technische Umsetzung",
+    imprintTechnicalHeadline: "Technische Umsetzung",
 
-        imprintTechnicalText: `
+    imprintTechnicalText: `
             Die Frontend-Entwicklung, technische Umsetzung sowie das
             Hosting dieser Website erfolgen eigenständig im Rahmen
             meiner Weiterbildung und praktischen Projektarbeit im
             Bereich Webentwicklung.
         `,
 
-        imprintTechnicalTextTwo: `
+    imprintTechnicalTextTwo: `
             Die zugrunde liegenden Design- und Layoutvorlagen wurden
             im Rahmen der Weiterbildung durch die Developer Akademie GmbH
             bereitgestellt.
         `,
 
-        imprintStatusHeadline: "Stand",
-        imprintStatusText: "August 2026"
-    },
+    imprintStatusHeadline: "Stand",
+    imprintStatusText: "August 2026",
 
-    en: {
-        heroJobTitle: "FRONTEND DEVELOPER",
+    privacyPolicyHeadline: `Datenschutzerklärung`,
 
-        navAbout: "About me",
-        navSkills: "Skills",
-        navProjects: "Projects",
-        navContact: "Contact",
+    privacyPolicyControllerHeadline: `Verantwortlicher`,
 
-        aboutHeadline: "About me",
+    privacyPolicyControllerIntro: `
+    Verantwortlicher im Sinne der Datenschutzgesetze,
+    insbesondere der DSGVO, ist:
+`,
 
-        aboutTextOne: `
+    privacyPolicyEmailLabel: `E-Mail:`,
+
+    privacyPolicyPhoneLabel: `Telefon:`,
+
+    privacyPolicyRightsHeadline: `Ihre Betroffenenrechte`,
+
+    privacyPolicyRightsIntro: `
+    Unter den angegebenen Kontaktdaten können Sie gemäß DSGVO
+    jederzeit folgende Rechte ausüben:
+`,
+
+    privacyPolicyRightAccess: `
+    Auskunft über Ihre gespeicherten Daten und deren Verarbeitung
+`,
+
+    privacyPolicyRightCorrection: `
+    Berichtigung unrichtiger personenbezogener Daten
+`,
+
+    privacyPolicyRightDeletion: `
+    Löschung Ihrer gespeicherten Daten
+`,
+
+    privacyPolicyRightRestriction: `
+    Einschränkung der Datenverarbeitung
+`,
+
+    privacyPolicyRightObjection: `
+    Widerspruch gegen die Verarbeitung Ihrer Daten
+`,
+
+    privacyPolicyRightPortability: `
+    Datenübertragbarkeit
+`,
+
+    privacyPolicyWithdrawalText: `
+    Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese
+    jederzeit mit Wirkung für die Zukunft widerrufen.
+`,
+
+    privacyPolicyComplaintText: `
+    Sie haben außerdem das Recht, sich bei einer zuständigen
+    Datenschutzaufsichtsbehörde zu beschweren.
+`,
+
+    privacyPolicyAccessDataHeadline: `Verarbeitung allgemeiner Zugriffsdaten`,
+
+    privacyPolicyServerLogsHeadline: `Server-Logfiles`,
+
+    privacyPolicyServerLogsIntro: `
+    Beim Besuch dieser Website werden automatisch technische Informationen
+    allgemeiner Natur erfasst. Hierzu zählen insbesondere:
+`,
+
+    privacyPolicyLogIp: `IP-Adresse`,
+
+    privacyPolicyLogDateTime: `Datum und Uhrzeit des Zugriffs`,
+
+    privacyPolicyLogBrowser: `Browsertyp und Betriebssystem`,
+
+    privacyPolicyLogFiles: `aufgerufene Seiten und Dateien`,
+
+    privacyPolicyLogReferrer: `Referrer-URL`,
+
+    privacyPolicyServerLogsPurpose: `
+    Diese Daten dienen der technischen Bereitstellung, Stabilität,
+    Sicherheit und Optimierung der Website.
+`,
+
+    privacyPolicyServerLogsLegalBasis: `
+    Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO
+    auf Grundlage unseres berechtigten Interesses an der sicheren
+    und fehlerfreien Bereitstellung dieser Website.
+`,
+
+    privacyPolicyServerLogsStorage: `
+    Die Daten werden maximal 14 Tage gespeichert und anschließend gelöscht,
+    sofern kein sicherheitsrelevantes Ereignis vorliegt.
+`,
+
+    privacyPolicyServerLogsSecurityIncident: `
+    Im Falle eines sicherheitsrelevanten Ereignisses können Server-Logfiles
+    bis zur Beseitigung und vollständigen Aufklärung des Vorfalls gespeichert werden.
+`,
+
+    privacyPolicyContactHeadline: `Kontaktformular und Kontaktaufnahme`,
+
+    privacyPolicyContactTypeHeadline: `Art der Verarbeitung`,
+
+    privacyPolicyContactFormText: `
+    Wenn Sie das Kontaktformular nutzen, werden die von Ihnen eingegebenen
+    Daten an uns übermittelt und zur Bearbeitung Ihrer Anfrage verarbeitet.
+`,
+
+    privacyPolicyContactDataIntro: `Hierzu gehören insbesondere:`,
+
+    privacyPolicyContactName: `Name`,
+
+    privacyPolicyContactEmail: `E-Mail-Adresse`,
+
+    privacyPolicyContactMessage: `Nachrichteninhalt`,
+
+    privacyPolicyContactTechnicalData: `
+    Zum Zeitpunkt der Absendung können zusätzlich technische Daten wie
+    IP-Adresse, Datum und Uhrzeit der Anfrage sowie die Herkunft der Anfrage
+    verarbeitet werden.
+`,
+
+    privacyPolicyEmailContactText: `
+    Eine Kontaktaufnahme ist außerdem über die bereitgestellte E-Mail-Adresse
+    möglich. In diesem Fall werden die mit der E-Mail übermittelten
+    personenbezogenen Daten verarbeitet.
+`,
+
+    privacyPolicyPhoneContactText: `
+    Sofern Sie telefonisch Kontakt aufnehmen, können hierbei Ihre Telefonnummer
+    sowie Gesprächsdaten wie Zeitpunkt und Dauer des Gesprächs verarbeitet werden.
+`,
+
+    privacyPolicyContactPurposeHeadline: `Zweck der Verarbeitung`,
+
+    privacyPolicyContactPurposeText: `
+    Die Verarbeitung erfolgt ausschließlich zur Bearbeitung Ihrer Anfrage
+    sowie zur individuellen Kommunikation mit Ihnen.
+`,
+
+    privacyPolicyContactLegalBasisHeadline: `Rechtsgrundlage`,
+
+    privacyPolicyContactLegalBasisText: `
+    Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO
+    auf Grundlage unseres berechtigten Interesses an einer unkomplizierten
+    Kontaktaufnahme.
+`,
+
+    privacyPolicyContactPreContractualText: `
+    Sofern Ihre Anfrage auf eine mögliche Zusammenarbeit oder ein vorvertragliches
+    Verhältnis gerichtet ist, kann die Verarbeitung zusätzlich auf
+    Art. 6 Abs. 1 lit. b DSGVO beruhen.
+`,
+
+    privacyPolicyContactStorageHeadline: `Speicherdauer`,
+
+    privacyPolicyContactStorageText: `
+    Die übermittelten Daten werden nur so lange gespeichert, wie dies für die
+    Bearbeitung der Anfrage erforderlich ist. Anschließend werden die Daten gelöscht.
+`,
+
+    privacyPolicyContactVoluntaryHeadline: `Bereitstellung der Daten`,
+
+    privacyPolicyContactVoluntaryText: `
+    Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig.
+    Eine Bearbeitung Ihrer Anfrage ist jedoch nur möglich, wenn Sie die hierfür
+    erforderlichen Angaben bereitstellen.
+`,
+
+    privacyPolicyObjectionHeadline: `Widerspruchsrecht`,
+
+    privacyPolicyObjectionTextOne: `
+    Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation
+    ergeben, jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten
+    Widerspruch einzulegen, sofern diese auf Grundlage von
+    Art. 6 Abs. 1 lit. f DSGVO erfolgt.
+`,
+
+    privacyPolicyObjectionTextTwo: `
+    Legen Sie Widerspruch ein, werden Ihre personenbezogenen Daten nicht mehr
+    verarbeitet, es sei denn, es bestehen zwingende schutzwürdige Gründe für
+    die Verarbeitung oder die Verarbeitung dient der Geltendmachung, Ausübung
+    oder Verteidigung von Rechtsansprüchen.
+`,
+
+    privacyPolicyChangesHeadline: `Änderungen dieser Datenschutzerklärung`,
+
+    privacyPolicyChangesText: `
+    Diese Datenschutzerklärung kann angepasst werden, um sie an aktuelle
+    rechtliche Anforderungen oder technische Änderungen dieser Website anzupassen.
+`,
+
+    privacyPolicyQuestionsHeadline: `Fragen zum Datenschutz`,
+
+    privacyPolicyQuestionsText: `
+    Bei Fragen zum Datenschutz können Sie sich jederzeit an die oben genannte
+    verantwortliche Person wenden.
+`,
+  },
+
+  en: {
+    heroJobTitle: "FRONTEND DEVELOPER",
+
+    navAbout: "About me",
+    navSkills: "Skills",
+    navProjects: "Projects",
+    navContact: "Contact",
+
+    aboutHeadline: "About me",
+
+    aboutTextOne: `
             Programming inspires me because it combines analytical thinking
             with creative problem-solving. What fascinates me most is transforming
             complex requirements into clear and user-friendly solutions.
         `,
 
-        aboutTextTwo: `
+    aboutTextTwo: `
             Through my structured way of working and strong communication skills,
             I maintain a clear overview even in team projects. It is important to me
             to work reliably, address feedback openly, and develop strong solutions together.
         `,
 
-        aboutTextThree: `
+    aboutTextThree: `
             Languages, logic, and clear structures have always fascinated me –
             which is exactly why working with code excites me so much.
         `,
 
-        contactButton: "Contact",
+    contactButton: "Contact",
 
-        skillsHeadline: "My Skills",
+    skillsHeadline: "My Skills",
 
-        currentLearningHeadline: "Currently learning",
+    currentLearningHeadline: "Currently learning",
 
-        currentLearningTextOne: `
+    currentLearningTextOne: `
             I am currently expanding my understanding of modern frontend frameworks
             with React and Vue.js.
         `,
 
-        currentLearningTextTwo: `
+    currentLearningTextTwo: `
             I am especially interested in developing performant
             and interactive user interfaces.
         `,
 
-        projectsHeadline: "My Projects",
+    projectsHeadline: "My Projects",
 
-        projectNavElPolloLoco: "El Pollo Loco",
-        projectNavJoin: "Join",
-        projectNavPokedex: "Pokédex",
+    projectNavElPolloLoco: "El Pollo Loco",
+    projectNavJoin: "Join",
+    projectNavPokedex: "Pokédex",
 
-        projectOverviewHeadline: "Project Overview",
-        projectWorkingMethodHeadline: "Workflow",
-        projectAdditionalHeadlineElPolloLoco: "What I learned",
-        projectTechnologiesLabel: "Technologies",
+    projectOverviewHeadline: "Project Overview",
+    projectWorkingMethodHeadline: "Workflow",
+    projectAdditionalHeadlineElPolloLoco: "What I learned",
+    projectTechnologiesLabel: "Technologies",
 
-        projectDurationElPolloLoco: "Duration: 3 weeks",
+    projectDurationElPolloLoco: "Duration: 3 weeks",
 
-        projectBulletpointOneElPolloLoco: `
+    projectBulletpointOneElPolloLoco: `
             El Pollo Loco is a 2D jump-and-run game in which the player guides Pepe through a desert landscape,
             collects coins, avoids enemies, and uses salsa bottles to defend himself against chickens and the final boss.
         `,
 
-        projectBulletpointTwoElPolloLoco: `
+    projectBulletpointTwoElPolloLoco: `
             To structure the project, I used Trello to clearly organize tasks, progress, and open issues.
             The code is divided into several classes and controllers, for example for the character, enemies,
             audio, input handling, and rendering.
         `,
 
-        projectBulletpointThreeElPolloLoco: `
+    projectBulletpointThreeElPolloLoco: `
             In this project, I learned a great deal about object-oriented JavaScript structures, canvas rendering,
             animations, collisions, game states, and input control. One important experience was combining
             many individual game mechanics into one functional complete game.
         `,
 
-        projectLiveTestButton: "Live Test",
-        projectGithubButton: "GitHub",
+    projectLiveTestButton: "Live Test",
+    projectGithubButton: "GitHub",
 
-        referencesIntroText: "What others say about working with me.",
+    referencesIntroText: "What others say about working with me.",
 
-        referenceProjectLabel: "Project",
+    referenceProjectLabel: "Project",
 
-        referenceAnneText: `
+    referenceAnneText: `
             While working with Eugen, I particularly noticed his strong communication skills
             and structured way of working. You could always rely on the dependable completion
             of agreed tasks. Especially positive was his respectful and constructive handling
             of feedback and challenging topics.
         `,
 
-        referenceMartinText: `
+    referenceMartinText: `
             In the group project, Eugen took on a structured and coordinating role,
             which made the collaboration within the team very efficient. Through regular
             communication, we were able to successfully complete the project.
         `,
 
-        referenceGithubProfile: "GitHub Profile",
-        referenceLinkedInProfile: "LinkedIn Profile",
+    referenceGithubProfile: "GitHub Profile",
+    referenceLinkedInProfile: "LinkedIn Profile",
 
-        contactHeadline: "Contact",
+    contactHeadline: "Contact",
 
-        contactIntroTextOne: `
+    contactIntroTextOne: `
             I look forward to connecting about frontend development,
             exciting projects, or new professional opportunities.
         `,
 
-        contactIntroTextTwo: `
+    contactIntroTextTwo: `
             I am particularly interested in working on modern and user-friendly web applications
             where clean structures, good collaboration, and creative solutions matter.
         `,
 
-        contactIntroTextThree: `
+    contactIntroTextThree: `
             If you believe I would be a good fit for your team or project,
             I would be happy to hear from you.
         `,
 
-        contactEmailLabel: "Email: eugen.liske@yahoo.de",
-        contactPhoneLabel: "Phone: 0176 634 524 73",
+    contactEmailLabel: "Email: eugen.liske@yahoo.de",
+    contactPhoneLabel: "Phone: 0176 634 524 73",
 
-        formNameLabel: "Your name",
-        formEmailLabel: "Your email address",
-        formMessageLabel: "Your message",
+    formNameLabel: "Your name",
+    formEmailLabel: "Your email address",
+    formMessageLabel: "Your message",
 
-        privacyPolicyText: `
+    privacyPolicyText: `
             I have read the <a href="./pages/privacy_policy.html">privacy policy</a> and agree to the processing of my data as described there.
         `,
 
-        privacyPolicyError: "Please accept the privacy policy.",
+    privacyPolicyError: "Please accept the privacy policy.",
 
-        sendButton: "Send",
+    sendButton: "Send",
 
-        footerLegalNotice: "Legal Notice",
+    footerLegalNotice: "Legal Notice",
+    footerPrivacyPolicy: "Privacy Policy",
 
-        imprintHeadline: "Legal Notice",
-        imprintLegalInformationHeadline: "Information according to Section 5 DDG",
-        imprintName: "Evgenij (Eugen) Liske",
-        imprintStreet: "Mooswiesenstraße 11a",
-        imprintCity: "81245 Munich",
-        imprintCountry: "Germany",
-        imprintContactHeadline: "Contact",
-        imprintEmailLabel: "Email:",
-        imprintPhoneLabel: "Phone:",
-        imprintPurposeHeadline: "Purpose of this website",
+    imprintHeadline: "Legal Notice",
+    imprintLegalInformationHeadline: "Information according to Section 5 DDG",
+    imprintName: "Evgenij (Eugen) Liske",
+    imprintStreet: "Mooswiesenstraße 11a",
+    imprintCity: "81245 Munich",
+    imprintCountry: "Germany",
+    imprintContactHeadline: "Contact",
+    imprintEmailLabel: "Email:",
+    imprintPhoneLabel: "Phone:",
+    imprintPurposeHeadline: "Purpose of this website",
 
-        imprintPurposeTextOne: `
+    imprintPurposeTextOne: `
             This website serves as my personal digital application portfolio
             and project portfolio. It presents my professional qualifications,
             skills, and selected projects in the field of frontend development.
         `,
 
-        imprintPurposeTextTwo: `
+    imprintPurposeTextTwo: `
             It provides an overview of selected development projects,
             technical skills, and career-relevant information about me.
         `,
 
-        imprintCopyrightHeadline: "Copyright",
+    imprintCopyrightHeadline: "Copyright",
 
-        imprintCopyrightTextOne: `
+    imprintCopyrightTextOne: `
             The technical implementation, frontend development, and programming
             of this website were carried out independently by me.
         `,
 
-        imprintCopyrightTextTwo: `
+    imprintCopyrightTextTwo: `
             The underlying design, visual concept, and selected layout templates
             are based on materials provided by Developer Akademie GmbH.
         `,
 
-        imprintCopyrightTextThree: `
+    imprintCopyrightTextThree: `
             Reproduction, distribution, or any other use of the provided design
             templates outside the intended learning and project context is not permitted.
         `,
 
-        imprintContentHeadline: "Information about the content",
+    imprintContentHeadline: "Information about the content",
 
-        imprintContentText: `
+    imprintContentText: `
             The content of this website is intended exclusively to present
             my professional qualifications, projects, and technical skills
             as part of my personal application materials.
         `,
 
-        imprintTechnicalHeadline: "Technical implementation",
+    imprintTechnicalHeadline: "Technical implementation",
 
-        imprintTechnicalText: `
+    imprintTechnicalText: `
             The frontend development, technical implementation, and hosting
             of this website are carried out independently by me as part of
             my further training and practical project work in web development.
         `,
 
-        imprintTechnicalTextTwo: `
+    imprintTechnicalTextTwo: `
             The underlying design and layout templates were provided by
             Developer Akademie GmbH as part of the training program.
         `,
 
-        imprintStatusHeadline: "Last updated",
-        imprintStatusText: "August 2026"
-    }
+    imprintStatusHeadline: "Last updated",
+    imprintStatusText: "August 2026",
+
+    privacyPolicyHeadline: `Privacy Policy`,
+
+    privacyPolicyControllerHeadline: `Data Controller`,
+
+    privacyPolicyControllerIntro: `
+    The data controller within the meaning of data protection laws,
+    in particular the GDPR, is:
+`,
+
+    privacyPolicyEmailLabel: `Email:`,
+
+    privacyPolicyPhoneLabel: `Phone:`,
+
+    privacyPolicyRightsHeadline: `Your Data Subject Rights`,
+
+    privacyPolicyRightsIntro: `
+    Using the contact details provided, you may exercise the following rights
+    under the GDPR at any time:
+`,
+
+    privacyPolicyRightAccess: `
+    Access to your stored data and information about its processing
+`,
+
+    privacyPolicyRightCorrection: `
+    Correction of inaccurate personal data
+`,
+
+    privacyPolicyRightDeletion: `
+    Deletion of your stored data
+`,
+
+    privacyPolicyRightRestriction: `
+    Restriction of data processing
+`,
+
+    privacyPolicyRightObjection: `
+    Objection to the processing of your data
+`,
+
+    privacyPolicyRightPortability: `
+    Data portability
+`,
+
+    privacyPolicyWithdrawalText: `
+    If you have given us your consent, you may withdraw it at any time
+    with effect for the future.
+`,
+
+    privacyPolicyComplaintText: `
+    You also have the right to lodge a complaint with a competent
+    data protection supervisory authority.
+`,
+
+    privacyPolicyAccessDataHeadline: `Processing of General Access Data`,
+
+    privacyPolicyServerLogsHeadline: `Server Log Files`,
+
+    privacyPolicyServerLogsIntro: `
+    When you visit this website, general technical information is automatically
+    collected. This includes in particular:
+`,
+
+    privacyPolicyLogIp: `IP address`,
+
+    privacyPolicyLogDateTime: `date and time of access`,
+
+    privacyPolicyLogBrowser: `browser type and operating system`,
+
+    privacyPolicyLogFiles: `pages and files accessed`,
+
+    privacyPolicyLogReferrer: `referrer URL`,
+
+    privacyPolicyServerLogsPurpose: `
+    This data is used for the technical provision, stability, security,
+    and optimization of the website.
+`,
+
+    privacyPolicyServerLogsLegalBasis: `
+    The processing is carried out pursuant to Art. 6(1)(f) GDPR
+    on the basis of our legitimate interest in providing this website
+    securely and without technical errors.
+`,
+
+    privacyPolicyServerLogsStorage: `
+    The data is stored for a maximum of 14 days and then deleted,
+    unless a security-relevant incident has occurred.
+`,
+
+    privacyPolicyServerLogsSecurityIncident: `
+    In the event of a security-relevant incident, server log files may be stored
+    until the incident has been fully resolved and clarified.
+`,
+
+    privacyPolicyContactHeadline: `Contact Form and Contact Requests`,
+
+    privacyPolicyContactTypeHeadline: `Type of Processing`,
+
+    privacyPolicyContactFormText: `
+    If you use the contact form, the data you enter will be transmitted to us
+    and processed in order to handle your request.
+`,
+
+    privacyPolicyContactDataIntro: `This includes in particular:`,
+
+    privacyPolicyContactName: `name`,
+
+    privacyPolicyContactEmail: `email address`,
+
+    privacyPolicyContactMessage: `message content`,
+
+    privacyPolicyContactTechnicalData: `
+    At the time the message is sent, additional technical data such as
+    IP address, date and time of the request, and the origin of the request
+    may be processed.
+`,
+
+    privacyPolicyEmailContactText: `
+    You may also contact us via the email address provided. In this case,
+    the personal data transmitted with the email will be processed.
+`,
+
+    privacyPolicyPhoneContactText: `
+    If you contact us by phone, your telephone number as well as call-related
+    data such as the time and duration of the call may be processed.
+`,
+
+    privacyPolicyContactPurposeHeadline: `Purpose of Processing`,
+
+    privacyPolicyContactPurposeText: `
+    The processing is carried out exclusively to handle your request
+    and to communicate with you individually.
+`,
+
+    privacyPolicyContactLegalBasisHeadline: `Legal Basis`,
+
+    privacyPolicyContactLegalBasisText: `
+    The processing is carried out pursuant to Art. 6(1)(f) GDPR
+    on the basis of our legitimate interest in enabling straightforward contact.
+`,
+
+    privacyPolicyContactPreContractualText: `
+    If your request relates to a possible collaboration or a pre-contractual
+    relationship, the processing may additionally be based on
+    Art. 6(1)(b) GDPR.
+`,
+
+    privacyPolicyContactStorageHeadline: `Storage Period`,
+
+    privacyPolicyContactStorageText: `
+    The transmitted data will be stored only for as long as necessary to process
+    the request. Afterwards, the data will be deleted.
+`,
+
+    privacyPolicyContactVoluntaryHeadline: `Provision of Data`,
+
+    privacyPolicyContactVoluntaryText: `
+    The provision of your personal data is voluntary. However, your request
+    can only be processed if you provide the information required for this purpose.
+`,
+
+    privacyPolicyObjectionHeadline: `Right to Object`,
+
+    privacyPolicyObjectionTextOne: `
+    You have the right, on grounds relating to your particular situation,
+    to object at any time to the processing of your personal data where such
+    processing is based on Art. 6(1)(f) GDPR.
+`,
+
+    privacyPolicyObjectionTextTwo: `
+    If you object, your personal data will no longer be processed unless
+    there are compelling legitimate grounds for the processing or the processing
+    serves the establishment, exercise, or defense of legal claims.
+`,
+
+    privacyPolicyChangesHeadline: `Changes to this Privacy Policy`,
+
+    privacyPolicyChangesText: `
+    This privacy policy may be updated in order to reflect current legal
+    requirements or technical changes to this website.
+`,
+
+    privacyPolicyQuestionsHeadline: `Questions about Data Protection`,
+
+    privacyPolicyQuestionsText: `
+    If you have any questions about data protection, you may contact the person
+    responsible named above at any time.
+`,
+  },
 };

@@ -13,6 +13,16 @@ main {
     padding: 64px 128px;
 }
 
+.imprint-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 100ms ease-in-out;
+}
+
+.imprint-content a:hover {
+    color: var(--text-color);
+}
+
 .imprint-content h1 {
     font-size: 54px;
     font-weight: 400;
@@ -36,4 +46,5 @@ main {
 
 p {
     line-height: 1.4;
+    margin-bottom: 24px;
 }

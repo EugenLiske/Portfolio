@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/hero_section.css" />
     <link rel="stylesheet" href="./styles/why_me_section.css" />
     <link rel="stylesheet" href="./styles/my_skills_section.css" />
@@ -540,7 +540,8 @@
           </div>
 
           <form
-            action=""
+            action="./send_mail.php"
+            method="POST"
             class="contact-form"
             onsubmit="checkFormAndSend(event)"
             novalidate
@@ -564,6 +565,7 @@
                     type="text"
                     class="input-field"
                     id="name-input-field"
+                    name="name"
                   />
                   <img
                     id="name-check-icon"
@@ -592,6 +594,7 @@
                     type="email"
                     class="input-field"
                     id="email-input-field"
+                    name="email"
                   />
                   <img
                     id="email-check-icon"
@@ -699,6 +702,7 @@
       <div class="footer-content">
           <div class="legal-notice-and-name-wrapper">
             <a href="./pages/legal_notice.html" data-i18n="footerLegalNotice">Impressum</a>
+            <a href="./pages/privacy_policy.html" data-i18n="footerPrivacyPolicy">Datenschutzerklärung</a>
             <span>© Eugen Liske 2026</span>
           </div>
 

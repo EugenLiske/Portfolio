@@ -202,7 +202,23 @@ function clearMessageError() {
 
 // ---- submit ---- //
 
-function checkFormAndSend(event) {
+// function checkFormAndSend(event) {
+//     event.preventDefault();
+
+//     const formInput = readFormInput();
+//     const evaluatedFormInput = evaluateFormInput(formInput);
+
+//     renderSubmitErrors(evaluatedFormInput);
+//     setSendButtonState(evaluatedFormInput.allValid);
+
+//     if (!evaluatedFormInput.allValid) {
+//         return false;
+//     }
+
+//     return false;
+// }
+
+async function checkFormAndSend(event) {
     event.preventDefault();
 
     const formInput = readFormInput();
@@ -215,8 +231,53 @@ function checkFormAndSend(event) {
         return false;
     }
 
-    // hier später echte Sendelogik
-    return false;
+    try {
+        sendFormButton.disabled = true;
+        sendFormButton.textContent = currentFormLanguage === "de" ? "Wird gesendet..." : "Sending...";
+
+        const response = await fetch("./send_mail.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: formInput.name,
+                email: formInput.email,
+                message: formInput.message
+            })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(result.error || "Mail delivery failed");
+        }
+
+        nameInputField.value = "";
+        emailInputField.value = "";
+        messageInputField.value = "";
+        checkboxInputField.checked = false;
+
+        checkboxWrapper.classList.remove("checked");
+        nameCheckIcon.classList.add("deactivated");
+        emailCheckIcon.classList.add("deactivated");
+        messageCheckIcon.classList.add("deactivated");
+
+        setSendButtonState(false);
+
+        sendFormButton.textContent = currentFormLanguage === "de" ? "Gesendet" : "Sent";
+
+        return false;
+    } catch (error) {
+        console.error(error);
+        sendFormButton.textContent = currentFormLanguage === "de" ? "Fehler" : "Error";
+        return false;
+    } finally {
+        setTimeout(() => {
+            sendFormButton.disabled = false;
+            sendFormButton.textContent = currentFormLanguage === "de" ? "Senden" : "Send";
+        }, 2000);
+    }
 }
 
 function renderSubmitErrors(evaluatedFormInput) {
