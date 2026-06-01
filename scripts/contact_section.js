@@ -14,6 +14,8 @@ const nameCheckIcon = document.getElementById("name-check-icon");
 const emailCheckIcon = document.getElementById("email-check-icon");
 const messageCheckIcon = document.getElementById("message-check-icon");
 
+const checkIcons = [nameCheckIcon, emailCheckIcon, messageCheckIcon];
+
 const nameInputLabel = document.getElementById("name-input-label");
 const emailInputLabel = document.getElementById("email-input-label");
 const messageInputLabel = document.getElementById("message-input-label");
@@ -138,10 +140,8 @@ function setSendButtonState(isFormValid) {
 
 function checkIfNameIsFilled() {
     if (nameInputField.value.trim() !== "") {
-        nameCheckIcon.classList.remove("deactivated");
         nameCheckIcon.classList.add("activated");
     } else {
-        nameCheckIcon.classList.add("deactivated");
         nameCheckIcon.classList.remove("activated");
     }
 }
@@ -153,27 +153,22 @@ function checkIfMailIsFilledAndValid() {
     const emailValid = isEmailValid(emailValue);
 
     if (emailFilled && emailValid) {
-        emailCheckIcon.classList.remove("deactivated");
         emailCheckIcon.classList.add("activated");
     } else if (emailFilled && !emailValid) {
-        emailCheckIcon.classList.add("deactivated");
         emailCheckIcon.classList.remove("activated");
 
         emailInputField.classList.add("error-border");
         emailInputLabel.classList.add("error-label");
         emailInputLabel.textContent = getFormTranslation("emailInvalid");
     } else {
-        emailCheckIcon.classList.add("deactivated");
         emailCheckIcon.classList.remove("activated");
     }
 }
 
 function checkIfMessageIsFilled() {
     if (messageInputField.value.trim() !== "") {
-        messageCheckIcon.classList.remove("deactivated");
         messageCheckIcon.classList.add("activated");
     } else {
-        messageCheckIcon.classList.add("deactivated");
         messageCheckIcon.classList.remove("activated");
     }
 }
@@ -202,22 +197,6 @@ function clearMessageError() {
 
 // ---- submit ---- //
 
-// function checkFormAndSend(event) {
-//     event.preventDefault();
-
-//     const formInput = readFormInput();
-//     const evaluatedFormInput = evaluateFormInput(formInput);
-
-//     renderSubmitErrors(evaluatedFormInput);
-//     setSendButtonState(evaluatedFormInput.allValid);
-
-//     if (!evaluatedFormInput.allValid) {
-//         return false;
-//     }
-
-//     return false;
-// }
-
 async function checkFormAndSend(event) {
     event.preventDefault();
 
@@ -232,9 +211,6 @@ async function checkFormAndSend(event) {
     }
 
     try {
-        sendFormButton.disabled = true;
-        sendFormButton.textContent = currentFormLanguage === "de" ? "Wird gesendet..." : "Sending...";
-
         const response = await fetch("./send_mail.php", {
             method: "POST",
             headers: {
@@ -259,24 +235,17 @@ async function checkFormAndSend(event) {
         checkboxInputField.checked = false;
 
         checkboxWrapper.classList.remove("checked");
-        nameCheckIcon.classList.add("deactivated");
-        emailCheckIcon.classList.add("deactivated");
-        messageCheckIcon.classList.add("deactivated");
+        checkIcons.forEach((checkIcon) => {
+            checkIcon.classList.remove("activated");
+        });
 
         setSendButtonState(false);
 
-        sendFormButton.textContent = currentFormLanguage === "de" ? "Gesendet" : "Sent";
 
         return false;
     } catch (error) {
         console.error(error);
-        sendFormButton.textContent = currentFormLanguage === "de" ? "Fehler" : "Error";
         return false;
-    } finally {
-        setTimeout(() => {
-            sendFormButton.disabled = false;
-            sendFormButton.textContent = currentFormLanguage === "de" ? "Senden" : "Send";
-        }, 2000);
     }
 }
 
@@ -286,7 +255,6 @@ function renderSubmitErrors(evaluatedFormInput) {
         nameInputLabel.classList.add("error-label");
         nameInputLabel.textContent = getFormTranslation("nameMissing");
 
-        nameCheckIcon.classList.add("deactivated");
         nameCheckIcon.classList.remove("activated");
     }
 
@@ -295,14 +263,12 @@ function renderSubmitErrors(evaluatedFormInput) {
         emailInputLabel.classList.add("error-label");
         emailInputLabel.textContent = getFormTranslation("emailMissing");
 
-        emailCheckIcon.classList.add("deactivated");
         emailCheckIcon.classList.remove("activated");
     } else if (!evaluatedFormInput.emailFormatValid) {
         emailInputField.classList.add("error-border");
         emailInputLabel.classList.add("error-label");
         emailInputLabel.textContent = getFormTranslation("emailInvalid");
 
-        emailCheckIcon.classList.add("deactivated");
         emailCheckIcon.classList.remove("activated");
     }
 
@@ -311,7 +277,6 @@ function renderSubmitErrors(evaluatedFormInput) {
         messageInputLabel.classList.add("error-label");
         messageInputLabel.textContent = getFormTranslation("messageMissing");
 
-        messageCheckIcon.classList.add("deactivated");
         messageCheckIcon.classList.remove("activated");
     }
 

@@ -185,14 +185,11 @@
 }
 
 .input-check-icon {
+    display: none;
     position: absolute;
     top: 50%;
     right: 12px;
     transform: translateY(-50%);
-}
-
-.input-check-icon.deactivated {
-    display: none;
 }
 
 .input-check-icon.activated {
@@ -243,13 +240,10 @@
 }
 
 .message-check-icon {
+    display: none;
     position: absolute;
     top: 24px;
     right: 12px;
-}
-
-.message-check-icon.deactivated {
-    display: none;
 }
 
 .message-check-icon.activated {
