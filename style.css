@@ -82,7 +82,7 @@
 }
 
 .project-navigation-wrapper {
-    gap: 128px;
+    gap: 0px;
     padding-left: calc(128px - 58px);
 }
 

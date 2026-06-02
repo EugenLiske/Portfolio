@@ -12,6 +12,7 @@ let projectTechnologyTwoRef = document.getElementById("projectTechnologyTwoID");
 let projectTechnologyThreeRef = document.getElementById("projectTechnologyThreeID");
 
 let projectMockupRef = document.getElementById("projectMockupID");
+let projectLiveTestRef = document.getElementById("projectLiveTestID");
 let githubLinkRef = document.getElementById("githubLinkID");
 
 const projectNavItemsRef = document.querySelectorAll(".project-nav-item");
@@ -28,6 +29,7 @@ const exchangeableProjectContent = {
             technologyTwo: `./assets/icons/my_projects_section/javascript_project_icon.svg`,
             technologyThree: `./assets/icons/my_projects_section/css_project_icon.svg`,
             projectMockup: `./assets/icons/my_projects_section/el_pollo_loco_preview.png`,
+            projectLiveTestLink: `https://el-pollo-loco.eugen-liske.de/`,
             githubLink: `https://github.com/EugenLiske/el_pollo_loco.git`
         },
         {
@@ -40,6 +42,7 @@ const exchangeableProjectContent = {
             technologyTwo: `./assets/icons/my_projects_section/javascript_project_icon.svg`,
             technologyThree: `./assets/icons/my_projects_section/css_project_icon.svg`,
             projectMockup: `./assets/icons/my_projects_section/join_preview.png`,
+            projectLiveTestLink: `https://join.eugen-liske.de/`,
             githubLink: `https://github.com/EugenLiske/join.git`
         },
         {
@@ -52,6 +55,7 @@ const exchangeableProjectContent = {
             technologyTwo: `./assets/icons/my_projects_section/javascript_project_icon.svg`,
             technologyThree: `./assets/icons/my_projects_section/css_project_icon.svg`,
             projectMockup: `./assets/icons/my_projects_section/pokemon_preview.png`,
+            projectLiveTestLink: `https://pokedex.eugen-liske.de/`,
             githubLink: `https://github.com/EugenLiske/Pokedex.git`
         }
     ],
@@ -67,6 +71,7 @@ const exchangeableProjectContent = {
             technologyTwo: `./assets/icons/my_projects_section/javascript_project_icon.svg`,
             technologyThree: `./assets/icons/my_projects_section/css_project_icon.svg`,
             projectMockup: `./assets/icons/my_projects_section/el_pollo_loco_preview.png`,
+            projectLiveTestLink: `https://el-pollo-loco.eugen-liske.de/`,
             githubLink: `https://github.com/EugenLiske/el_pollo_loco.git`
         },
         {
@@ -79,6 +84,7 @@ const exchangeableProjectContent = {
             technologyTwo: `./assets/icons/my_projects_section/javascript_project_icon.svg`,
             technologyThree: `./assets/icons/my_projects_section/css_project_icon.svg`,
             projectMockup: `./assets/icons/my_projects_section/join_preview.png`,
+            projectLiveTestLink: `https://join.eugen-liske.de/`,
             githubLink: `https://github.com/EugenLiske/join.git`
         },
         {
@@ -91,6 +97,7 @@ const exchangeableProjectContent = {
             technologyTwo: `./assets/icons/my_projects_section/javascript_project_icon.svg`,
             technologyThree: `./assets/icons/my_projects_section/css_project_icon.svg`,
             projectMockup: `./assets/icons/my_projects_section/pokemon_preview.png`,
+            projectLiveTestLink: `https://pokedex.eugen-liske.de/`,
             githubLink: `https://github.com/EugenLiske/Pokedex.git`
         }
     ]
@@ -123,5 +130,6 @@ function displayProjectContent(i) {
     projectTechnologyThreeRef.src = selectedProject.technologyThree;
 
     projectMockupRef.src = selectedProject.projectMockup;
+    projectLiveTestRef.href = selectedProject.projectLiveTestLink
     githubLinkRef.href = selectedProject.githubLink;
 }

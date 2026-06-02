@@ -1,5 +1,7 @@
 const translations = {
   de: {
+    pageTitleLegalNotice: "Portfolio - Impressum",
+    pageTitlePrivacyPolicy: "Portfolio - Datenschutz",
     heroJobTitle: "FRONTEND ENTWICKLER",
 
     navAbout: "Über mich",
@@ -397,6 +399,8 @@ const translations = {
   },
 
   en: {
+    pageTitleLegalNotice: "Portfolio - Legal Notice",
+    pageTitlePrivacyPolicy: "Portfolio - Privacy Policy",
     heroJobTitle: "FRONTEND DEVELOPER",
 
     navAbout: "About me",
