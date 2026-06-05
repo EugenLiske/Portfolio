@@ -1,0 +1,817 @@
+@media (max-width: 1400px) {
+
+    /*----- hero section -----*/
+
+    h1 {
+        font-size: 72px;
+    }
+
+    .hero-section h2 {
+        font-size: 32px;
+    }
+
+    /*----- why me section -----*/
+
+    .why-me-content,
+    .my-skills-content,
+    .references-content,
+    .contact-content,
+    .project-navigation-wrapper,
+    .project-inner-content-wrapper {
+        padding-inline: 64px;
+    }
+
+    .why-me-content {
+        gap: 32px;
+    }
+
+    /*----- my projects section -----*/
+
+    .project-information-wrapper li::before {
+        left: -32px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .project-information-wrapper {
+        padding-left: 58px;
+    }
+
+    /*----- contact section -----*/
+
+    .nav-arrow-up-position-wrapper {
+        right: 64px;
+    }
+
+    /*----- legal notice page -----*/
+
+    .imprint-content {
+        padding-inline: 64px;
+    }
+
+    /*----- privacy policy page -----*/
+
+    .privacy-policy-content {
+        padding-inline: 64px;
+    }
+}
+
+@media (max-width: 1330px) {
+    .project-inner-content-wrapper {
+        height: 700px;
+    }
+}
+
+@media (max-width: 1300px) {
+
+    /*----- hero section -----*/
+
+    .hero-img-wrapper {
+        width: 600px;
+        height: min(calc(100dvh - 104px), 720px);
+    }
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        width: 536px;
+        height: 640px;
+        top: 156px;
+        left: 60px;
+    }
+
+    .hero-img {
+        width: 504px;
+        left: 90px;
+        top: 132px;
+    }
+
+    .hero-information-wrapper {
+        transform: translateY(-26px);
+    }
+
+    /*----- why me section -----*/
+
+    .animated-information-wrapper {
+        gap: 8px;
+        flex: 0 0 590px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .project-inner-content-wrapper {
+        height: 750px;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    /*----- hero section -----*/
+
+    .hero-content,
+    .hero-section-sticky-header,
+    .footer-content {
+        padding-inline: 32px;
+    }
+
+    .hero-img-wrapper {
+        width: 540px;
+    }
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        width: 482px;
+        height: 576px;
+        top: 190px;
+        left: 50px;
+    }
+
+    .hero-img {
+        width: 454px;
+        left: 80px;
+        top: 190px;
+    }
+
+    .hero-information-wrapper {
+        transform: translateY(10px);
+    }
+
+    .nav-arrow-position-wrapper {
+        top: calc(100% + 96px);
+    }
+
+    /*----- why me section -----*/
+
+    .animated-information-wrapper {
+        flex: 0 0 540px;
+    }
+
+    .animated-info-text {
+        font-size: 26px;
+    }
+
+    /*----- my projects section -----*/
+
+    .project-inner-content-wrapper {
+        height: 800px;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    /*----- why me section -----*/
+
+    .why-me-content {
+        gap: 8px;
+    }
+
+    /*----- my projects section -----*/
+
+    .project-preview-img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    /*----- hero section -----*/
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .hero-section h2 {
+        font-size: 28px;
+    }
+
+    /*----- why me section -----*/
+
+    .why-me-section h2,
+    .my-skills-section h2,
+    .my-projects-section h2,
+    .contact-section h2 {
+        font-size: 48px;
+    }
+
+    .why-me-content,
+    .my-skills-content,
+    .references-content,
+    .contact-content,
+    .project-navigation-wrapper,
+    .project-inner-content-wrapper {
+        padding-inline: 48px;
+    }
+
+    /*----- legal notice page -----*/
+
+    .imprint-content {
+        padding-inline: 48px;
+    }
+
+    /*----- privacy policy page -----*/
+
+    .privacy-policy-content {
+        padding-inline: 48px;
+    }
+}
+
+@media (max-width: 1060px) {
+
+    /*----- why me section -----*/
+
+    .animated-info-icon {
+        width: 60px;
+    }
+
+    .animated-info-text {
+        font-size: 20px;
+    }
+
+    .animated-information-wrapper {
+        flex: 0 0 410px;
+    }
+}
+
+@media (max-width: 1050px) {
+
+    /*----- my projects section -----*/
+
+    .project-inner-content-wrapper {
+        height: 850px;
+    }
+}
+
+@media (max-width: 1030px) {
+
+    /*----- hero section -----*/
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        left: 28px;
+    }
+
+    .hero-img {
+        left: 52px;
+    }
+
+    /*----- contact section -----*/
+
+    .contact-upper-part {
+        column-gap: 48px;
+    }
+
+    .name-email-wrapper {
+        gap: 48px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    /*----- hero section -----*/
+
+    .hero-img-wrapper {
+        width: 486px;
+    }
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        width: 434px; 
+        height: 518px;
+        top: 256px;
+        left: 30px;
+    }
+
+    .hero-img {
+        width: 408px; 
+        left: 56px;
+        top: 244px;
+    }
+
+    .hero-information-wrapper {
+        transform: translateY(44px);
+    }
+
+    .nav-arrow-position-wrapper {
+        top: calc(100% + 70px);
+    }
+
+    /*----- header -----*/
+
+    .nav-link {
+        font-size: 24px;
+        padding: 8px 8px;
+    }
+
+    /*----- why me section -----*/
+
+    .personal-information {
+        font-size: 16px;
+    }
+
+    /*----- my skills -----*/
+
+    .skills-overview {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+    }
+
+    .my-skills-content {
+        justify-content: center;
+        gap: 80px;
+    }
+
+    .current-learning-text p {
+        font-size: 16px;
+    }
+
+    /*----- my projects section -----*/
+
+    .project-info-bulletpoint-header {
+        gap: 16px;
+    }
+
+    .project-info-single-bulletpoint h3 {
+        font-size: 24px;
+    }
+
+    .project-info-single-bulletpoint span, .project-info-single-bulletpoint p {
+        font-size: 16px;
+    }
+
+    /*----- reference section -----*/
+
+    .single-reference-wrapper {
+        font-size: 16px;
+    }
+
+    .references-content {
+        gap: 24px;
+    }
+
+    /*----- contact section -----*/
+
+    .contact-intro-text p {
+        font-size: 16px;
+    }
+
+    .single-link-wrapper span {
+        font-size: 16px;
+    }
+
+    /*----- footer -----*/
+
+    .legal-notice-and-name-wrapper {
+        font-size: 16px;
+    }
+
+    /*----- legal notice page -----*/
+
+    .imprint-content p,
+    .imprint-content span {
+        font-size: 16px;
+    }
+
+    /*----- privacy policy page -----*/
+
+    .privacy-policy-content p,
+    .privacy-policy-content span,
+    .privacy-policy-content ul {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 950px) {
+
+    /*----- hero section -----*/
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .hero-section h2 {
+        font-size: 24px;
+    }
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        width: 434px; 
+        height: 518px;
+        top: 256px;
+        left: 30px;
+    }
+
+    .hero-img {
+        width: 408px; 
+        left: 56px;
+        top: 244px;
+    }
+
+    /*----- header -----*/
+
+    .nav-link-wrapper {
+        width: 600px
+    }
+
+    /*----- why me section -----*/
+
+    .why-me-section h2,
+    .my-skills-section h2,
+    .my-projects-section h2,
+    .contact-section h2 {
+        font-size: 40px;
+        padding-bottom: 60px;
+    }
+    
+    .why-me-content,
+    .my-skills-content,
+    .references-content,
+    .contact-content,
+    .project-navigation-wrapper,
+    .project-inner-content-wrapper {
+        padding-inline: 32px;
+    }
+
+    .why-me-section,
+    .contact-section {
+        padding-top: 60px;
+    }
+
+    .why-me-section {
+        padding-bottom: 30px;
+    }
+
+    /*----- my skills section -----*/
+
+    .my-skills-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    /*----- my projects section -----*/
+
+    .my-projects-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .project-info-bulletpoint-header {
+        gap: 8px;
+    }
+
+    .project-info-single-bulletpoint h3 {
+        font-size: 20px;
+    }
+
+    .project-inner-content-wrapper {
+        height: 780px;
+        gap: 32px;
+    }
+
+    /*----- reference section -----*/
+
+    .references-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .references-intro-text {
+        padding-bottom: 60px;
+    }
+
+    .single-reference-wrapper {
+        padding: 16px 16px;
+        gap: 2px;
+    }
+
+    .reference-card-header h2  {
+        font-size: 20px;
+    }
+
+    /*----- legal notice page -----*/
+
+    .imprint-content h1 {
+        font-size: 40px;
+        margin-bottom: 48px;
+    }
+
+    /*----- privacy policy page -----*/
+
+    .privacy-policy-content h1 {
+        font-size: 40px;
+        margin-bottom: 48px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /*----- hero section -----*/
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        left: 14px;
+    }
+
+    .hero-img {
+        left: 38px;
+    }
+
+    /*----- header -----*/
+
+    .nav-link-wrapper {
+        width: 580px
+    }
+
+    /*----- my skills section -----*/
+
+    .skills-overview {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .my-skills-content {
+        gap: 32px;
+    }
+
+    /*----- my project section -----*/
+
+    .project-preview-img {
+        width: 360px;
+    }
+
+    /*----- reference section -----*/
+
+    .reference-bg-shape-default, .reference-bg-shape-hover {
+        width: 350px;
+        height: auto;
+    }
+
+    .references-intro-text {
+        font-size: 28px;
+    }
+
+    /*----- contact section -----*/
+
+    .contact-upper-part {
+        column-gap: 32px;
+    }
+
+    .name-email-wrapper {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    /*----- header -----*/
+
+    .nav-link-wrapper {
+        width: 550px
+    }
+
+    .nav-translate-function {
+        gap: 8px;
+    }
+
+    /*----- why me section -----*/
+
+    .animated-info-icon {
+        width: 48px;
+    }
+
+    .animated-info-text {
+        font-size: 18px;
+    }
+
+    .animated-information-wrapper {
+        flex: 0 0 360px;
+    }
+
+    /*----- my project section -----*/
+
+    .project-info-single-bulletpoint h3 {
+        font-size: 16px;
+    }
+
+    .project-information-wrapper li::before {
+        left: -32px;
+        top: -4px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .project-nav-item {
+        font-size: 28px;
+    }
+
+    .project-inner-content-wrapper {
+        height: 800px;
+    }
+
+    .project-info-single-bulletpoint span {
+        font-size: 14px;
+    }
+
+    /*----- reference section -----*/
+
+    .reference-bg-shape-default, .reference-bg-shape-hover {
+        width: 320px;
+        height: auto;
+    }
+
+    .reference-card-header {
+        gap: 4px;
+    }
+
+    .single-reference-wrapper a {
+        padding-top: 8px;
+    }
+
+    .single-reference-wrapper {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 830px) {
+
+    /*----- hero section -----*/
+
+    h1 {
+        line-height: 1;
+    }
+
+    .nav-arrow-position-wrapper {
+        top: calc(100% + 24px);
+    }
+
+    .hero-information-wrapper {
+        transform: translateY(84px);
+    }
+}
+
+@media (max-width: 810px) {
+
+     /*----- my project section -----*/
+
+    .project-inner-content-wrapper {
+        height: 820px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /*----- hero section -----*/
+
+    .bg-shape-default,
+    .bg-shape-hover {
+        width: 390px;
+        height: 466px;
+        top: 296px;
+        left: -2px;
+    }
+
+    .hero-img {
+        width: 366px;
+        left: 20px;
+        top: 294px;
+    }
+
+    .hero-information-wrapper {
+        transform: translateY(134px);
+    }
+
+    .nav-arrow-position-wrapper {
+        top: calc(100% + 10px);
+    }
+
+    .nav-arrow-wrapper {
+        width: 32px;
+        height: 75px;
+    }
+
+    .nav-arrow-down-default,
+    .nav-arrow-down-hover {
+        width: 32px;
+    }
+
+    /*----- header -----*/
+
+    .nav-link-wrapper {
+        width: 500px
+    }
+
+    .nav-link {
+        font-size: 22px;
+    }
+
+    .nav-translate-function {
+        gap: 2px;
+    }
+
+    .translate-button {
+        font-size: 16px;
+
+    }
+
+    /*----- why me section -----*/
+
+    .animated-info-text {
+        font-size: 16px;
+    }
+
+    .animated-information-wrapper {
+        flex: 0 0 320px;
+        gap: 2px;
+    }
+
+    /*----- my skills -----*/
+
+    .skills-overview {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .my-skills-content {
+        gap: 64px;
+    }
+
+    /*----- my project section -----*/
+
+    .project-preview-img {
+        width: 300px;
+    }
+
+    .live-test-buttons-wrapper {
+        gap: 32px;
+    }
+
+    .live-test-button, .live-test-button:link, .live-test-button:visited {
+        width: 120px;
+        height: 44px;
+    }
+
+    .github-button, .github-button:link, .github-button:visited {
+        width: 120px;
+        height: 44px;
+    }
+
+    /*----- contact section -----*/
+
+    .contact-upper-part {
+        column-gap: 16px;
+    }
+
+    .name-email-wrapper {
+        gap: 16px;
+    }
+
+    .label-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 750px) {
+    /*----- header -----*/
+
+    .nav-link-wrapper {
+        width: 470px
+    }
+
+    /*----- my projects section -----*/
+
+    .project-inner-content-wrapper {
+        height: 930px;
+    }
+}
+
+/*----- deactivate hover and transitions for tablets and phones -----*/
+
+@media (hover: none) {
+    * {
+        transition: none !important;
+    }
+
+    .nav-arrow-down-hover,
+    .nav-arrow-up-hover,
+    .portfolio-logo-hover,
+    .bg-shape-hover,
+    .social-media-icon-hover,
+    .footer-social-media-icon-hover,
+    .link-icon-hover,
+    .current-learning-bg-shape-hover,
+    .reference-bg-shape-hover {
+        display: none;
+    }
+
+    .nav-arrow-down-default,
+    .nav-arrow-up-default,
+    .portfolio-logo-default,
+    .bg-shape-default,
+    .social-media-icon-default,
+    .footer-social-media-icon-default,
+    .link-icon-default,
+    .current-learning-bg-shape-default,
+    .reference-bg-shape-default {
+        opacity: 1 !important;
+    }
+}

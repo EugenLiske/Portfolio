@@ -26,29 +26,30 @@
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding-inline: 128px;
-}
-
-.project-navigation-wrapper {
-    display: flex;
-    gap: 128px;
-
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding-inline: 128px;
-    padding-left: calc(128px - 58px);
+    padding-inline: 96px;
 }
 
 .project-inner-content-wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 40px 128px;
+    padding-block: 40px;
 
     display: flex;
     align-items: start;
     gap: 80px;
+}
+
+.project-navigation-wrapper {
+    display: flex;
+
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+
+    gap: 0;
+
+    padding-right: 128px;
+
+    /* Ausgleich für die Projektnummerierung links */
+    padding-left: calc(128px - 58px);
 }
 
 /*----- section spacing -----*/
@@ -81,20 +82,43 @@
     gap: 64px;
 }
 
-.project-navigation-wrapper {
-    gap: 0px;
-    padding-left: calc(128px - 58px);
-}
-
-.project-inner-content-wrapper {
-    padding-block: 40px;
-    gap: 80px;
-}
-
 .references-content {
     gap: 80px;
 }
 
 .contact-content {
     gap: 64px;
+}
+
+/*----- global fonts -----*/
+
+body {
+    font-family: 'Josefin Sans';
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+
+h1 {
+    font-family: 'Anta';
+    font-size: 88px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.why-me-section h2,
+.my-skills-section h2,
+.my-projects-section h2,
+.contact-section h2 {
+    font-family: 'Anta';
+    font-size: 60px;
+    color: var(--primary-color);
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 80px;
 }

@@ -18,7 +18,7 @@
 
 .hero-img-wrapper {
     position: relative;
-    flex: 0 0 664px;
+    width: 664px;
     height: 720px;
 }
 
@@ -26,7 +26,7 @@
 .bg-shape-hover {
     z-index: 1;
     width: 594px;
-    height: auto;
+    height: 710px;
     transform: rotate(-45deg);
 
     position: absolute;
@@ -50,18 +50,16 @@
 
 .hero-img {
     z-index: 2;
-    width: 536px;
+    width: 560px;
     height: auto;
-
     position: absolute;
-    left: 80px;
-    top: -84px;
+    left: 76px;
+    top: 66px;
 }
 
 /* right side of the hero section */
 
 .hero-information-wrapper {
-    /* flex: 1; */
     position: relative;
     display: flex;
     flex-direction: column;

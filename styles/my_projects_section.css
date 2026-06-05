@@ -60,11 +60,16 @@
     background-color: var(--project-bg-color);
 }
 
+.project-inner-content-wrapper {
+    height: 620px;
+}
+
 /* project information  - left side*/
 
 .project-information-wrapper {
     margin: 0;
     padding: 0;
+    padding-left: 36px;
 
     color: var(--secondary-color);
 
@@ -109,6 +114,10 @@
 .project-info-single-bulletpoint p {
     font-size: 18px;
     font-weight: 400;
+}
+
+.project-info-single-bulletpoint p {
+    line-height: 1.4;
 }
 
 .project-info-bulletpoint-header {

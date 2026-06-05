@@ -5,8 +5,8 @@
 
 .nav-arrow-up-position-wrapper {
     position: absolute;
-    top: 40px;
-    right: 64px;
+    top: -124px;
+    right: 96px;
 
     width: 38px;
     height: 89px;
@@ -41,6 +41,7 @@
 }
 
 .contact-content {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
