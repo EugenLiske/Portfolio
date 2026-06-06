@@ -343,3 +343,33 @@
 .translate-button.active-language {
     color: var(--secondary-color);
 }
+
+/*----- MOBILE VERSION -----*/
+
+.mobile-hero-section {
+    display: none;
+    background-color: var(--bg-color);
+}
+
+.mobile-hero-section-upper-part {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 32px;
+    width: 100%;
+}
+
+.mobile-hero-img {
+    width: 400px;
+    height: auto;
+}
+
+.burger-menu {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+
+    width: 32px;
+    height: 32px;
+}
