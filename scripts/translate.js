@@ -40,17 +40,13 @@ function translateToEnglish() {
 }
 
 function updateActiveLanguageButton(language) {
-    const germanButton = document.getElementById("translate-german-button");
-    const englishButton = document.getElementById("translate-english-button");
+    const languageButtons = document.querySelectorAll("[data-language]");
 
-    germanButton.classList.remove("active-language");
-    englishButton.classList.remove("active-language");
+    languageButtons.forEach((button) => {
+        button.classList.remove("active-language");
 
-    if (language === "de") {
-        germanButton.classList.add("active-language");
-    }
-
-    if (language === "en") {
-        englishButton.classList.add("active-language");
-    }
+        if (button.dataset.language === language) {
+            button.classList.add("active-language");
+        }
+    });
 }

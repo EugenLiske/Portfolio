@@ -161,34 +161,91 @@
     <section class="mobile-hero-section" id="mobile-hero-section-ID">
 
       <div class="mobile-hero-section-upper-part">
-        <div class="hero-main-logo">
-          <div class="logo-wrapper">
-            <img
-              class="portfolio-logo-default"
-              src="./assets/icons/hero_section/portfolio_logo_default_1.svg"
-              alt="portfolio_logo_default"
-            />
-            <img
-              class="portfolio-logo-hover"
-              src="./assets/icons/hero_section/portfolio_logo_hover_1.svg"
-              alt="portfolio_logo_hover"
-            />
-          </div>
 
-          <span class="logo-name">E.Liske</span>
-          <span class="logo-title">developer</span>
+        <div class="hero-main-logo">
+            <div class="logo-wrapper">
+                <img
+                    class="portfolio-logo-default"
+                    src="./assets/icons/hero_section/portfolio_logo_default_1.svg"
+                    alt="portfolio_logo_default"
+                />
+            </div>
+
+            <span class="logo-name">E.Liske</span>
+            <span class="logo-title">developer</span>
         </div>
 
-        <button class="burger-menu" type="button">
-          <img
-            src="./assets/mobile/burger_menu_default.svg"
-            alt="Open navigation menu"
-          />
+        <button
+            class="burger-menu"
+            type="button"
+            aria-label="Open navigation menu"
+            onclick="openBurgerMenu()"
+        >
+            <img
+                class="burger-menu-icon"
+                src="./assets/mobile/burger_menu_default.svg"
+                alt=""
+            />
         </button>
       </div>
 
-      <img class="mobile-hero-img" src="./assets/mobile/hero_img_mobile.png" alt="hero_img_mobile">
-    </section>
+      <div class="mobile-hero-img-wrapper">
+
+        <!-- normales Hero Bild -->
+
+        <img class="mobile-hero-img" src="./assets/mobile/hero_img_mobile.png" alt="hero_img_mobile" />
+
+        <!-- Overlay welches das Hero Bild überdeckt -->
+
+        <nav class="mobile-menu-overlay">
+
+            <div class="mobile-menu-content">
+
+                <a href="#why-me-section-ID" class="mobile-menu-link" data-i18n="navAbout" onclick="openBurgerMenu()">
+                    About me
+                </a>
+
+                <a href="#my-skills-section-ID" class="mobile-menu-link" data-i18n="navSkills" onclick="openBurgerMenu()">
+                    Skills
+                </a>
+
+                <a href="#my-projects-section-ID" class="mobile-menu-link" data-i18n="navProjects" onclick="openBurgerMenu()">
+                    Projects
+                </a>
+
+                <a href="#contact-section-ID" class="mobile-menu-link" data-i18n="navContact" onclick="openBurgerMenu()">
+                    Contact
+                </a>
+
+                <div class="mobile-menu-language-wrapper">
+                    <button type="button" class="mobile-menu-language-button active-language" data-language="de" onclick="translateToGerman()">
+                        DE
+                    </button>
+
+                    <button type="button" class="mobile-menu-language-button" data-language="en" onclick="translateToEnglish()">
+                        EN
+                    </button>
+                </div>
+            </div>
+        </nav>
+      </div>
+
+    <div class="mobile-hero-information">
+        <h1>Eugen Liske</h1>
+
+        <h2 data-i18n="heroJobTitle">
+            FRONTEND ENTWICKLER
+        </h2>
+    </div>
+
+    <a href="#why-me-section-ID" class="mobile-nav-arrow">
+      <img
+          class="mobile-nav-arrow-img"
+          src="./assets/icons/hero_section/hero_section_arrow_down_icon_default.svg"
+          alt="hero_section_arrow_down_icon_default"
+      />
+    </a>
+  </section>
 
     <main>
       <section class="why-me-section" id="why-me-section-ID">
@@ -777,5 +834,6 @@
   <script src="./scripts/my_projects_section.js"></script>
   <script src="./scripts/contact_section.js"></script>
   <script src="./scripts/translate.js"></script>
+  <script src="./scripts/responsiveness.js"></script>
 </body>
 </html>
