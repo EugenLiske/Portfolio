@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: contact_section.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: contact_section.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// ---- DOM elements ---- //
+
+const nameInputField = document.getElementById("name-input-field");
+const emailInputField = document.getElementById("email-input-field");
+const messageInputField = document.getElementById("message-input-field");
+
+const checkboxWrapper = document.getElementById("checkbox-wrapper-ID");
+const checkboxInputField = document.getElementById("checkbox-input-field");
+const privacyPolicyError = document.getElementById("privacy-policy-error");
+
+const sendFormButton = document.getElementById("send-form-button");
+
+const nameCheckIcon = document.getElementById("name-check-icon");
+const emailCheckIcon = document.getElementById("email-check-icon");
+const messageCheckIcon = document.getElementById("message-check-icon");
+
+const checkIcons = [nameCheckIcon, emailCheckIcon, messageCheckIcon];
+
+const nameInputLabel = document.getElementById("name-input-label");
+const emailInputLabel = document.getElementById("email-input-label");
+const messageInputLabel = document.getElementById("message-input-label");
+
+
+// ---- language state ---- //
+
+let currentFormLanguage = "de";
+
+const formTranslations = {
+    de: {
+        nameMissing: "Bitte geben Sie Ihren Namen ein.",
+        emailMissing: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+        messageMissing: "Bitte geben Sie eine Nachricht ein.",
+        privacyPolicyMissing: "Bitte stimmen Sie der Datenschutzerklärung zu.",
+        emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+
+        nameDefault: "Ihr Name",
+        emailDefault: "Ihre E-Mail-Adresse",
+        messageDefault: "Ihre Nachricht"
+    },
+
+    en: {
+        nameMissing: "Please enter your name.",
+        emailMissing: "Please enter your email address.",
+        messageMissing: "Please enter a message.",
+        privacyPolicyMissing: "Please accept the privacy policy.",
+        emailInvalid: "Please enter a valid email address.",
+
+        nameDefault: "Your name",
+        emailDefault: "Your email address",
+        messageDefault: "Your message"
+    }
+};
+
+/**
+ * Sets the active form language and refreshes visible error messages.
+ * @param {string} language - The selected language key.
+ */
+function setFormLanguage(language) {
+    currentFormLanguage = language;
+    updateVisibleFormErrors();
+}
+
+/**
+ * Returns a translated form text by key.
+ * @param {string} key - The translation key.
+ * @returns {string} The translated text.
+ */
+function getFormTranslation(key) {
+    return formTranslations[currentFormLanguage][key];
+}
+
+
+// ---- focus helper ---- //
+
+/**
+ * Focuses the first form input field.
+ */
+function focusForm() {
+    nameInputField.focus();
+}
+
+
+// ---- checkbox ---- //
+
+/**
+ * Updates the visual checkbox state and removes checkbox errors when checked.
+ */
+function checkPrivacyPolicy() {
+    checkboxWrapper.classList.toggle("checked", checkboxInputField.checked);
+
+    if (checkboxInputField.checked) {
+        hidePrivacyPolicyError();
+    }
+}
+
+/**
+ * Removes the privacy policy error state.
+ */
+function hidePrivacyPolicyError() {
+    checkboxWrapper.classList.remove("error");
+    privacyPolicyError.classList.add("deactivated");
+}
+
+
+// ---- validation overview ---- //
+
+/**
+ * Validates the current form input and updates the send button state.
+ */
+function validateFormInput() {
+    const evaluatedFormInput = evaluateFormInput(readFormInput());
+    setSendButtonState(evaluatedFormInput.allValid);
+}
+
+/**
+ * Reads and trims all current form values.
+ * @returns {Object} The current form input values.
+ */
+function readFormInput() {
+    return {
+        name: nameInputField.value.trim(),
+        email: emailInputField.value.trim(),
+        message: messageInputField.value.trim(),
+        checkbox: checkboxInputField.checked
+    };
+}
+
+/**
+ * Evaluates all form fields and returns their validation state.
+ * @param {Object} formInput - The current form input values.
+ * @returns {Object} The evaluated validation result.
+ */
+function evaluateFormInput(formInput) {
+    const nameFilled = formInput.name !== "";
+    const emailFilled = formInput.email !== "";
+    const messageFilled = formInput.message !== "";
+    const emailFormatValid = isEmailValid(formInput.email);
+    const allFieldsFilled = nameFilled &amp;&amp; emailFilled &amp;&amp; messageFilled;
+
+    return {
+        nameFilled,
+        emailFilled,
+        emailFormatValid,
+        messageFilled,
+        allFieldsFilled,
+        checkboxIsChecked: formInput.checkbox,
+        allValid: allFieldsFilled &amp;&amp; formInput.checkbox &amp;&amp; emailFormatValid
+    };
+}
+
+/**
+ * Checks whether an email address has a valid format.
+ * @param {string} email - The email address to validate.
+ * @returns {boolean} True if the email format is valid.
+ */
+function isEmailValid(email) {
+    const regularExpression = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+    return regularExpression.test(email);
+}
+
+
+// ---- send button ---- //
+
+/**
+ * Activates or deactivates the send button.
+ * @param {boolean} isFormValid - Whether the form is valid.
+ */
+function setSendButtonState(isFormValid) {
+    sendFormButton.classList.toggle("activated", isFormValid);
+    sendFormButton.classList.toggle("deactivated", !isFormValid);
+}
+
+
+// ---- single field validation ---- //
+
+/**
+ * Updates the name check icon depending on the name input value.
+ */
+function checkIfNameIsFilled() {
+    const nameFilled = nameInputField.value.trim() !== "";
+    nameCheckIcon.classList.toggle("activated", nameFilled);
+}
+
+/**
+ * Updates the email check icon and shows an error for invalid email input.
+ */
+function checkIfMailIsFilledAndValid() {
+    const emailValue = emailInputField.value.trim();
+    const emailFilled = emailValue !== "";
+    const emailValid = isEmailValid(emailValue);
+
+    emailCheckIcon.classList.toggle("activated", emailFilled &amp;&amp; emailValid);
+
+    if (emailFilled &amp;&amp; !emailValid) {
+        showEmailError("emailInvalid");
+    }
+}
+
+/**
+ * Updates the message check icon depending on the message input value.
+ */
+function checkIfMessageIsFilled() {
+    const messageFilled = messageInputField.value.trim() !== "";
+    messageCheckIcon.classList.toggle("activated", messageFilled);
+}
+
+
+// ---- clear errors ---- //
+
+/**
+ * Clears the name input error state and restores the default label.
+ */
+function clearNameError() {
+    nameInputField.classList.remove("error-border");
+    nameInputLabel.classList.remove("error-label");
+    nameInputLabel.textContent = getFormTranslation("nameDefault");
+}
+
+/**
+ * Clears the email input error state and restores the default label.
+ */
+function clearEmailError() {
+    emailInputField.classList.remove("error-border");
+    emailInputLabel.classList.remove("error-label");
+    emailInputLabel.textContent = getFormTranslation("emailDefault");
+}
+
+/**
+ * Clears the message input error state and restores the default label.
+ */
+function clearMessageError() {
+    messageInputField.classList.remove("error-border");
+    messageInputLabel.classList.remove("error-label");
+    messageInputLabel.textContent = getFormTranslation("messageDefault");
+}
+
+
+// ---- error rendering ---- //
+
+/**
+ * Shows an error state for the name input.
+ * @param {string} translationKey - The translation key for the error text.
+ */
+function showNameError(translationKey) {
+    nameInputField.classList.add("error-border");
+    nameInputLabel.classList.add("error-label");
+    nameInputLabel.textContent = getFormTranslation(translationKey);
+    nameCheckIcon.classList.remove("activated");
+}
+
+/**
+ * Shows an error state for the email input.
+ * @param {string} translationKey - The translation key for the error text.
+ */
+function showEmailError(translationKey) {
+    emailInputField.classList.add("error-border");
+    emailInputLabel.classList.add("error-label");
+    emailInputLabel.textContent = getFormTranslation(translationKey);
+    emailCheckIcon.classList.remove("activated");
+}
+
+/**
+ * Shows an error state for the message input.
+ * @param {string} translationKey - The translation key for the error text.
+ */
+function showMessageError(translationKey) {
+    messageInputField.classList.add("error-border");
+    messageInputLabel.classList.add("error-label");
+    messageInputLabel.textContent = getFormTranslation(translationKey);
+    messageCheckIcon.classList.remove("activated");
+}
+
+/**
+ * Shows the privacy policy checkbox error.
+ */
+function showPrivacyPolicyError() {
+    checkboxWrapper.classList.add("error");
+    checkboxWrapper.classList.remove("checked");
+    privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
+    privacyPolicyError.classList.remove("deactivated");
+}
+
+/**
+ * Shows all submit errors based on the validation result.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function renderSubmitErrors(evaluatedFormInput) {
+    renderNameSubmitError(evaluatedFormInput);
+    renderEmailSubmitError(evaluatedFormInput);
+    renderMessageSubmitError(evaluatedFormInput);
+    renderPrivacyPolicySubmitError(evaluatedFormInput);
+}
+
+/**
+ * Shows the name submit error if needed.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function renderNameSubmitError(evaluatedFormInput) {
+    if (!evaluatedFormInput.nameFilled) {
+        showNameError("nameMissing");
+    }
+}
+
+/**
+ * Shows the email submit error if needed.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function renderEmailSubmitError(evaluatedFormInput) {
+    if (!evaluatedFormInput.emailFilled) {
+        showEmailError("emailMissing");
+        return;
+    }
+
+    if (!evaluatedFormInput.emailFormatValid) {
+        showEmailError("emailInvalid");
+    }
+}
+
+/**
+ * Shows the message submit error if needed.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function renderMessageSubmitError(evaluatedFormInput) {
+    if (!evaluatedFormInput.messageFilled) {
+        showMessageError("messageMissing");
+    }
+}
+
+/**
+ * Shows the privacy policy submit error if needed.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function renderPrivacyPolicySubmitError(evaluatedFormInput) {
+    if (!evaluatedFormInput.checkboxIsChecked) {
+        showPrivacyPolicyError();
+    }
+}
+
+
+// ---- submit ---- //
+
+/**
+ * Validates the form and sends it when all inputs are valid.
+ * @param {SubmitEvent} event - The form submit event.
+ * @returns {Promise&lt;boolean>} Always returns false to prevent default handling.
+ */
+async function checkFormAndSend(event) {
+    event.preventDefault();
+
+    const formInput = readFormInput();
+    const evaluatedFormInput = evaluateFormInput(formInput);
+
+    renderSubmitErrors(evaluatedFormInput);
+    setSendButtonState(evaluatedFormInput.allValid);
+
+    if (!evaluatedFormInput.allValid) {
+        return false;
+    }
+
+    await sendValidForm(formInput);
+}
+
+/**
+ * Sends a valid form input to the backend.
+ * @param {Object} formInput - The validated form input values.
+ * @returns {Promise&lt;boolean>} Always returns false after handling the request.
+ */
+async function sendValidForm(formInput) {
+    try {
+        const response = await postFormInput(formInput);
+        const result = await response.json();
+
+        validateMailResponse(response, result);
+        resetFormAfterSend();
+
+        return false;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+/**
+ * Sends form input values to the PHP mail endpoint.
+ * @param {Object} formInput - The validated form input values.
+ * @returns {Promise&lt;Response>} The fetch response.
+ */
+function postFormInput(formInput) {
+    return fetch("./send_mail.php", {
+        method: "POST",
+        headers: getMailRequestHeaders(),
+        body: JSON.stringify(getMailRequestBody(formInput))
+    });
+}
+
+/**
+ * Returns the headers for the mail request.
+ * @returns {Object} The request headers.
+ */
+function getMailRequestHeaders() {
+    return {
+        "Content-Type": "application/json"
+    };
+}
+
+/**
+ * Returns the mail request body.
+ * @param {Object} formInput - The validated form input values.
+ * @returns {Object} The request body.
+ */
+function getMailRequestBody(formInput) {
+    return {
+        name: formInput.name,
+        email: formInput.email,
+        message: formInput.message
+    };
+}
+
+/**
+ * Throws an error if the mail response is not successful.
+ * @param {Response} response - The fetch response.
+ * @param {Object} result - The parsed response body.
+ */
+function validateMailResponse(response, result) {
+    if (!response.ok || !result.success) {
+        throw new Error(result.error || "Mail delivery failed");
+    }
+}
+
+/**
+ * Resets all form fields and visual states after a successful send.
+ */
+function resetFormAfterSend() {
+    clearFormFields();
+    resetCheckboxState();
+    resetCheckIcons();
+    setSendButtonState(false);
+}
+
+/**
+ * Clears all form input fields.
+ */
+function clearFormFields() {
+    nameInputField.value = "";
+    emailInputField.value = "";
+    messageInputField.value = "";
+}
+
+/**
+ * Resets the privacy policy checkbox.
+ */
+function resetCheckboxState() {
+    checkboxInputField.checked = false;
+    checkboxWrapper.classList.remove("checked");
+}
+
+/**
+ * Removes all activated check icons.
+ */
+function resetCheckIcons() {
+    checkIcons.forEach((checkIcon) => {
+        checkIcon.classList.remove("activated");
+    });
+}
+
+
+// ---- update visible translated errors ---- //
+
+/**
+ * Updates currently visible form errors after a language change.
+ */
+function updateVisibleFormErrors() {
+    const evaluatedFormInput = evaluateFormInput(readFormInput());
+
+    updateNameErrorText(evaluatedFormInput);
+    updateEmailErrorText(evaluatedFormInput);
+    updateMessageErrorText(evaluatedFormInput);
+    updatePrivacyPolicyErrorText();
+}
+
+/**
+ * Updates the visible name error text.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function updateNameErrorText(evaluatedFormInput) {
+    if (nameInputLabel.classList.contains("error-label") &amp;&amp; !evaluatedFormInput.nameFilled) {
+        nameInputLabel.textContent = getFormTranslation("nameMissing");
+    }
+}
+
+/**
+ * Updates the visible email error text.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function updateEmailErrorText(evaluatedFormInput) {
+    if (!emailInputLabel.classList.contains("error-label")) {
+        return;
+    }
+
+    setVisibleEmailErrorText(evaluatedFormInput);
+}
+
+/**
+ * Sets the correct visible email error text.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function setVisibleEmailErrorText(evaluatedFormInput) {
+    if (!evaluatedFormInput.emailFilled) {
+        emailInputLabel.textContent = getFormTranslation("emailMissing");
+        return;
+    }
+
+    if (!evaluatedFormInput.emailFormatValid) {
+        emailInputLabel.textContent = getFormTranslation("emailInvalid");
+    }
+}
+
+/**
+ * Updates the visible message error text.
+ * @param {Object} evaluatedFormInput - The evaluated validation result.
+ */
+function updateMessageErrorText(evaluatedFormInput) {
+    if (messageInputLabel.classList.contains("error-label") &amp;&amp; !evaluatedFormInput.messageFilled) {
+        messageInputLabel.textContent = getFormTranslation("messageMissing");
+    }
+}
+
+/**
+ * Updates the visible privacy policy error text.
+ */
+function updatePrivacyPolicyErrorText() {
+    if (!privacyPolicyError.classList.contains("deactivated")) {
+        privacyPolicyError.textContent = getFormTranslation("privacyPolicyMissing");
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#checkFormAndSend">checkFormAndSend</a></li><li><a href="global.html#checkIfMailIsFilledAndValid">checkIfMailIsFilledAndValid</a></li><li><a href="global.html#checkIfMessageIsFilled">checkIfMessageIsFilled</a></li><li><a href="global.html#checkIfNameIsFilled">checkIfNameIsFilled</a></li><li><a href="global.html#checkPrivacyPolicy">checkPrivacyPolicy</a></li><li><a href="global.html#clearAnimatedText">clearAnimatedText</a></li><li><a href="global.html#clearEmailError">clearEmailError</a></li><li><a href="global.html#clearFormFields">clearFormFields</a></li><li><a href="global.html#clearMessageError">clearMessageError</a></li><li><a href="global.html#clearNameError">clearNameError</a></li><li><a href="global.html#deleteText">deleteText</a></li><li><a href="global.html#displayProjectContent">displayProjectContent</a></li><li><a href="global.html#evaluateFormInput">evaluateFormInput</a></li><li><a href="global.html#finishBurgerMenuAnimation">finishBurgerMenuAnimation</a></li><li><a href="global.html#focusForm">focusForm</a></li><li><a href="global.html#getBurgerMenuAnimationFrames">getBurgerMenuAnimationFrames</a></li><li><a href="global.html#getBurgerMenuElements">getBurgerMenuElements</a></li><li><a href="global.html#getFormTranslation">getFormTranslation</a></li><li><a href="global.html#getMailRequestBody">getMailRequestBody</a></li><li><a href="global.html#getMailRequestHeaders">getMailRequestHeaders</a></li><li><a href="global.html#getSavedLanguage">getSavedLanguage</a></li><li><a href="global.html#getSelectedProject">getSelectedProject</a></li><li><a href="global.html#hideAnimatedIcon">hideAnimatedIcon</a></li><li><a href="global.html#hidePrivacyPolicyError">hidePrivacyPolicyError</a></li><li><a href="global.html#isEmailValid">isEmailValid</a></li><li><a href="global.html#openBurgerMenu">openBurgerMenu</a></li><li><a href="global.html#postFormInput">postFormInput</a></li><li><a href="global.html#readFormInput">readFormInput</a></li><li><a href="global.html#renderEmailSubmitError">renderEmailSubmitError</a></li><li><a href="global.html#renderMessageSubmitError">renderMessageSubmitError</a></li><li><a href="global.html#renderNameSubmitError">renderNameSubmitError</a></li><li><a href="global.html#renderPrivacyPolicySubmitError">renderPrivacyPolicySubmitError</a></li><li><a href="global.html#renderSubmitErrors">renderSubmitErrors</a></li><li><a href="global.html#resetCheckIcons">resetCheckIcons</a></li><li><a href="global.html#resetCheckboxState">resetCheckboxState</a></li><li><a href="global.html#resetFormAfterSend">resetFormAfterSend</a></li><li><a href="global.html#runTypewriterCycle">runTypewriterCycle</a></li><li><a href="global.html#saveSelectedLanguage">saveSelectedLanguage</a></li><li><a href="global.html#sendValidForm">sendValidForm</a></li><li><a href="global.html#setActiveProjectNavItem">setActiveProjectNavItem</a></li><li><a href="global.html#setFormLanguage">setFormLanguage</a></li><li><a href="global.html#setProjectLanguage">setProjectLanguage</a></li><li><a href="global.html#setSendButtonState">setSendButtonState</a></li><li><a href="global.html#setTypewriterLanguage">setTypewriterLanguage</a></li><li><a href="global.html#setVisibleEmailErrorText">setVisibleEmailErrorText</a></li><li><a href="global.html#showAnimatedIcon">showAnimatedIcon</a></li><li><a href="global.html#showBurgerMenuFrame">showBurgerMenuFrame</a></li><li><a href="global.html#showEmailError">showEmailError</a></li><li><a href="global.html#showMessageError">showMessageError</a></li><li><a href="global.html#showNameError">showNameError</a></li><li><a href="global.html#showPrivacyPolicyError">showPrivacyPolicyError</a></li><li><a href="global.html#startBurgerMenuAnimation">startBurgerMenuAnimation</a></li><li><a href="global.html#startTypewriterLoop">startTypewriterLoop</a></li><li><a href="global.html#toggleMobileMenuOverlay">toggleMobileMenuOverlay</a></li><li><a href="global.html#translatePage">translatePage</a></li><li><a href="global.html#translateSingleElement">translateSingleElement</a></li><li><a href="global.html#translateTextElements">translateTextElements</a></li><li><a href="global.html#translateToEnglish">translateToEnglish</a></li><li><a href="global.html#translateToGerman">translateToGerman</a></li><li><a href="global.html#translations">translations</a></li><li><a href="global.html#typeText">typeText</a></li><li><a href="global.html#updateActiveLanguageButton">updateActiveLanguageButton</a></li><li><a href="global.html#updateAnimatedText">updateAnimatedText</a></li><li><a href="global.html#updateDesktopProjectContent">updateDesktopProjectContent</a></li><li><a href="global.html#updateDesktopProjectImages">updateDesktopProjectImages</a></li><li><a href="global.html#updateDesktopProjectLinks">updateDesktopProjectLinks</a></li><li><a href="global.html#updateDesktopProjectTexts">updateDesktopProjectTexts</a></li><li><a href="global.html#updateDocumentLanguage">updateDocumentLanguage</a></li><li><a href="global.html#updateEmailErrorText">updateEmailErrorText</a></li><li><a href="global.html#updateFormLanguage">updateFormLanguage</a></li><li><a href="global.html#updateLanguageModules">updateLanguageModules</a></li><li><a href="global.html#updateMessageErrorText">updateMessageErrorText</a></li><li><a href="global.html#updateMobileProjectContent">updateMobileProjectContent</a></li><li><a href="global.html#updateMobileProjectImages">updateMobileProjectImages</a></li><li><a href="global.html#updateMobileProjectLinks">updateMobileProjectLinks</a></li><li><a href="global.html#updateMobileProjectTexts">updateMobileProjectTexts</a></li><li><a href="global.html#updateNameErrorText">updateNameErrorText</a></li><li><a href="global.html#updatePrivacyPolicyErrorText">updatePrivacyPolicyErrorText</a></li><li><a href="global.html#updateProjectLanguage">updateProjectLanguage</a></li><li><a href="global.html#updateSingleLanguageButton">updateSingleLanguageButton</a></li><li><a href="global.html#updateStyledText">updateStyledText</a></li><li><a href="global.html#updateTypewriterLanguage">updateTypewriterLanguage</a></li><li><a href="global.html#updateVisibleFormErrors">updateVisibleFormErrors</a></li><li><a href="global.html#validateFormInput">validateFormInput</a></li><li><a href="global.html#validateMailResponse">validateMailResponse</a></li><li><a href="global.html#wait">wait</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Jun 08 2026 21:20:59 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
