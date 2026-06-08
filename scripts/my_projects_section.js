@@ -3,35 +3,35 @@ let currentProjectIndex = 0;
 
 //----- DESKTOP DOM ELEMENTS -----//
 
-let projectDurationRef = document.getElementById("projectDurationID");
-let projectBulletpointOneRef = document.getElementById("projectBulletpointOneID");
-let projectBulletpointTwoRef = document.getElementById("projectBulletpointTwoID");
-let projectBulletpointThreeRef = document.getElementById("projectBulletpointThreeID");
-let additionalProjectInformationRef = document.getElementById("additionalProjectInformationID");
+const projectDurationRef = document.getElementById("projectDurationID");
+const projectBulletpointOneRef = document.getElementById("projectBulletpointOneID");
+const projectBulletpointTwoRef = document.getElementById("projectBulletpointTwoID");
+const projectBulletpointThreeRef = document.getElementById("projectBulletpointThreeID");
+const additionalProjectInformationRef = document.getElementById("additionalProjectInformationID");
 
-let projectTechnologyOneRef = document.getElementById("projectTechnologyOneID");
-let projectTechnologyTwoRef = document.getElementById("projectTechnologyTwoID");
-let projectTechnologyThreeRef = document.getElementById("projectTechnologyThreeID");
+const projectTechnologyOneRef = document.getElementById("projectTechnologyOneID");
+const projectTechnologyTwoRef = document.getElementById("projectTechnologyTwoID");
+const projectTechnologyThreeRef = document.getElementById("projectTechnologyThreeID");
 
-let projectMockupRef = document.getElementById("projectMockupID");
-let projectLiveTestRef = document.getElementById("projectLiveTestID");
-let githubLinkRef = document.getElementById("githubLinkID");
+const projectMockupRef = document.getElementById("projectMockupID");
+const projectLiveTestRef = document.getElementById("projectLiveTestID");
+const githubLinkRef = document.getElementById("githubLinkID");
 
 const projectNavItemsRef = document.querySelectorAll(".project-nav-item");
 
 //----- MOBILE DOM ELEMENTS -----//
 
-let mobileProjectTitleRef = document.getElementById("mobileProjectTitleID");
-let mobileProjectTechnologiesRef = document.getElementById("mobileProjectTechnologiesID");
-let mobileProjectDurationRef = document.getElementById("mobileProjectDurationID");
-let mobileProjectBulletpointOneRef = document.getElementById("mobileProjectBulletpointOneID");
-let mobileProjectBulletpointTwoRef = document.getElementById("mobileProjectBulletpointTwoID");
-let mobileProjectBulletpointThreeRef = document.getElementById("mobileProjectBulletpointThreeID");
-let mobileAdditionalProjectInformationRef = document.getElementById("mobileAdditionalProjectInformationID");
+const mobileProjectTitleRef = document.getElementById("mobileProjectTitleID");
+const mobileProjectTechnologiesRef = document.getElementById("mobileProjectTechnologiesID");
+const mobileProjectDurationRef = document.getElementById("mobileProjectDurationID");
+const mobileProjectBulletpointOneRef = document.getElementById("mobileProjectBulletpointOneID");
+const mobileProjectBulletpointTwoRef = document.getElementById("mobileProjectBulletpointTwoID");
+const mobileProjectBulletpointThreeRef = document.getElementById("mobileProjectBulletpointThreeID");
+const mobileAdditionalProjectInformationRef = document.getElementById("mobileAdditionalProjectInformationID");
 
-let mobileProjectMockupRef = document.getElementById("mobileProjectMockupID");
-let mobileProjectLiveTestRef = document.getElementById("mobileProjectLiveTestID");
-let mobileGithubLinkRef = document.getElementById("mobileGithubLinkID");
+const mobileProjectMockupRef = document.getElementById("mobileProjectMockupID");
+const mobileProjectLiveTestRef = document.getElementById("mobileProjectLiveTestID");
+const mobileGithubLinkRef = document.getElementById("mobileGithubLinkID");
 
 const mobileProjectNavItemsRef = document.querySelectorAll(".mobile-project-nav-item");
 
@@ -133,59 +133,131 @@ const exchangeableProjectContent = {
     ]
 };
 
+/**
+ * Sets the active project language and refreshes the current project content.
+ * @param {string} language - The selected project language key.
+ */
 function setProjectLanguage(language) {
     currentProjectLanguage = language;
     displayProjectContent(currentProjectIndex);
 }
 
-function displayProjectContent(i) {
-    currentProjectIndex = i;
+/**
+ * Displays the selected project on desktop and mobile.
+ * @param {number} index - The selected project index.
+ */
+function displayProjectContent(index) {
+    currentProjectIndex = index;
 
-    const selectedProject = exchangeableProjectContent[currentProjectLanguage][i];
+    const selectedProject = getSelectedProject(index);
 
-    updateDesktopProjectContent(selectedProject, i);
-    updateMobileProjectContent(selectedProject, i);
+    updateDesktopProjectContent(selectedProject, index);
+    updateMobileProjectContent(selectedProject, index);
 }
 
+/**
+ * Returns the selected project for the current language.
+ * @param {number} index - The selected project index.
+ * @returns {Object} The selected project content.
+ */
+function getSelectedProject(index) {
+    return exchangeableProjectContent[currentProjectLanguage][index];
+}
+
+/**
+ * Updates the desktop project section.
+ * @param {Object} selectedProject - The selected project content.
+ * @param {number} index - The selected project index.
+ */
 function updateDesktopProjectContent(selectedProject, index) {
-    projectNavItemsRef.forEach((item) => {
-        item.classList.remove("active-project");
-    });
+    setActiveProjectNavItem(projectNavItemsRef, index);
+    updateDesktopProjectTexts(selectedProject);
+    updateDesktopProjectImages(selectedProject);
+    updateDesktopProjectLinks(selectedProject);
+}
 
-    projectNavItemsRef[index].classList.add("active-project");
-
+/**
+ * Updates all desktop project text contents.
+ * @param {Object} selectedProject - The selected project content.
+ */
+function updateDesktopProjectTexts(selectedProject) {
     projectDurationRef.textContent = selectedProject.duration;
     projectBulletpointOneRef.textContent = selectedProject.bulletpointOne;
     projectBulletpointTwoRef.textContent = selectedProject.bulletpointTwo;
     projectBulletpointThreeRef.textContent = selectedProject.bulletpointThree;
     additionalProjectInformationRef.textContent = selectedProject.additionalProjectInformation;
+}
 
+/**
+ * Updates all desktop project images.
+ * @param {Object} selectedProject - The selected project content.
+ */
+function updateDesktopProjectImages(selectedProject) {
     projectTechnologyOneRef.src = selectedProject.technologyOne;
     projectTechnologyTwoRef.src = selectedProject.technologyTwo;
     projectTechnologyThreeRef.src = selectedProject.technologyThree;
-
     projectMockupRef.src = selectedProject.projectMockup;
+}
+
+/**
+ * Updates all desktop project links.
+ * @param {Object} selectedProject - The selected project content.
+ */
+function updateDesktopProjectLinks(selectedProject) {
     projectLiveTestRef.href = selectedProject.projectLiveTestLink;
     githubLinkRef.href = selectedProject.githubLink;
 }
 
+/**
+ * Updates the mobile project section.
+ * @param {Object} selectedProject - The selected project content.
+ * @param {number} index - The selected project index.
+ */
 function updateMobileProjectContent(selectedProject, index) {
-    mobileProjectNavItemsRef.forEach((item) => {
-        item.classList.remove("active-project");
-    });
+    setActiveProjectNavItem(mobileProjectNavItemsRef, index);
+    updateMobileProjectTexts(selectedProject);
+    updateMobileProjectImages(selectedProject);
+    updateMobileProjectLinks(selectedProject);
+}
 
-    mobileProjectNavItemsRef[index].classList.add("active-project");
-
+/**
+ * Updates all mobile project text contents.
+ * @param {Object} selectedProject - The selected project content.
+ */
+function updateMobileProjectTexts(selectedProject) {
     mobileProjectTitleRef.textContent = selectedProject.title;
     mobileProjectTechnologiesRef.textContent = selectedProject.technologiesText;
     mobileProjectDurationRef.textContent = selectedProject.duration;
-
     mobileProjectBulletpointOneRef.textContent = selectedProject.bulletpointOne;
     mobileProjectBulletpointTwoRef.textContent = selectedProject.bulletpointTwo;
     mobileProjectBulletpointThreeRef.textContent = selectedProject.bulletpointThree;
     mobileAdditionalProjectInformationRef.textContent = selectedProject.additionalProjectInformation;
+}
 
+/**
+ * Updates all mobile project images.
+ * @param {Object} selectedProject - The selected project content.
+ */
+function updateMobileProjectImages(selectedProject) {
     mobileProjectMockupRef.src = selectedProject.projectMockup;
+}
+
+/**
+ * Updates all mobile project links.
+ * @param {Object} selectedProject - The selected project content.
+ */
+function updateMobileProjectLinks(selectedProject) {
     mobileProjectLiveTestRef.href = selectedProject.projectLiveTestLink;
     mobileGithubLinkRef.href = selectedProject.githubLink;
+}
+
+/**
+ * Updates the active navigation item for a project navigation list.
+ * @param {NodeList} navItems - The project navigation items.
+ * @param {number} activeIndex - The index that should become active.
+ */
+function setActiveProjectNavItem(navItems, activeIndex) {
+    navItems.forEach((item, index) => {
+        item.classList.toggle("active-project", index === activeIndex);
+    });
 }

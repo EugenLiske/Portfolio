@@ -1,3 +1,25 @@
+/**
+ * Contains all static translation texts used by the portfolio website.
+ *
+ * The first level defines the language (`de`, `en`).
+ * The second level contains translation keys that are referenced
+ * in the HTML via the `data-i18n` attribute.
+ *
+ * Example:
+ * <h1 data-i18n="aboutHeadline"></h1>
+ *
+ * The translate script reads this object and inserts the matching
+ * text into the corresponding HTML element.
+ *
+ * Some values contain HTML markup, for example links inside translated text.
+ * These values are inserted with `innerHTML`.
+ *
+ * @type {{
+ *   de: Object<string, string>,
+ *   en: Object<string, string>
+ * }}
+ */
+
 const translations = {
   de: {
     pageTitleLegalNotice: "Portfolio - Impressum",

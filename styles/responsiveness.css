@@ -2073,6 +2073,8 @@
     .imprint-content h1,
     .privacy-policy-content h1 {
         font-size: 42px;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .imprint-section h2,
