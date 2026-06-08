@@ -283,7 +283,7 @@
 
 .checkbox-icon-hover {
     position: absolute;
-    top: 12%;
+    top: 11%;
     left: 49%;
     transform: translate(-50%, -50%);
 
@@ -293,7 +293,7 @@
 
 .checkbox-icon-checked {
     position: absolute;
-    top: 12%;
+    top: 11%;
     left: 49%;
     transform: translate(-50%, -50%);
 
@@ -303,7 +303,7 @@
 
 .checkbox-icon-error {
     position: absolute;
-    top: 15%;
+    top: 14%;
     left: 53%;
     transform: translate(-50%, -50%);
 

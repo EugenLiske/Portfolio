@@ -1630,12 +1630,12 @@
 
     .legal-mobile-menu-overlay {
         position: absolute;
-        top: 64px;
+        top: 56px;
         left: 50%;
         z-index: 20;
 
-        width: min(360px, 92vw);
-        height: 420px;
+        width: min(340px, 84vw);
+        height: 390px;
 
         transform: translateX(-50%);
 
@@ -2061,6 +2061,24 @@
     .mobile-project-buttons-wrapper .github-button:visited {
         width: 128px;
         height: 48px;
+    }
+
+    /*----- contact section -----*/
+
+    .checkbox-icon-default {
+        top: -26%;
+    }
+
+    .checkbox-icon-hover {
+        top: -30%;
+    }
+
+    .checkbox-icon-error {
+        top: -26%;
+    }
+
+    .checkbox-icon-checked {
+        top: -30%;
     }
 
     /*----- legal notice and privacy policy pages -----*/
