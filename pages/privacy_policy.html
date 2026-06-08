@@ -1,325 +1,598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="pageTitlePrivacyPolicy">Portfolio - Datenschutz</title>
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/hero_section/portfolio_logo_default.svg">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/icons/hero_section/portfolio_logo_default.svg"
+    />
 
-    <link rel="stylesheet" href="../styles/privacy_policy.css">
-    <link rel="stylesheet" href="../styles/standard.css"/>
-    <link rel="stylesheet" href="../styles/fonts.css"/>
+    <link rel="stylesheet" href="../styles/privacy_policy.css" />
+    <link rel="stylesheet" href="../styles/standard.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
     <link rel="stylesheet" href="../styles/variables.css" />
-    <link rel="stylesheet" href="../style.css"/>
-    <link rel="stylesheet" href="../styles/hero_section.css"/>
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/hero_section.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/why_me_section.css" />
     <link rel="stylesheet" href="../styles/my_skills_section.css" />
     <link rel="stylesheet" href="../styles/my_projects_section.css" />
     <link rel="stylesheet" href="../styles/reference_section.css" />
     <link rel="stylesheet" href="../styles/contact_section.css" />
-    <link rel="stylesheet" href="../styles/responsiveness.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/responsiveness.css" />
+  </head>
+  <body>
     <div class="privacy-policy-header-wrapper">
-        <header class="hero-section-sticky-header">
-            <a href="../index.html" class="hero-main-logo">
-                <img src="../assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark" />
+      <header class="hero-section-sticky-header">
+        <a href="../index.html" class="hero-main-logo">
+          <img
+            src="../assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
 
-                <span class="nav-logo-name">E.Liske</span>
-                <span class="nav-logo-title">developer</span>
-            </a>
+          <span class="nav-logo-name">E.Liske</span>
+          <span class="nav-logo-title">developer</span>
+        </a>
 
-            <nav class="nav-link-wrapper">
-                <a href="../index.html" class="nav-link" data-i18n="navAbout">Über mich</a>
-                <a href="../index.html#my-skills-section-ID" class="nav-link" data-i18n="navSkills">Fähigkeiten</a>
-                <a href="../index.html#my-projects-section-ID" class="nav-link" data-i18n="navProjects">Projekte</a>
-                <a href="../index.html#contact-section-ID" class="nav-link" data-i18n="navContact">Kontakt</a>
-            </nav>
+        <nav class="nav-link-wrapper">
+          <a href="../index.html" class="nav-link" data-i18n="navAbout"
+            >Über mich</a
+          >
+          <a
+            href="../index.html#my-skills-section-ID"
+            class="nav-link"
+            data-i18n="navSkills"
+            >Fähigkeiten</a
+          >
+          <a
+            href="../index.html#my-projects-section-ID"
+            class="nav-link"
+            data-i18n="navProjects"
+            >Projekte</a
+          >
+          <a
+            href="../index.html#contact-section-ID"
+            class="nav-link"
+            data-i18n="navContact"
+            >Kontakt</a
+          >
+        </nav>
 
-            <div class="nav-translate-function">
-                <button
-                    id="translate-german-button"
-                    type="button"
-                    class="translate-button active-language"
-                    data-language="de"
-                    onclick="translateToGerman()"
-                >
-                    DE
-                </button>
+        <div class="nav-translate-function">
+          <button
+            id="translate-german-button"
+            type="button"
+            class="translate-button active-language"
+            data-language="de"
+            onclick="translateToGerman()"
+          >
+            DE
+          </button>
 
-                <button
-                    id="translate-english-button"
-                    type="button"
-                    class="translate-button"
-                    data-language="en"
-                    onclick="translateToEnglish()"
-                >
-                    EN
-                </button>
-            </div>
-        </header>
+          <button
+            id="translate-english-button"
+            type="button"
+            class="translate-button"
+            data-language="en"
+            onclick="translateToEnglish()"
+          >
+            EN
+          </button>
+        </div>
+      </header>
     </div>
 
-<main>
-    <div class="privacy-policy-content">
+    <section class="legal-mobile-header">
+      <div class="mobile-hero-section-upper-part">
+        <a href="../index.html" class="mobile-hero-main-logo">
+          <div class="logo-wrapper">
+            <img
+              class="portfolio-logo-default"
+              src="../assets/icons/hero_section/portfolio_logo_default_1.svg"
+              alt="portfolio_logo_default"
+            />
+          </div>
 
-    <h1 data-i18n="privacyPolicyHeadline">
-        Datenschutzerklärung
-    </h1>
+          <span class="logo-name">E.Liske</span>
+          <span class="logo-title">developer</span>
+        </a>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyControllerHeadline">
-            Verantwortlicher
-        </h2>
+        <button
+          class="burger-menu"
+          type="button"
+          aria-label="Open navigation menu"
+          onclick="openBurgerMenu()"
+        >
+          <img
+            class="burger-menu-icon"
+            src="../assets/mobile/burger_menu_default.svg"
+            alt=""
+          />
+        </button>
+      </div>
 
-        <p data-i18n="privacyPolicyControllerIntro">
-            Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der DSGVO, ist:
-        </p>
+      <nav class="mobile-menu-overlay legal-mobile-menu-overlay">
+        <div class="mobile-menu-content">
+          <a
+            href="../index.html#why-me-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navAbout"
+            onclick="openBurgerMenu()"
+          >
+            Why me
+          </a>
 
-        <p>
-            Evgenij (Eugen) Liske<br>
-            Mooswiesenstraße 11a<br>
-            81245 München<br>
+          <a
+            href="../index.html#my-skills-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navSkills"
+            onclick="openBurgerMenu()"
+          >
+            Skills
+          </a>
+
+          <a
+            href="../index.html#my-projects-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navProjects"
+            onclick="openBurgerMenu()"
+          >
+            Projects
+          </a>
+
+          <a
+            href="../index.html#contact-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navContact"
+            onclick="openBurgerMenu()"
+          >
+            Contact
+          </a>
+
+          <div class="mobile-menu-language-wrapper">
+            <button
+              type="button"
+              class="mobile-menu-language-button active-language"
+              data-language="de"
+              onclick="translateToGerman()"
+            >
+              DE
+            </button>
+
+            <button
+              type="button"
+              class="mobile-menu-language-button"
+              data-language="en"
+              onclick="translateToEnglish()"
+            >
+              EN
+            </button>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <div class="privacy-policy-content">
+        <button
+          class="back-to-previous-page-button"
+          type="button"
+          onclick="history.back()"
+        >
+          <img
+            src="../assets/mobile/back_to_previous_page_arrow.svg"
+            alt="back_to_previous_page"
+          />
+        </button>
+
+        <h1 data-i18n="privacyPolicyHeadline">Datenschutzerklärung</h1>
+
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyControllerHeadline">Verantwortlicher</h2>
+
+          <p data-i18n="privacyPolicyControllerIntro">
+            Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
+            DSGVO, ist:
+          </p>
+
+          <p>
+            Evgenij (Eugen) Liske<br />
+            Mooswiesenstraße 11a<br />
+            81245 München<br />
             Deutschland
-        </p>
+          </p>
 
-        <p>
+          <p>
             <span data-i18n="privacyPolicyEmailLabel">E-Mail:</span>
             <span>eugen.liske@yahoo.de</span>
-        </p>
+          </p>
 
-        <p>
+          <p>
             <span data-i18n="privacyPolicyPhoneLabel">Telefon:</span>
             <span>+49 176 63452473</span>
-        </p>
-    </section>
+          </p>
+        </section>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyRightsHeadline">
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyRightsHeadline">
             Ihre Betroffenenrechte
-        </h2>
+          </h2>
 
-        <p data-i18n="privacyPolicyRightsIntro">
-            Unter den angegebenen Kontaktdaten können Sie gemäß DSGVO jederzeit folgende Rechte ausüben:
-        </p>
+          <p data-i18n="privacyPolicyRightsIntro">
+            Unter den angegebenen Kontaktdaten können Sie gemäß DSGVO jederzeit
+            folgende Rechte ausüben:
+          </p>
 
-        <ul>
-            <li data-i18n="privacyPolicyRightAccess">Auskunft über Ihre gespeicherten Daten und deren Verarbeitung</li>
-            <li data-i18n="privacyPolicyRightCorrection">Berichtigung unrichtiger personenbezogener Daten</li>
-            <li data-i18n="privacyPolicyRightDeletion">Löschung Ihrer gespeicherten Daten</li>
-            <li data-i18n="privacyPolicyRightRestriction">Einschränkung der Datenverarbeitung</li>
-            <li data-i18n="privacyPolicyRightObjection">Widerspruch gegen die Verarbeitung Ihrer Daten</li>
-            <li data-i18n="privacyPolicyRightPortability">Datenübertragbarkeit</li>
-        </ul>
+          <ul>
+            <li data-i18n="privacyPolicyRightAccess">
+              Auskunft über Ihre gespeicherten Daten und deren Verarbeitung
+            </li>
+            <li data-i18n="privacyPolicyRightCorrection">
+              Berichtigung unrichtiger personenbezogener Daten
+            </li>
+            <li data-i18n="privacyPolicyRightDeletion">
+              Löschung Ihrer gespeicherten Daten
+            </li>
+            <li data-i18n="privacyPolicyRightRestriction">
+              Einschränkung der Datenverarbeitung
+            </li>
+            <li data-i18n="privacyPolicyRightObjection">
+              Widerspruch gegen die Verarbeitung Ihrer Daten
+            </li>
+            <li data-i18n="privacyPolicyRightPortability">
+              Datenübertragbarkeit
+            </li>
+          </ul>
 
-        <p data-i18n="privacyPolicyWithdrawalText">
-            Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
-        </p>
+          <p data-i18n="privacyPolicyWithdrawalText">
+            Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese
+            jederzeit mit Wirkung für die Zukunft widerrufen.
+          </p>
 
-        <p data-i18n="privacyPolicyComplaintText">
-            Sie haben außerdem das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.
-        </p>
-    </section>
+          <p data-i18n="privacyPolicyComplaintText">
+            Sie haben außerdem das Recht, sich bei einer zuständigen
+            Datenschutzaufsichtsbehörde zu beschweren.
+          </p>
+        </section>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyAccessDataHeadline">
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyAccessDataHeadline">
             Verarbeitung allgemeiner Zugriffsdaten
-        </h2>
+          </h2>
 
-        <h3 data-i18n="privacyPolicyServerLogsHeadline">
-            Server-Logfiles
-        </h3>
+          <h3 data-i18n="privacyPolicyServerLogsHeadline">Server-Logfiles</h3>
 
-        <p data-i18n="privacyPolicyServerLogsIntro">
-            Beim Besuch dieser Website werden automatisch technische Informationen allgemeiner Natur erfasst.
-            Hierzu zählen insbesondere:
-        </p>
+          <p data-i18n="privacyPolicyServerLogsIntro">
+            Beim Besuch dieser Website werden automatisch technische
+            Informationen allgemeiner Natur erfasst. Hierzu zählen insbesondere:
+          </p>
 
-        <ul>
+          <ul>
             <li data-i18n="privacyPolicyLogIp">IP-Adresse</li>
-            <li data-i18n="privacyPolicyLogDateTime">Datum und Uhrzeit des Zugriffs</li>
-            <li data-i18n="privacyPolicyLogBrowser">Browsertyp und Betriebssystem</li>
-            <li data-i18n="privacyPolicyLogFiles">aufgerufene Seiten und Dateien</li>
+            <li data-i18n="privacyPolicyLogDateTime">
+              Datum und Uhrzeit des Zugriffs
+            </li>
+            <li data-i18n="privacyPolicyLogBrowser">
+              Browsertyp und Betriebssystem
+            </li>
+            <li data-i18n="privacyPolicyLogFiles">
+              aufgerufene Seiten und Dateien
+            </li>
             <li data-i18n="privacyPolicyLogReferrer">Referrer-URL</li>
-        </ul>
+          </ul>
 
-        <p data-i18n="privacyPolicyServerLogsPurpose">
-            Diese Daten dienen der technischen Bereitstellung, Stabilität, Sicherheit und Optimierung der Website.
-        </p>
+          <p data-i18n="privacyPolicyServerLogsPurpose">
+            Diese Daten dienen der technischen Bereitstellung, Stabilität,
+            Sicherheit und Optimierung der Website.
+          </p>
 
-        <p data-i18n="privacyPolicyServerLogsLegalBasis">
-            Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Grundlage unseres berechtigten Interesses
-            an der sicheren und fehlerfreien Bereitstellung dieser Website.
-        </p>
+          <p data-i18n="privacyPolicyServerLogsLegalBasis">
+            Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf
+            Grundlage unseres berechtigten Interesses an der sicheren und
+            fehlerfreien Bereitstellung dieser Website.
+          </p>
 
-        <p data-i18n="privacyPolicyServerLogsStorage">
-            Die Daten werden maximal 14 Tage gespeichert und anschließend gelöscht, sofern kein sicherheitsrelevantes Ereignis vorliegt.
-        </p>
+          <p data-i18n="privacyPolicyServerLogsStorage">
+            Die Daten werden maximal 14 Tage gespeichert und anschließend
+            gelöscht, sofern kein sicherheitsrelevantes Ereignis vorliegt.
+          </p>
 
-        <p data-i18n="privacyPolicyServerLogsSecurityIncident">
-            Im Falle eines sicherheitsrelevanten Ereignisses können Server-Logfiles bis zur Beseitigung und vollständigen Aufklärung
-            des Vorfalls gespeichert werden.
-        </p>
-    </section>
+          <p data-i18n="privacyPolicyServerLogsSecurityIncident">
+            Im Falle eines sicherheitsrelevanten Ereignisses können
+            Server-Logfiles bis zur Beseitigung und vollständigen Aufklärung des
+            Vorfalls gespeichert werden.
+          </p>
+        </section>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyContactHeadline">
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyContactHeadline">
             Kontaktformular und Kontaktaufnahme
-        </h2>
+          </h2>
 
-        <h3 data-i18n="privacyPolicyContactTypeHeadline">
+          <h3 data-i18n="privacyPolicyContactTypeHeadline">
             Art der Verarbeitung
-        </h3>
+          </h3>
 
-        <p data-i18n="privacyPolicyContactFormText">
-            Wenn Sie das Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten an uns übermittelt und zur Bearbeitung
-            Ihrer Anfrage verarbeitet.
-        </p>
+          <p data-i18n="privacyPolicyContactFormText">
+            Wenn Sie das Kontaktformular nutzen, werden die von Ihnen
+            eingegebenen Daten an uns übermittelt und zur Bearbeitung Ihrer
+            Anfrage verarbeitet.
+          </p>
 
-        <p data-i18n="privacyPolicyContactDataIntro">
+          <p data-i18n="privacyPolicyContactDataIntro">
             Hierzu gehören insbesondere:
-        </p>
+          </p>
 
-        <ul>
+          <ul>
             <li data-i18n="privacyPolicyContactName">Name</li>
             <li data-i18n="privacyPolicyContactEmail">E-Mail-Adresse</li>
             <li data-i18n="privacyPolicyContactMessage">Nachrichteninhalt</li>
-        </ul>
+          </ul>
 
-        <p data-i18n="privacyPolicyContactTechnicalData">
-            Zum Zeitpunkt der Absendung können zusätzlich technische Daten wie IP-Adresse, Datum und Uhrzeit der Anfrage
-            sowie die Herkunft der Anfrage verarbeitet werden.
-        </p>
+          <p data-i18n="privacyPolicyContactTechnicalData">
+            Zum Zeitpunkt der Absendung können zusätzlich technische Daten wie
+            IP-Adresse, Datum und Uhrzeit der Anfrage sowie die Herkunft der
+            Anfrage verarbeitet werden.
+          </p>
 
-        <p data-i18n="privacyPolicyEmailContactText">
-            Eine Kontaktaufnahme ist außerdem über die bereitgestellte E-Mail-Adresse möglich. In diesem Fall werden die mit der
-            E-Mail übermittelten personenbezogenen Daten verarbeitet.
-        </p>
+          <p data-i18n="privacyPolicyEmailContactText">
+            Eine Kontaktaufnahme ist außerdem über die bereitgestellte
+            E-Mail-Adresse möglich. In diesem Fall werden die mit der E-Mail
+            übermittelten personenbezogenen Daten verarbeitet.
+          </p>
 
-        <p data-i18n="privacyPolicyPhoneContactText">
-            Sofern Sie telefonisch Kontakt aufnehmen, können hierbei Ihre Telefonnummer sowie Gesprächsdaten wie Zeitpunkt und
-            Dauer des Gesprächs verarbeitet werden.
-        </p>
+          <p data-i18n="privacyPolicyPhoneContactText">
+            Sofern Sie telefonisch Kontakt aufnehmen, können hierbei Ihre
+            Telefonnummer sowie Gesprächsdaten wie Zeitpunkt und Dauer des
+            Gesprächs verarbeitet werden.
+          </p>
 
-        <h3 data-i18n="privacyPolicyContactPurposeHeadline">
+          <h3 data-i18n="privacyPolicyContactPurposeHeadline">
             Zweck der Verarbeitung
-        </h3>
+          </h3>
 
-        <p data-i18n="privacyPolicyContactPurposeText">
-            Die Verarbeitung erfolgt ausschließlich zur Bearbeitung Ihrer Anfrage sowie zur individuellen Kommunikation mit Ihnen.
-        </p>
+          <p data-i18n="privacyPolicyContactPurposeText">
+            Die Verarbeitung erfolgt ausschließlich zur Bearbeitung Ihrer
+            Anfrage sowie zur individuellen Kommunikation mit Ihnen.
+          </p>
 
-        <h3 data-i18n="privacyPolicyContactLegalBasisHeadline">
+          <h3 data-i18n="privacyPolicyContactLegalBasisHeadline">
             Rechtsgrundlage
-        </h3>
+          </h3>
 
-        <p data-i18n="privacyPolicyContactLegalBasisText">
-            Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Grundlage unseres berechtigten Interesses
-            an einer unkomplizierten Kontaktaufnahme.
-        </p>
+          <p data-i18n="privacyPolicyContactLegalBasisText">
+            Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf
+            Grundlage unseres berechtigten Interesses an einer unkomplizierten
+            Kontaktaufnahme.
+          </p>
 
-        <p data-i18n="privacyPolicyContactPreContractualText">
-            Sofern Ihre Anfrage auf eine mögliche Zusammenarbeit oder ein vorvertragliches Verhältnis gerichtet ist,
-            kann die Verarbeitung zusätzlich auf Art. 6 Abs. 1 lit. b DSGVO beruhen.
-        </p>
+          <p data-i18n="privacyPolicyContactPreContractualText">
+            Sofern Ihre Anfrage auf eine mögliche Zusammenarbeit oder ein
+            vorvertragliches Verhältnis gerichtet ist, kann die Verarbeitung
+            zusätzlich auf Art. 6 Abs. 1 lit. b DSGVO beruhen.
+          </p>
 
-        <h3 data-i18n="privacyPolicyContactStorageHeadline">
-            Speicherdauer
-        </h3>
+          <h3 data-i18n="privacyPolicyContactStorageHeadline">Speicherdauer</h3>
 
-        <p data-i18n="privacyPolicyContactStorageText">
-            Die übermittelten Daten werden nur so lange gespeichert, wie dies für die Bearbeitung der Anfrage erforderlich ist.
-            Anschließend werden die Daten gelöscht.
-        </p>
+          <p data-i18n="privacyPolicyContactStorageText">
+            Die übermittelten Daten werden nur so lange gespeichert, wie dies
+            für die Bearbeitung der Anfrage erforderlich ist. Anschließend
+            werden die Daten gelöscht.
+          </p>
 
-        <h3 data-i18n="privacyPolicyContactVoluntaryHeadline">
+          <h3 data-i18n="privacyPolicyContactVoluntaryHeadline">
             Bereitstellung der Daten
-        </h3>
+          </h3>
 
-        <p data-i18n="privacyPolicyContactVoluntaryText">
-            Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig. Eine Bearbeitung Ihrer Anfrage ist jedoch nur möglich,
-            wenn Sie die hierfür erforderlichen Angaben bereitstellen.
-        </p>
-    </section>
+          <p data-i18n="privacyPolicyContactVoluntaryText">
+            Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig.
+            Eine Bearbeitung Ihrer Anfrage ist jedoch nur möglich, wenn Sie die
+            hierfür erforderlichen Angaben bereitstellen.
+          </p>
+        </section>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyObjectionHeadline">
-            Widerspruchsrecht
-        </h2>
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyObjectionHeadline">Widerspruchsrecht</h2>
 
-        <p data-i18n="privacyPolicyObjectionTextOne">
-            Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung
-            Ihrer personenbezogenen Daten Widerspruch einzulegen, sofern diese auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO erfolgt.
-        </p>
+          <p data-i18n="privacyPolicyObjectionTextOne">
+            Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen
+            Situation ergeben, jederzeit gegen die Verarbeitung Ihrer
+            personenbezogenen Daten Widerspruch einzulegen, sofern diese auf
+            Grundlage von Art. 6 Abs. 1 lit. f DSGVO erfolgt.
+          </p>
 
-        <p data-i18n="privacyPolicyObjectionTextTwo">
-            Legen Sie Widerspruch ein, werden Ihre personenbezogenen Daten nicht mehr verarbeitet, es sei denn, es bestehen
-            zwingende schutzwürdige Gründe für die Verarbeitung oder die Verarbeitung dient der Geltendmachung, Ausübung
-            oder Verteidigung von Rechtsansprüchen.
-        </p>
-    </section>
+          <p data-i18n="privacyPolicyObjectionTextTwo">
+            Legen Sie Widerspruch ein, werden Ihre personenbezogenen Daten nicht
+            mehr verarbeitet, es sei denn, es bestehen zwingende schutzwürdige
+            Gründe für die Verarbeitung oder die Verarbeitung dient der
+            Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
+          </p>
+        </section>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyChangesHeadline">
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyChangesHeadline">
             Änderungen dieser Datenschutzerklärung
-        </h2>
+          </h2>
 
-        <p data-i18n="privacyPolicyChangesText">
-            Diese Datenschutzerklärung kann angepasst werden, um sie an aktuelle rechtliche Anforderungen oder technische Änderungen
-            dieser Website anzupassen.
-        </p>
-    </section>
+          <p data-i18n="privacyPolicyChangesText">
+            Diese Datenschutzerklärung kann angepasst werden, um sie an aktuelle
+            rechtliche Anforderungen oder technische Änderungen dieser Website
+            anzupassen.
+          </p>
+        </section>
 
-    <section class="privacy-policy-section">
-        <h2 data-i18n="privacyPolicyQuestionsHeadline">
+        <section class="privacy-policy-section">
+          <h2 data-i18n="privacyPolicyQuestionsHeadline">
             Fragen zum Datenschutz
-        </h2>
+          </h2>
 
-        <p data-i18n="privacyPolicyQuestionsText">
-            Bei Fragen zum Datenschutz können Sie sich jederzeit an die oben genannte verantwortliche Person wenden.
-        </p>
-    </section>
+          <p data-i18n="privacyPolicyQuestionsText">
+            Bei Fragen zum Datenschutz können Sie sich jederzeit an die oben
+            genannte verantwortliche Person wenden.
+          </p>
+        </section>
+      </div>
+    </main>
 
-</div>
-</main>
-    
-<footer>
+    <footer>
       <div class="footer-content">
-          <div class="legal-notice-and-name-wrapper">
-            <a href="./legal_notice.html" data-i18n="footerLegalNotice">Impressum</a>
-            <a href="./privacy_policy.html" data-i18n="footerPrivacyPolicy">Datenschutzerklärung</a>
-            <span>© Eugen Liske 2026</span>
-          </div>
+        <div class="legal-notice-and-name-wrapper">
+          <a href="./legal_notice.html" data-i18n="footerLegalNotice"
+            >Impressum</a
+          >
+          <a href="./privacy_policy.html" data-i18n="footerPrivacyPolicy"
+            >Datenschutzerklärung</a
+          >
+          <span>© Eugen Liske 2026</span>
+        </div>
 
-          <div class="footer-logo-wrapper">
-            <img src="../assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark"
+        <div class="footer-logo-wrapper">
+          <img
+            src="../assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
+
+          <span class="footer-logo-name">E.Liske</span>
+          <span class="footer-logo-title">developer</span>
+        </div>
+
+        <div class="footer-social-media-links-wrapper">
+          <a
+            href="https://github.com/EugenLiske"
+            target="_blank"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="../assets/icons/footer/footer_github_icon_default.svg"
+              alt="footer_github_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="../assets/icons/footer/footer_github_icon_hover.svg"
+              alt="footer_github_icon_hover"
+            />
+          </a>
+
+          <a
+            href="../index.html#contact-section-ID"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="../assets/icons/footer/footer_email_icon_default.svg"
+              alt="footer_email_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="../assets/icons/footer/footer_email_icon_hover.svg"
+              alt="footer_email_icon_hover"
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+            target="_blank"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="../assets/icons/footer/footer_linkedin_icon_default.svg"
+              alt="footer_linkedin_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="../assets/icons/footer/footer_linkedin_icon_hover.svg"
+              alt="footer_linkedin_icon_hover"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-footer-content">
+        <div class="mobile-footer-logo-wrapper">
+          <img
+            src="../assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
+
+          <span class="footer-logo-name">E.Liske</span>
+          <span class="footer-logo-title">developer</span>
+        </div>
+
+        <div class="mobile-footer-social-media-links-wrapper">
+          <a
+            href="https://github.com/EugenLiske"
+            target="_blank"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="../assets/mobile/mobile_footer_github_icon_default.svg"
+              alt="github_icon_default"
             />
 
-            <span class="footer-logo-name">E.Liske</span>
-            <span class="footer-logo-title">developer</span>
-          </div>
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="../assets/mobile/mobile_footer_github_icon_active.svg"
+              alt="github_icon_active"
+            />
+          </a>
 
-          <div class="footer-social-media-links-wrapper">
-            <a href="https://github.com/EugenLiske" target="_blank" class="footer-social-media-icon-wrapper">
-              <img class="footer-social-media-icon-default" src="../assets/icons/footer/footer_github_icon_default.svg" alt="footer_github_icon_default">
-              <img class="footer-social-media-icon-hover" src="../assets/icons/footer/footer_github_icon_hover.svg" alt="footer_github_icon_hover">
-            </a>
+          <a
+            href="../index.html#contact-section-ID"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="../assets/mobile/mobile_footer_email_icon_default.svg"
+              alt="email_icon_default"
+            />
 
-            <button class="footer-social-media-icon-wrapper" onclick="focusForm()">
-              <img class="footer-social-media-icon-default" src="../assets/icons/footer/footer_email_icon_default.svg" alt="footer_email_icon_default">
-              <img class="footer-social-media-icon-hover" src="../assets/icons/footer/footer_email_icon_hover.svg" alt="footer_email_icon_hover">
-            </button>
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="../assets/mobile/mobile_footer_email_icon_active.svg"
+              alt="email_icon_active"
+            />
+          </a>
 
-            <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="footer-social-media-icon-wrapper">
-              <img class="footer-social-media-icon-default" src="../assets/icons/footer/footer_linkedin_icon_default.svg" alt="footer_linkedin_icon_default">
-              <img class="footer-social-media-icon-hover" src="../assets/icons/footer/footer_linkedin_icon_hover.svg" alt="footer_linkedin_icon_hover">
-            </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+            target="_blank"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="../assets/mobile/mobile_footer_linkedin_icon_default.svg"
+              alt="linkedin_icon_default"
+            />
 
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="../assets/mobile/mobile_footer_linkedin_icon_active.svg"
+              alt="linkedin_icon_active"
+            />
+          </a>
+        </div>
+
+        <div class="mobile-footer-legal-wrapper">
+          <a href="./legal_notice.html" data-i18n="footerLegalNotice">
+            Impressum
+          </a>
+
+          <a href="./privacy_policy.html" data-i18n="footerPrivacyPolicy">
+            Datenschutzerklärung
+          </a>
+
+          <span>© Eugen Liske 2026</span>
+        </div>
       </div>
-</footer>
-<script src="../scripts/translation_text_object.js"></script>
-<script src="../scripts/translate.js"></script>
-</body>
+    </footer>
+    <script src="../scripts/translation_text_object.js"></script>
+    <script src="../scripts/translate.js"></script>
+    <script src="../scripts/responsiveness.js"></script>
+  </body>
 </html>

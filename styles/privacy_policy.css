@@ -67,3 +67,11 @@ main {
 .privacy-policy-content a:hover {
     color: var(--text-color);
 }
+
+.legal-mobile-header {
+    display: none;
+}
+
+.back-to-previous-page-button {
+    display: none;
+}

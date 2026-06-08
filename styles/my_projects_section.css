@@ -209,3 +209,7 @@
 .github-button:hover {
     background-color: var(--button-hover-2);
 }
+
+.mobile-projects-wrapper {
+    display: none;
+}

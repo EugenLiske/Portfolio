@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Eugen Liske</title>
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/hero_section/portfolio_logo_default.svg">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/icons/hero_section/portfolio_logo_default.svg"
+    />
 
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
@@ -16,8 +20,8 @@
     <link rel="stylesheet" href="./styles/my_projects_section.css" />
     <link rel="stylesheet" href="./styles/reference_section.css" />
     <link rel="stylesheet" href="./styles/contact_section.css" />
-    <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/responsiveness.css">
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/responsiveness.css" />
   </head>
   <body>
     <section class="hero-section" id="hero-section-ID">
@@ -59,7 +63,11 @@
             </div>
 
             <div class="hero-social-media-icons">
-              <button type="button" class="social-media-icon-wrapper" onclick="focusForm()">
+              <button
+                type="button"
+                class="social-media-icon-wrapper"
+                onclick="focusForm()"
+              >
                 <img
                   class="social-media-icon-default"
                   src="./assets/icons/hero_section/mail_icon_default.svg"
@@ -70,7 +78,11 @@
                 />
               </button>
 
-              <a href="https://github.com/EugenLiske" target="_blank" class="social-media-icon-wrapper">
+              <a
+                href="https://github.com/EugenLiske"
+                target="_blank"
+                class="social-media-icon-wrapper"
+              >
                 <img
                   class="social-media-icon-default"
                   src="./assets/icons/hero_section/github_icon_default.svg"
@@ -81,7 +93,11 @@
                 />
               </a>
 
-              <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="social-media-icon-wrapper">
+              <a
+                href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+                target="_blank"
+                class="social-media-icon-wrapper"
+              >
                 <img
                   class="social-media-icon-default"
                   src="./assets/icons/hero_section/linkedin_icon_default.svg"
@@ -128,10 +144,21 @@
         </div>
 
         <nav class="nav-link-wrapper">
-          <a href="#why-me-section-ID" class="nav-link" data-i18n="navAbout">Über mich</a>
-          <a href="#my-skills-section-ID" class="nav-link" data-i18n="navSkills">Fähigkeiten</a>
-          <a href="#my-projects-section-ID" class="nav-link" data-i18n="navProjects">Projekte</a>
-          <a href="#contact-section-ID" class="nav-link" data-i18n="navContact">Kontakt</a>
+          <a href="#why-me-section-ID" class="nav-link" data-i18n="navAbout"
+            >Über mich</a
+          >
+          <a href="#my-skills-section-ID" class="nav-link" data-i18n="navSkills"
+            >Fähigkeiten</a
+          >
+          <a
+            href="#my-projects-section-ID"
+            class="nav-link"
+            data-i18n="navProjects"
+            >Projekte</a
+          >
+          <a href="#contact-section-ID" class="nav-link" data-i18n="navContact"
+            >Kontakt</a
+          >
         </nav>
 
         <div class="nav-translate-function">
@@ -159,93 +186,120 @@
     </div>
 
     <section class="mobile-hero-section" id="mobile-hero-section-ID">
-
       <div class="mobile-hero-section-upper-part">
+        <div class="mobile-hero-main-logo">
+          <div class="logo-wrapper">
+            <img
+              class="portfolio-logo-default"
+              src="./assets/icons/hero_section/portfolio_logo_default_1.svg"
+              alt="portfolio_logo_default"
+            />
+          </div>
 
-        <div class="hero-main-logo">
-            <div class="logo-wrapper">
-                <img
-                    class="portfolio-logo-default"
-                    src="./assets/icons/hero_section/portfolio_logo_default_1.svg"
-                    alt="portfolio_logo_default"
-                />
-            </div>
-
-            <span class="logo-name">E.Liske</span>
-            <span class="logo-title">developer</span>
+          <span class="logo-name">E.Liske</span>
+          <span class="logo-title">developer</span>
         </div>
 
         <button
-            class="burger-menu"
-            type="button"
-            aria-label="Open navigation menu"
-            onclick="openBurgerMenu()"
+          class="burger-menu"
+          type="button"
+          aria-label="Open navigation menu"
+          onclick="openBurgerMenu()"
         >
-            <img
-                class="burger-menu-icon"
-                src="./assets/mobile/burger_menu_default.svg"
-                alt=""
-            />
+          <img
+            class="burger-menu-icon"
+            src="./assets/mobile/burger_menu_default.svg"
+            alt=""
+          />
         </button>
       </div>
 
       <div class="mobile-hero-img-wrapper">
-
         <!-- normales Hero Bild -->
 
-        <img class="mobile-hero-img" src="./assets/mobile/hero_img_mobile.png" alt="hero_img_mobile" />
+        <img
+          class="mobile-hero-img"
+          src="./assets/mobile/hero_img_mobile.png"
+          alt="hero_img_mobile"
+        />
 
         <!-- Overlay welches das Hero Bild überdeckt -->
 
         <nav class="mobile-menu-overlay">
+          <div class="mobile-menu-content">
+            <a
+              href="#why-me-section-ID"
+              class="mobile-menu-link"
+              data-i18n="navAbout"
+              onclick="openBurgerMenu()"
+            >
+              About me
+            </a>
 
-            <div class="mobile-menu-content">
+            <a
+              href="#my-skills-section-ID"
+              class="mobile-menu-link"
+              data-i18n="navSkills"
+              onclick="openBurgerMenu()"
+            >
+              Skills
+            </a>
 
-                <a href="#why-me-section-ID" class="mobile-menu-link" data-i18n="navAbout" onclick="openBurgerMenu()">
-                    About me
-                </a>
+            <a
+              href="#my-projects-section-ID"
+              class="mobile-menu-link"
+              data-i18n="navProjects"
+              onclick="openBurgerMenu()"
+            >
+              Projects
+            </a>
 
-                <a href="#my-skills-section-ID" class="mobile-menu-link" data-i18n="navSkills" onclick="openBurgerMenu()">
-                    Skills
-                </a>
+            <a
+              href="#contact-section-ID"
+              class="mobile-menu-link"
+              data-i18n="navContact"
+              onclick="openBurgerMenu()"
+            >
+              Contact
+            </a>
 
-                <a href="#my-projects-section-ID" class="mobile-menu-link" data-i18n="navProjects" onclick="openBurgerMenu()">
-                    Projects
-                </a>
+            <div class="mobile-menu-language-wrapper">
+              <button
+                type="button"
+                class="mobile-menu-language-button active-language"
+                data-language="de"
+                onclick="translateToGerman()"
+              >
+                DE
+              </button>
 
-                <a href="#contact-section-ID" class="mobile-menu-link" data-i18n="navContact" onclick="openBurgerMenu()">
-                    Contact
-                </a>
-
-                <div class="mobile-menu-language-wrapper">
-                    <button type="button" class="mobile-menu-language-button active-language" data-language="de" onclick="translateToGerman()">
-                        DE
-                    </button>
-
-                    <button type="button" class="mobile-menu-language-button" data-language="en" onclick="translateToEnglish()">
-                        EN
-                    </button>
-                </div>
+              <button
+                type="button"
+                class="mobile-menu-language-button"
+                data-language="en"
+                onclick="translateToEnglish()"
+              >
+                EN
+              </button>
             </div>
+          </div>
         </nav>
       </div>
 
-    <div class="mobile-hero-information">
+      <div class="mobile-hero-information">
         <h1>Eugen Liske</h1>
 
-        <h2 data-i18n="heroJobTitle">
-            FRONTEND ENTWICKLER
-        </h2>
-    </div>
+        <h2 data-i18n="heroJobTitle">FRONTEND ENTWICKLER</h2>
+      </div>
 
-    <a href="#why-me-section-ID" class="mobile-nav-arrow">
-      <img
+      <a href="#why-me-section-ID" class="mobile-nav-arrow">
+        <img
           class="mobile-nav-arrow-img"
           src="./assets/icons/hero_section/hero_section_arrow_down_icon_default.svg"
           alt="hero_section_arrow_down_icon_default"
-      />
-    </a>
-  </section>
+        />
+      </a>
+    </section>
 
     <main>
       <section class="why-me-section" id="why-me-section-ID">
@@ -269,25 +323,31 @@
           <div class="personal-information-wrapper">
             <div class="personal-information">
               <p data-i18n="aboutTextOne">
-                Programmieren begeistert mich, weil es analytisches Denken mit kreativer
-                Problemlösung verbindet. Besonders spannend finde ich es, komplexe
-                Anforderungen in klare und benutzerfreundliche Lösungen zu übersetzen.
+                Programmieren begeistert mich, weil es analytisches Denken mit
+                kreativer Problemlösung verbindet. Besonders spannend finde ich
+                es, komplexe Anforderungen in klare und benutzerfreundliche
+                Lösungen zu übersetzen.
               </p>
 
               <p data-i18n="aboutTextTwo">
-                Durch meine strukturierte Arbeitsweise und starke Kommunikation behalte ich
-                auch in Teamprojekten stets den Überblick. Dabei ist mir wichtig,
-                zuverlässig zu arbeiten, offen Feedback anzusprechen und gemeinsam gute
-                Lösungen zu entwickeln.
+                Durch meine strukturierte Arbeitsweise und starke Kommunikation
+                behalte ich auch in Teamprojekten stets den Überblick. Dabei ist
+                mir wichtig, zuverlässig zu arbeiten, offen Feedback
+                anzusprechen und gemeinsam gute Lösungen zu entwickeln.
               </p>
 
               <p data-i18n="aboutTextThree">
-                Sprachen, Logik und klare Strukturen haben mich schon immer fasziniert –
-                genau deshalb begeistert mich auch die Arbeit mit Code.
+                Sprachen, Logik und klare Strukturen haben mich schon immer
+                fasziniert – genau deshalb begeistert mich auch die Arbeit mit
+                Code.
               </p>
             </div>
 
-            <a href="#contact-section-ID" class="lets-talk-button" data-i18n="contactButton">
+            <a
+              href="#contact-section-ID"
+              class="lets-talk-button"
+              data-i18n="contactButton"
+            >
               Kontakt
             </a>
           </div>
@@ -354,7 +414,10 @@
               alt="current_learning_bg_shape_hover"
             />
 
-            <p class="current-learning-headline" data-i18n="currentLearningHeadline">
+            <p
+              class="current-learning-headline"
+              data-i18n="currentLearningHeadline"
+            >
               Aktuell vertiefe ich
             </p>
 
@@ -372,17 +435,58 @@
 
             <div class="current-learning-text">
               <p data-i18n="currentLearningTextOne">
-                Mit React und Vue.js erweitere ich aktuell mein Verständnis
-                für moderne Frontend-Frameworks.
+                Mit React und Vue.js erweitere ich aktuell mein Verständnis für
+                moderne Frontend-Frameworks.
               </p>
 
               <p data-i18n="currentLearningTextTwo">
-                Besonders spannend finde ich die Entwicklung performanter
-                und interaktiver Benutzeroberflächen.
+                Besonders spannend finde ich die Entwicklung performanter und
+                interaktiver Benutzeroberflächen.
               </p>
             </div>
           </div>
 
+          <div class="mobile-current-learning-wrapper">
+            <p
+              class="mobile-current-learning-headline"
+              data-i18n="currentLearningHeadline"
+            >
+              Aktuell vertiefe ich
+            </p>
+
+            <div class="mobile-current-learning-content">
+              <div class="mobile-current-learning-text">
+                <p data-i18n="currentLearningTextOne">
+                  Mit React und Vue.js erweitere ich aktuell mein Verständnis
+                  für moderne Frontend-Frameworks.
+                </p>
+
+                <p data-i18n="currentLearningTextTwo">
+                  Besonders spannend finde ich die Entwicklung performanter und
+                  interaktiver Benutzeroberflächen.
+                </p>
+              </div>
+
+              <div class="mobile-current-learning-icons">
+                <img
+                  src="./assets/icons/my_skills_section/vue_js_icon.svg"
+                  alt="vue_js_icon"
+                />
+                <img
+                  src="./assets/icons/my_skills_section/react_icon.svg"
+                  alt="react_icon"
+                />
+              </div>
+            </div>
+
+            <a
+              href="#contact-section-ID"
+              class="mobile-lets-talk-button"
+              data-i18n="contactButton"
+            >
+              Kontakt
+            </a>
+          </div>
         </div>
       </section>
 
@@ -391,15 +495,30 @@
 
         <ol class="project-navigation-wrapper">
           <li class="project-nav-item active-project">
-            <button onclick="displayProjectContent(0)" data-i18n="projectNavElPolloLoco">El Pollo Loco</button>
+            <button
+              onclick="displayProjectContent(0)"
+              data-i18n="projectNavElPolloLoco"
+            >
+              El Pollo Loco
+            </button>
           </li>
 
           <li class="project-nav-item">
-            <button onclick="displayProjectContent(1)" data-i18n="projectNavJoin">Join</button>
+            <button
+              onclick="displayProjectContent(1)"
+              data-i18n="projectNavJoin"
+            >
+              Join
+            </button>
           </li>
 
           <li class="project-nav-item">
-            <button onclick="displayProjectContent(2)" data-i18n="projectNavPokedex">Pokédex</button>
+            <button
+              onclick="displayProjectContent(2)"
+              data-i18n="projectNavPokedex"
+            >
+              Pokédex
+            </button>
           </li>
         </ol>
 
@@ -409,13 +528,24 @@
               <li>
                 <div class="project-info-single-bulletpoint">
                   <div class="project-info-bulletpoint-header">
-                    <h3 data-i18n="projectOverviewHeadline">Projektübersicht</h3>
-                    <span id="projectDurationID" data-i18n="projectDurationElPolloLoco">Dauer: 3 Wochen</span>
+                    <h3 data-i18n="projectOverviewHeadline">
+                      Projektübersicht
+                    </h3>
+                    <span
+                      id="projectDurationID"
+                      data-i18n="projectDurationElPolloLoco"
+                      >Dauer: 3 Wochen</span
+                    >
                   </div>
 
-                  <p data-i18n="projectBulletpointOneElPolloLoco" id="projectBulletpointOneID">
-                    El Pollo Loco ist ein 2D-Jump-and-Run-Spiel, in dem der Spieler Pepe durch eine Wüstenlandschaft steuert,
-                    Münzen sammelt, Gegnern ausweicht und sich mit Salsaflaschen gegen Hühner und den Endboss verteidigt.
+                  <p
+                    data-i18n="projectBulletpointOneElPolloLoco"
+                    id="projectBulletpointOneID"
+                  >
+                    El Pollo Loco ist ein 2D-Jump-and-Run-Spiel, in dem der
+                    Spieler Pepe durch eine Wüstenlandschaft steuert, Münzen
+                    sammelt, Gegnern ausweicht und sich mit Salsaflaschen gegen
+                    Hühner und den Endboss verteidigt.
                   </p>
                 </div>
               </li>
@@ -423,23 +553,37 @@
               <li>
                 <div class="project-info-single-bulletpoint">
                   <h3 data-i18n="projectWorkingMethodHeadline">Arbeitsweise</h3>
-                  <p data-i18n="projectBulletpointTwoElPolloLoco" id="projectBulletpointTwoID">
-                    Zur Strukturierung des Projekts habe ich Trello genutzt, um Aufgaben, Fortschritt und offene Punkte
-                    übersichtlich zu organisieren. Der Code ist in mehrere Klassen und Controller aufgeteilt, zum Beispiel für
-                    Spielfigur, Gegner, Audio, Eingaben und Rendering.
+                  <p
+                    data-i18n="projectBulletpointTwoElPolloLoco"
+                    id="projectBulletpointTwoID"
+                  >
+                    Zur Strukturierung des Projekts habe ich Trello genutzt, um
+                    Aufgaben, Fortschritt und offene Punkte übersichtlich zu
+                    organisieren. Der Code ist in mehrere Klassen und Controller
+                    aufgeteilt, zum Beispiel für Spielfigur, Gegner, Audio,
+                    Eingaben und Rendering.
                   </p>
                 </div>
               </li>
 
               <li>
                 <div class="project-info-single-bulletpoint">
-                  <h3 id="additionalProjectInformationID" data-i18n="projectAdditionalHeadlineElPolloLoco">
+                  <h3
+                    id="additionalProjectInformationID"
+                    data-i18n="projectAdditionalHeadlineElPolloLoco"
+                  >
                     Was ich gelernt habe
                   </h3>
-                  <p data-i18n="projectBulletpointThreeElPolloLoco" id="projectBulletpointThreeID">
-                    In diesem Projekt habe ich besonders viel über objektorientierte JavaScript-Strukturen, Canvas-Rendering,
-                    Animationen, Kollisionen, Spielzustände und Eingabesteuerung gelernt. Eine wichtige Erfahrung war es,
-                    viele einzelne Spielmechaniken zu einem funktionierenden Gesamtspiel zusammenzuführen.
+                  <p
+                    data-i18n="projectBulletpointThreeElPolloLoco"
+                    id="projectBulletpointThreeID"
+                  >
+                    In diesem Projekt habe ich besonders viel über
+                    objektorientierte JavaScript-Strukturen, Canvas-Rendering,
+                    Animationen, Kollisionen, Spielzustände und Eingabesteuerung
+                    gelernt. Eine wichtige Erfahrung war es, viele einzelne
+                    Spielmechaniken zu einem funktionierenden Gesamtspiel
+                    zusammenzuführen.
                   </p>
                 </div>
               </li>
@@ -481,15 +625,130 @@
                   class="live-test-button"
                   href="https://el-pollo-loco.eugen-liske.de/"
                   target="_blank"
-                >Live Test</a>
+                  >Live Test</a
+                >
 
                 <a
                   id="githubLinkID"
                   class="github-button"
                   href="https://github.com/EugenLiske/el_pollo_loco.git"
                   target="_blank"
-                >GitHub</a>
+                  >GitHub</a
+                >
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-projects-wrapper">
+          <ol class="mobile-project-navigation-wrapper">
+            <li class="mobile-project-nav-item active-project">
+              <button
+                onclick="displayProjectContent(0)"
+                data-i18n="projectNavElPolloLoco"
+              >
+                El Pollo Loco
+              </button>
+            </li>
+
+            <li class="mobile-project-nav-item">
+              <button
+                onclick="displayProjectContent(1)"
+                data-i18n="projectNavJoin"
+              >
+                Join
+              </button>
+            </li>
+
+            <li class="mobile-project-nav-item">
+              <button
+                onclick="displayProjectContent(2)"
+                data-i18n="projectNavPokedex"
+              >
+                Pokédex
+              </button>
+            </li>
+          </ol>
+
+          <div class="mobile-project-card">
+            <h3 id="mobileProjectTitleID">El Pollo Loco</h3>
+
+            <div class="mobile-project-meta">
+              <p id="mobileProjectTechnologiesID">
+                Technologien: HTML, JavaScript, CSS
+              </p>
+
+              <p id="mobileProjectDurationID">Dauer: 3 Wochen</p>
+            </div>
+
+            <img
+              id="mobileProjectMockupID"
+              class="mobile-project-preview-img"
+              src="./assets/icons/my_projects_section/el_pollo_loco_preview.png"
+              alt="project_preview"
+            />
+
+            <ul class="mobile-project-information-wrapper">
+              <li>
+                <div class="mobile-project-info-single-bulletpoint">
+                  <h4 data-i18n="projectOverviewHeadline">Projektübersicht</h4>
+
+                  <p id="mobileProjectBulletpointOneID">
+                    El Pollo Loco ist ein 2D-Jump-and-Run-Spiel, in dem der
+                    Spieler Pepe durch eine Wüstenlandschaft steuert, Münzen
+                    sammelt, Gegnern ausweicht und sich mit Salsaflaschen gegen
+                    Hühner und den Endboss verteidigt.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="mobile-project-info-single-bulletpoint">
+                  <h4 data-i18n="projectWorkingMethodHeadline">Arbeitsweise</h4>
+
+                  <p id="mobileProjectBulletpointTwoID">
+                    Zur Strukturierung des Projekts habe ich Trello genutzt, um
+                    Aufgaben, Fortschritt und offene Punkte übersichtlich zu
+                    organisieren. Der Code ist in mehrere Klassen und Controller
+                    aufgeteilt.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="mobile-project-info-single-bulletpoint">
+                  <h4 id="mobileAdditionalProjectInformationID">
+                    Was ich gelernt habe
+                  </h4>
+
+                  <p id="mobileProjectBulletpointThreeID">
+                    In diesem Projekt habe ich besonders viel über
+                    objektorientierte JavaScript-Strukturen, Canvas-Rendering,
+                    Animationen, Kollisionen, Spielzustände und Eingabesteuerung
+                    gelernt.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="mobile-project-buttons-wrapper">
+              <a
+                id="mobileProjectLiveTestID"
+                class="live-test-button"
+                href="https://el-pollo-loco.eugen-liske.de/"
+                target="_blank"
+              >
+                Live Test
+              </a>
+
+              <a
+                id="mobileGithubLinkID"
+                class="github-button"
+                href="https://github.com/EugenLiske/el_pollo_loco.git"
+                target="_blank"
+              >
+                GitHub
+              </a>
             </div>
           </div>
         </div>
@@ -497,8 +756,16 @@
 
       <section class="references-section">
         <p class="references-intro-text" data-i18n="referencesIntroText">
-          Das sagen andere über die Zusammenarbeit mit mir.
+          Teamplayer benötigt? Das sagen andere über die Zusammenarbeit mit mir.
         </p>
+
+        <div class="mobile-references-intro-text">
+          <p data-i18n="referencesMobileHeadline">Teamplayer benötigt?</p>
+
+          <span data-i18n="referencesMobileSubline">
+            Das sagen andere über die Zusammenarbeit mit mir.
+          </span>
+        </div>
 
         <div class="references-content">
           <div class="single-reference-wrapper">
@@ -512,12 +779,19 @@
             </header>
 
             <p data-i18n="referenceAnneText">
-              Bei der Zusammenarbeit mit Eugen sind mir besonders seine starke Kommunikation und strukturierte Arbeitsweise aufgefallen.
-              Man konnte sich stets auf die zuverlässige Umsetzung vereinbarter Aufgaben verlassen. Besonders positiv war sein
-              respektvoller und konstruktiver Umgang mit Feedback und schwierigen Themen.
+              Bei der Zusammenarbeit mit Eugen sind mir besonders seine starke
+              Kommunikation und strukturierte Arbeitsweise aufgefallen. Man
+              konnte sich stets auf die zuverlässige Umsetzung vereinbarter
+              Aufgaben verlassen. Besonders positiv war sein respektvoller und
+              konstruktiver Umgang mit Feedback und schwierigen Themen.
             </p>
 
-            <a href="https://github.com/Saki63" target="_blank" data-i18n="referenceGithubProfile">GitHub Profile</a>
+            <a
+              href="https://github.com/Saki63"
+              target="_blank"
+              data-i18n="referenceGithubProfile"
+              >GitHub Profile</a
+            >
 
             <img
               class="reference-bg-shape-default"
@@ -542,11 +816,18 @@
             </header>
 
             <p data-i18n="referenceMartinText">
-              Im Gruppenprojekt übernahm Eugen eine strukturierte und koordinierende Rolle, wodurch die Zusammenarbeit im
-              Team sehr effizient verlief. Durch den regelmäßigen Austausch konnten wir das Projekt erfolgreich umsetzen.
+              Im Gruppenprojekt übernahm Eugen eine strukturierte und
+              koordinierende Rolle, wodurch die Zusammenarbeit im Team sehr
+              effizient verlief. Durch den regelmäßigen Austausch konnten wir
+              das Projekt erfolgreich umsetzen.
             </p>
 
-            <a href="https://www.linkedin.com/in/martin-freimuth/" target="_blank" data-i18n="referenceLinkedInProfile">LinkedIn Profile</a>
+            <a
+              href="https://www.linkedin.com/in/martin-freimuth/"
+              target="_blank"
+              data-i18n="referenceLinkedInProfile"
+              >LinkedIn Profile</a
+            >
 
             <img
               class="reference-bg-shape-default"
@@ -563,15 +844,21 @@
       </section>
 
       <section class="contact-section" id="contact-section-ID">
-
         <h2 data-i18n="contactHeadline">Kontakt</h2>
 
         <div class="contact-content">
-
           <a href="#hero-section-ID" class="nav-arrow-up-position-wrapper">
             <div class="nav-arrow-up-img-wrapper">
-              <img class="nav-arrow-up-default" src="./assets/icons/contact_section/contact_section_arrow_up_icon_default.svg" alt="contact_section_arrow_up_icon_default">
-              <img class="nav-arrow-up-hover" src="./assets/icons/contact_section/contact_section_arrow_up_icon_hover.svg" alt="contact_section_arrow_up_icon_hover">
+              <img
+                class="nav-arrow-up-default"
+                src="./assets/icons/contact_section/contact_section_arrow_up_icon_default.svg"
+                alt="contact_section_arrow_up_icon_default"
+              />
+              <img
+                class="nav-arrow-up-hover"
+                src="./assets/icons/contact_section/contact_section_arrow_up_icon_hover.svg"
+                alt="contact_section_arrow_up_icon_hover"
+              />
             </div>
           </a>
 
@@ -584,8 +871,9 @@
 
               <p data-i18n="contactIntroTextTwo">
                 Besonders interessant finde ich die Arbeit an modernen und
-                benutzerfreundlichen Webanwendungen, bei denen saubere Strukturen,
-                gute Zusammenarbeit und kreative Lösungen gefragt sind.
+                benutzerfreundlichen Webanwendungen, bei denen saubere
+                Strukturen, gute Zusammenarbeit und kreative Lösungen gefragt
+                sind.
               </p>
 
               <p data-i18n="contactIntroTextThree">
@@ -613,7 +901,9 @@
                   />
                 </div>
 
-                <span data-i18n="contactEmailLabel">E-mail: eugen.liske@yahoo.de</span>
+                <span data-i18n="contactEmailLabel"
+                  >E-mail: eugen.liske@yahoo.de</span
+                >
               </button>
 
               <a href="tel:017663452473" class="single-link-wrapper">
@@ -634,6 +924,10 @@
               </a>
             </div>
           </div>
+
+          <p class="mobile-contact-cta" data-i18n="contactMobileCTA">
+            Lassen Sie uns zusammenarbeiten!
+          </p>
 
           <form
             action="./send_mail.php"
@@ -662,6 +956,7 @@
                     class="input-field"
                     id="name-input-field"
                     name="name"
+                    placeholder=" "
                   />
                   <img
                     id="name-check-icon"
@@ -691,6 +986,7 @@
                     class="input-field"
                     id="email-input-field"
                     name="email"
+                    placeholder=" "
                   />
                   <img
                     id="email-check-icon"
@@ -720,6 +1016,7 @@
                   class="message-field"
                   name="message"
                   id="message-input-field"
+                  placeholder=" "
                 ></textarea>
                 <img
                   id="message-check-icon"
@@ -768,12 +1065,19 @@
                 />
               </div>
 
-              <div class="privacy-policy-content">
+              <div class="privacy-policy-declaration">
                 <span class="privacy-policy-text" data-i18n="privacyPolicyText">
-                  Ich habe die <a href="./pages/privacy_policy.html">Datenschutzerklärung</a> gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.
+                  Ich habe die
+                  <a href="./pages/privacy_policy.html">Datenschutzerklärung</a>
+                  gelesen und stimme der darin beschriebenen Verarbeitung meiner
+                  Daten zu.
                 </span>
 
-                <span id="privacy-policy-error" class="privacy-policy-error deactivated" data-i18n="privacyPolicyError">
+                <span
+                  id="privacy-policy-error"
+                  class="privacy-policy-error deactivated"
+                  data-i18n="privacyPolicyError"
+                >
                   Bitte stimmen Sie der Datenschutzerklärung zu.
                 </span>
               </div>
@@ -790,50 +1094,179 @@
               </button>
             </div>
           </form>
+
+          <a
+            href="#mobile-hero-section-ID"
+            class="mobile-nav-arrow-up-position-wrapper"
+          >
+            <img
+              class="mobile-nav-arrow-up-img"
+              src="./assets/icons/contact_section/contact_section_arrow_up_icon_default.svg"
+              alt="contact_section_arrow_up_icon_default"
+            />
+          </a>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="footer-content">
-          <div class="legal-notice-and-name-wrapper">
-            <a href="./pages/legal_notice.html" data-i18n="footerLegalNotice">Impressum</a>
-            <a href="./pages/privacy_policy.html" data-i18n="footerPrivacyPolicy">Datenschutzerklärung</a>
-            <span>© Eugen Liske 2026</span>
-          </div>
+        <div class="legal-notice-and-name-wrapper">
+          <a href="./pages/legal_notice.html" data-i18n="footerLegalNotice"
+            >Impressum</a
+          >
+          <a href="./pages/privacy_policy.html" data-i18n="footerPrivacyPolicy"
+            >Datenschutzerklärung</a
+          >
+          <span>© Eugen Liske 2026</span>
+        </div>
 
-          <div class="footer-logo-wrapper">
-            <img src="./assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark"
+        <div class="footer-logo-wrapper">
+          <img
+            src="./assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
+
+          <span class="footer-logo-name">E.Liske</span>
+          <span class="footer-logo-title">developer</span>
+        </div>
+
+        <div class="footer-social-media-links-wrapper">
+          <a
+            href="https://github.com/EugenLiske"
+            target="_blank"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="./assets/icons/footer/footer_github_icon_default.svg"
+              alt="footer_github_icon_default"
             />
+            <img
+              class="footer-social-media-icon-hover"
+              src="./assets/icons/footer/footer_github_icon_hover.svg"
+              alt="footer_github_icon_hover"
+            />
+          </a>
 
-            <span class="footer-logo-name">E.Liske</span>
-            <span class="footer-logo-title">developer</span>
-          </div>
+          <button
+            class="footer-social-media-icon-wrapper"
+            onclick="focusForm()"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="./assets/icons/footer/footer_email_icon_default.svg"
+              alt="footer_email_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="./assets/icons/footer/footer_email_icon_hover.svg"
+              alt="footer_email_icon_hover"
+            />
+          </button>
 
-          <div class="footer-social-media-links-wrapper">
-            <a href="https://github.com/EugenLiske" target="_blank" class="footer-social-media-icon-wrapper">
-              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_github_icon_default.svg" alt="footer_github_icon_default">
-              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_github_icon_hover.svg" alt="footer_github_icon_hover">
-            </a>
+          <a
+            href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+            target="_blank"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="./assets/icons/footer/footer_linkedin_icon_default.svg"
+              alt="footer_linkedin_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="./assets/icons/footer/footer_linkedin_icon_hover.svg"
+              alt="footer_linkedin_icon_hover"
+            />
+          </a>
+        </div>
+      </div>
 
-            <button class="footer-social-media-icon-wrapper" onclick="focusForm()">
-              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_email_icon_default.svg" alt="footer_email_icon_default">
-              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_email_icon_hover.svg" alt="footer_email_icon_hover">
-            </button>
+      <div class="mobile-footer-content">
+        <div class="mobile-footer-logo-wrapper">
+          <img
+            src="./assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
 
-            <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="footer-social-media-icon-wrapper">
-              <img class="footer-social-media-icon-default" src="./assets/icons/footer/footer_linkedin_icon_default.svg" alt="footer_linkedin_icon_default">
-              <img class="footer-social-media-icon-hover" src="./assets/icons/footer/footer_linkedin_icon_hover.svg" alt="footer_linkedin_icon_hover">
-            </a>
-          </div>
+          <span class="footer-logo-name">E.Liske</span>
+          <span class="footer-logo-title">developer</span>
+        </div>
 
+        <div class="mobile-footer-social-media-links-wrapper">
+          <a
+            href="https://github.com/EugenLiske"
+            target="_blank"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="./assets/mobile/mobile_footer_github_icon_default.svg"
+              alt="github_icon_default"
+            />
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="./assets/mobile/mobile_footer_github_icon_active.svg"
+              alt="github_icon_active"
+            />
+          </a>
+
+          <button
+            type="button"
+            class="mobile-footer-social-media-icon-wrapper"
+            onclick="focusForm()"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="./assets/mobile/mobile_footer_email_icon_default.svg"
+              alt="email_icon_default"
+            />
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="./assets/mobile/mobile_footer_email_icon_active.svg"
+              alt="email_icon_active"
+            />
+          </button>
+
+          <a
+            href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+            target="_blank"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="./assets/mobile/mobile_footer_linkedin_icon_default.svg"
+              alt="linkedin_icon_default"
+            />
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="./assets/mobile/mobile_footer_linkedin_icon_active.svg"
+              alt="linkedin_icon_active"
+            />
+          </a>
+        </div>
+
+        <div class="mobile-footer-legal-wrapper">
+          <a href="./pages/legal_notice.html" data-i18n="footerLegalNotice">
+            Impressum
+          </a>
+
+          <a href="./pages/privacy_policy.html" data-i18n="footerPrivacyPolicy">
+            Datenschutzerklärung
+          </a>
+
+          <span>© Eugen Liske 2026</span>
+        </div>
       </div>
     </footer>
-  <script src="./scripts/translation_text_object.js"></script>
-  <script src="./scripts/why_me_section.js"></script>
-  <script src="./scripts/my_projects_section.js"></script>
-  <script src="./scripts/contact_section.js"></script>
-  <script src="./scripts/translate.js"></script>
-  <script src="./scripts/responsiveness.js"></script>
-</body>
+
+    <script src="./scripts/translation_text_object.js"></script>
+    <script src="./scripts/why_me_section.js"></script>
+    <script src="./scripts/my_projects_section.js"></script>
+    <script src="./scripts/contact_section.js"></script>
+    <script src="./scripts/translate.js"></script>
+    <script src="./scripts/responsiveness.js"></script>
+  </body>
 </html>

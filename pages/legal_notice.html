@@ -1,257 +1,452 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="pageTitleLegalNotice">Portfolio - Impressum</title>
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/hero_section/portfolio_logo_default.svg">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/icons/hero_section/portfolio_logo_default.svg"
+    />
 
-    <link rel="stylesheet" href="../styles/legal_notice.css">
-    <link rel="stylesheet" href="../styles/standard.css"/>
-    <link rel="stylesheet" href="../styles/fonts.css"/>
+    <link rel="stylesheet" href="../styles/legal_notice.css" />
+    <link rel="stylesheet" href="../styles/standard.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
     <link rel="stylesheet" href="../styles/variables.css" />
-    <link rel="stylesheet" href="../style.css"/>
-    <link rel="stylesheet" href="../styles/hero_section.css"/>
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/hero_section.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/why_me_section.css" />
     <link rel="stylesheet" href="../styles/my_skills_section.css" />
     <link rel="stylesheet" href="../styles/my_projects_section.css" />
     <link rel="stylesheet" href="../styles/reference_section.css" />
     <link rel="stylesheet" href="../styles/contact_section.css" />
-    <link rel="stylesheet" href="../styles/responsiveness.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/responsiveness.css" />
+  </head>
+  <body>
     <div class="imprint-header-wrapper">
-        <header class="hero-section-sticky-header">
-            <a href="../index.html" class="hero-main-logo">
-                <img src="../assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark" />
+      <header class="hero-section-sticky-header">
+        <a href="../index.html" class="hero-main-logo">
+          <img
+            src="../assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
 
-                <span class="nav-logo-name">E.Liske</span>
-                <span class="nav-logo-title">developer</span>
-            </a>
+          <span class="nav-logo-name">E.Liske</span>
+          <span class="nav-logo-title">developer</span>
+        </a>
 
-            <nav class="nav-link-wrapper">
-                <a href="../index.html" class="nav-link" data-i18n="navAbout">Über mich</a>
-                <a href="../index.html#my-skills-section-ID" class="nav-link" data-i18n="navSkills">Fähigkeiten</a>
-                <a href="../index.html#my-projects-section-ID" class="nav-link" data-i18n="navProjects">Projekte</a>
-                <a href="../index.html#contact-section-ID" class="nav-link" data-i18n="navContact">Kontakt</a>
-            </nav>
+        <nav class="nav-link-wrapper">
+          <a href="../index.html" class="nav-link" data-i18n="navAbout"
+            >Über mich</a
+          >
+          <a
+            href="../index.html#my-skills-section-ID"
+            class="nav-link"
+            data-i18n="navSkills"
+            >Fähigkeiten</a
+          >
+          <a
+            href="../index.html#my-projects-section-ID"
+            class="nav-link"
+            data-i18n="navProjects"
+            >Projekte</a
+          >
+          <a
+            href="../index.html#contact-section-ID"
+            class="nav-link"
+            data-i18n="navContact"
+            >Kontakt</a
+          >
+        </nav>
 
-            <div class="nav-translate-function">
-                <button
-                    id="translate-german-button"
-                    type="button"
-                    class="translate-button active-language"
-                    data-language="de"
-                    onclick="translateToGerman()"
-                >
-                    DE
-                </button>
+        <div class="nav-translate-function">
+          <button
+            id="translate-german-button"
+            type="button"
+            class="translate-button active-language"
+            data-language="de"
+            onclick="translateToGerman()"
+          >
+            DE
+          </button>
 
-                <button
-                    id="translate-english-button"
-                    type="button"
-                    class="translate-button"
-                    data-language="en"
-                    onclick="translateToEnglish()"
-                >
-                    EN
-                </button>
-            </div>
-        </header>
+          <button
+            id="translate-english-button"
+            type="button"
+            class="translate-button"
+            data-language="en"
+            onclick="translateToEnglish()"
+          >
+            EN
+          </button>
+        </div>
+      </header>
     </div>
 
-<main>
-    <div class="imprint-content">
+    <section class="legal-mobile-header">
+      <div class="mobile-hero-section-upper-part">
+        <a href="../index.html" class="mobile-hero-main-logo">
+          <div class="logo-wrapper">
+            <img
+              class="portfolio-logo-default"
+              src="../assets/icons/hero_section/portfolio_logo_default_1.svg"
+              alt="portfolio_logo_default"
+            />
+          </div>
 
-    <h1 id="imprint-headline" data-i18n="imprintHeadline">
-        Impressum
-    </h1>
+          <span class="logo-name">E.Liske</span>
+          <span class="logo-title">developer</span>
+        </a>
 
-    <section class="imprint-section">
+        <button
+          class="burger-menu"
+          type="button"
+          aria-label="Open navigation menu"
+          onclick="openBurgerMenu()"
+        >
+          <img
+            class="burger-menu-icon"
+            src="../assets/mobile/burger_menu_default.svg"
+            alt=""
+          />
+        </button>
+      </div>
 
-        <h2 data-i18n="imprintLegalInformationHeadline">
+      <nav class="mobile-menu-overlay legal-mobile-menu-overlay">
+        <div class="mobile-menu-content">
+          <a
+            href="../index.html#why-me-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navAbout"
+            onclick="openBurgerMenu()"
+          >
+            Why me
+          </a>
+
+          <a
+            href="../index.html#my-skills-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navSkills"
+            onclick="openBurgerMenu()"
+          >
+            Skills
+          </a>
+
+          <a
+            href="../index.html#my-projects-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navProjects"
+            onclick="openBurgerMenu()"
+          >
+            Projects
+          </a>
+
+          <a
+            href="../index.html#contact-section-ID"
+            class="mobile-menu-link"
+            data-i18n="navContact"
+            onclick="openBurgerMenu()"
+          >
+            Contact
+          </a>
+
+          <div class="mobile-menu-language-wrapper">
+            <button
+              type="button"
+              class="mobile-menu-language-button active-language"
+              data-language="de"
+              onclick="translateToGerman()"
+            >
+              DE
+            </button>
+
+            <button
+              type="button"
+              class="mobile-menu-language-button"
+              data-language="en"
+              onclick="translateToEnglish()"
+            >
+              EN
+            </button>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <main>
+      <div class="imprint-content">
+        <button
+          class="back-to-previous-page-button"
+          type="button"
+          onclick="history.back()"
+        >
+          <img
+            src="../assets/mobile/back_to_previous_page_arrow.svg"
+            alt="back_to_previous_page"
+          />
+        </button>
+
+        <h1 id="imprint-headline" data-i18n="imprintHeadline">Impressum</h1>
+
+        <section class="imprint-section">
+          <h2 data-i18n="imprintLegalInformationHeadline">
             Angaben gemäß § 5 TMG
-        </h2>
+          </h2>
 
-        <p>
-            <span data-i18n="imprintName">
-                Evgenij (Eugen) Liske
-            </span><br>
+          <p>
+            <span data-i18n="imprintName"> Evgenij (Eugen) Liske </span><br />
 
-            <span data-i18n="imprintStreet">
-                Mooswiesenstraße 11a
-            </span><br>
+            <span data-i18n="imprintStreet"> Mooswiesenstraße 11a </span><br />
 
-            <span data-i18n="imprintCity">
-                81245 München
-            </span><br>
+            <span data-i18n="imprintCity"> 81245 München </span><br />
 
-            <span data-i18n="imprintCountry">
-                Deutschland
-            </span>
-        </p>
+            <span data-i18n="imprintCountry"> Deutschland </span>
+          </p>
+        </section>
 
-    </section>
+        <section class="imprint-section">
+          <h2 data-i18n="imprintContactHeadline">Kontakt</h2>
 
-    <section class="imprint-section">
+          <p>
+            <span data-i18n="imprintEmailLabel"> E-Mail: </span>
 
-        <h2 data-i18n="imprintContactHeadline">
-            Kontakt
-        </h2>
+            <span> eugen.liske@yahoo.de </span>
+          </p>
 
-        <p>
-            <span data-i18n="imprintEmailLabel">
-                E-Mail:
-            </span>
+          <p>
+            <span data-i18n="imprintPhoneLabel"> Telefon: </span>
 
-            <span>
-                eugen.liske@yahoo.de
-            </span>
-        </p>
+            <span> +49 176 63452473 </span>
+          </p>
+        </section>
 
-        <p>
-            <span data-i18n="imprintPhoneLabel">
-                Telefon:
-            </span>
+        <section class="imprint-section">
+          <h2 data-i18n="imprintPurposeHeadline">Zweck dieser Website</h2>
 
-            <span>
-                +49 176 63452473
-            </span>
-        </p>
-
-    </section>
-
-    <section class="imprint-section">
-
-        <h2 data-i18n="imprintPurposeHeadline">
-            Zweck dieser Website
-        </h2>
-
-        <p data-i18n="imprintPurposeTextOne">
+          <p data-i18n="imprintPurposeTextOne">
             Diese Website dient als persönliche digitale Bewerbungs- und
             Projektmappe zur Präsentation meiner fachlichen Qualifikationen,
             Kenntnisse und Projekte im Bereich Frontend-Entwicklung.
-        </p>
+          </p>
 
-        <p data-i18n="imprintPurposeTextTwo">
+          <p data-i18n="imprintPurposeTextTwo">
             Sie bietet einen Überblick über ausgewählte Entwicklungsprojekte,
-            technische Fähigkeiten sowie beruflich relevante Informationen
-            zu meiner Person.
-        </p>
+            technische Fähigkeiten sowie beruflich relevante Informationen zu
+            meiner Person.
+          </p>
+        </section>
 
-    </section>
+        <section class="imprint-section">
+          <h2 data-i18n="imprintCopyrightHeadline">Urheberrecht</h2>
 
-    <section class="imprint-section">
-
-        <h2 data-i18n="imprintCopyrightHeadline">
-            Urheberrecht
-        </h2>
-
-        <p data-i18n="imprintCopyrightTextOne">
+          <p data-i18n="imprintCopyrightTextOne">
             Die technische Umsetzung, Frontend-Entwicklung sowie die
             Programmierung dieser Website erfolgten eigenständig.
-        </p>
+          </p>
 
-        <p data-i18n="imprintCopyrightTextTwo">
-            Das zugrunde liegende Design, die visuelle Konzeption sowie
-            einzelne Gestaltungsvorlagen basieren auf Materialien der
-            Developer Akademie GmbH.
-        </p>
+          <p data-i18n="imprintCopyrightTextTwo">
+            Das zugrunde liegende Design, die visuelle Konzeption sowie einzelne
+            Gestaltungsvorlagen basieren auf Materialien der Developer Akademie
+            GmbH.
+          </p>
 
-        <p data-i18n="imprintCopyrightTextThree">
-            Eine Vervielfältigung, Weitergabe oder anderweitige Nutzung
-            der bereitgestellten Designvorlagen außerhalb des vorgesehenen
-            Lern- und Projektkontextes ist nicht gestattet.
-        </p>
+          <p data-i18n="imprintCopyrightTextThree">
+            Eine Vervielfältigung, Weitergabe oder anderweitige Nutzung der
+            bereitgestellten Designvorlagen außerhalb des vorgesehenen Lern- und
+            Projektkontextes ist nicht gestattet.
+          </p>
+        </section>
 
-    </section>
+        <section class="imprint-section">
+          <h2 data-i18n="imprintContentHeadline">Hinweise zu den Inhalten</h2>
 
-    <section class="imprint-section">
+          <p data-i18n="imprintContentText">
+            Die Inhalte dieser Website dienen ausschließlich der Präsentation
+            meiner beruflichen Qualifikationen, Projekte und technischen
+            Fähigkeiten im Rahmen meiner persönlichen Bewerbungsunterlagen.
+          </p>
+        </section>
 
-        <h2 data-i18n="imprintContentHeadline">
-            Hinweise zu den Inhalten
-        </h2>
+        <section class="imprint-section">
+          <h2 data-i18n="imprintTechnicalHeadline">Technische Umsetzung</h2>
 
-        <p data-i18n="imprintContentText">
-            Die Inhalte dieser Website dienen ausschließlich der
-            Präsentation meiner beruflichen Qualifikationen,
-            Projekte und technischen Fähigkeiten im Rahmen meiner
-            persönlichen Bewerbungsunterlagen.
-        </p>
+          <p data-i18n="imprintTechnicalText">
+            Die Frontend-Entwicklung, technische Umsetzung sowie das Hosting
+            dieser Website erfolgen eigenständig im Rahmen meiner Weiterbildung
+            und praktischen Projektarbeit im Bereich Webentwicklung.
+          </p>
 
-    </section>
+          <p data-i18n="imprintTechnicalTextTwo">
+            Die zugrunde liegenden Design- und Layoutvorlagen wurden im Rahmen
+            der Weiterbildung durch die Developer Akademie GmbH bereitgestellt.
+          </p>
+        </section>
 
-    <section class="imprint-section">
+        <section class="imprint-section">
+          <h2 data-i18n="imprintStatusHeadline">Stand</h2>
 
-        <h2 data-i18n="imprintTechnicalHeadline">
-            Technische Umsetzung
-        </h2>
-
-        <p data-i18n="imprintTechnicalText">
-            Die Frontend-Entwicklung, technische Umsetzung sowie das
-            Hosting dieser Website erfolgen eigenständig im Rahmen
-            meiner Weiterbildung und praktischen Projektarbeit im
-            Bereich Webentwicklung.
-        </p>
-
-        <p data-i18n="imprintTechnicalTextTwo">
-            Die zugrunde liegenden Design- und Layoutvorlagen wurden
-            im Rahmen der Weiterbildung durch die Developer Akademie GmbH
-            bereitgestellt.
-        </p>
-
-    </section>
-
-    <section class="imprint-section">
-
-        <h2 data-i18n="imprintStatusHeadline">
-            Stand
-        </h2>
-
-        <p data-i18n="imprintStatusText">
-            August 2026
-        </p>
-
-    </section>
-    </div>
-</main>
-<footer>
+          <p data-i18n="imprintStatusText">August 2026</p>
+        </section>
+      </div>
+    </main>
+    <footer>
       <div class="footer-content">
-          <div class="legal-notice-and-name-wrapper">
-            <a href="./legal_notice.html" data-i18n="footerLegalNotice">Impressum</a>
-            <a href="./privacy_policy.html" data-i18n="footerPrivacyPolicy">Datenschutzerklärung</a>
-            <span>© Eugen Liske 2026</span>
-          </div>
+        <div class="legal-notice-and-name-wrapper">
+          <a href="./legal_notice.html" data-i18n="footerLegalNotice"
+            >Impressum</a
+          >
+          <a href="./privacy_policy.html" data-i18n="footerPrivacyPolicy"
+            >Datenschutzerklärung</a
+          >
+          <span>© Eugen Liske 2026</span>
+        </div>
 
-          <div class="footer-logo-wrapper">
-            <img src="../assets/icons/hero_section/portfolio_logo_dark.svg" alt="portfolio_logo_dark"
+        <div class="footer-logo-wrapper">
+          <img
+            src="../assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
+
+          <span class="footer-logo-name">E.Liske</span>
+          <span class="footer-logo-title">developer</span>
+        </div>
+
+        <div class="footer-social-media-links-wrapper">
+          <a
+            href="https://github.com/EugenLiske"
+            target="_blank"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="../assets/icons/footer/footer_github_icon_default.svg"
+              alt="footer_github_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="../assets/icons/footer/footer_github_icon_hover.svg"
+              alt="footer_github_icon_hover"
+            />
+          </a>
+
+          <a
+            href="../index.html#contact-section-ID"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="../assets/icons/footer/footer_email_icon_default.svg"
+              alt="footer_email_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="../assets/icons/footer/footer_email_icon_hover.svg"
+              alt="footer_email_icon_hover"
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+            target="_blank"
+            class="footer-social-media-icon-wrapper"
+          >
+            <img
+              class="footer-social-media-icon-default"
+              src="../assets/icons/footer/footer_linkedin_icon_default.svg"
+              alt="footer_linkedin_icon_default"
+            />
+            <img
+              class="footer-social-media-icon-hover"
+              src="../assets/icons/footer/footer_linkedin_icon_hover.svg"
+              alt="footer_linkedin_icon_hover"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-footer-content">
+        <div class="mobile-footer-logo-wrapper">
+          <img
+            src="../assets/icons/hero_section/portfolio_logo_dark.svg"
+            alt="portfolio_logo_dark"
+          />
+
+          <span class="footer-logo-name">E.Liske</span>
+          <span class="footer-logo-title">developer</span>
+        </div>
+
+        <div class="mobile-footer-social-media-links-wrapper">
+          <a
+            href="https://github.com/EugenLiske"
+            target="_blank"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="../assets/mobile/mobile_footer_github_icon_default.svg"
+              alt="github_icon_default"
             />
 
-            <span class="footer-logo-name">E.Liske</span>
-            <span class="footer-logo-title">developer</span>
-          </div>
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="../assets/mobile/mobile_footer_github_icon_active.svg"
+              alt="github_icon_active"
+            />
+          </a>
 
-          <div class="footer-social-media-links-wrapper">
-            <a href="https://github.com/EugenLiske" target="_blank" class="footer-social-media-icon-wrapper">
-              <img class="footer-social-media-icon-default" src="../assets/icons/footer/footer_github_icon_default.svg" alt="footer_github_icon_default">
-              <img class="footer-social-media-icon-hover" src="../assets/icons/footer/footer_github_icon_hover.svg" alt="footer_github_icon_hover">
-            </a>
+          <a
+            href="../index.html#contact-section-ID"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="../assets/mobile/mobile_footer_email_icon_default.svg"
+              alt="email_icon_default"
+            />
 
-            <button class="footer-social-media-icon-wrapper" onclick="focusForm()">
-              <img class="footer-social-media-icon-default" src="../assets/icons/footer/footer_email_icon_default.svg" alt="footer_email_icon_default">
-              <img class="footer-social-media-icon-hover" src="../assets/icons/footer/footer_email_icon_hover.svg" alt="footer_email_icon_hover">
-            </button>
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="../assets/mobile/mobile_footer_email_icon_active.svg"
+              alt="email_icon_active"
+            />
+          </a>
 
-            <a href="https://www.linkedin.com/in/eugen-liske-14949a11a/" target="_blank" class="footer-social-media-icon-wrapper">
-              <img class="footer-social-media-icon-default" src="../assets/icons/footer/footer_linkedin_icon_default.svg" alt="footer_linkedin_icon_default">
-              <img class="footer-social-media-icon-hover" src="../assets/icons/footer/footer_linkedin_icon_hover.svg" alt="footer_linkedin_icon_hover">
-            </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
+            target="_blank"
+            class="mobile-footer-social-media-icon-wrapper"
+          >
+            <img
+              class="mobile-footer-social-media-icon-default"
+              src="../assets/mobile/mobile_footer_linkedin_icon_default.svg"
+              alt="linkedin_icon_default"
+            />
 
+            <img
+              class="mobile-footer-social-media-icon-active"
+              src="../assets/mobile/mobile_footer_linkedin_icon_active.svg"
+              alt="linkedin_icon_active"
+            />
+          </a>
+        </div>
+
+        <div class="mobile-footer-legal-wrapper">
+          <a href="./legal_notice.html" data-i18n="footerLegalNotice">
+            Impressum
+          </a>
+
+          <a href="./privacy_policy.html" data-i18n="footerPrivacyPolicy">
+            Datenschutzerklärung
+          </a>
+
+          <span>© Eugen Liske 2026</span>
+        </div>
       </div>
-</footer>
-<script src="../scripts/translation_text_object.js"></script>
-<script src="../scripts/translate.js"></script>
-</body>
+    </footer>
+    <script src="../scripts/translation_text_object.js"></script>
+    <script src="../scripts/translate.js"></script>
+    <script src="../scripts/responsiveness.js"></script>
+  </body>
 </html>

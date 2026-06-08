@@ -342,7 +342,7 @@
     opacity: 1;
 }
 
-.privacy-policy-content {
+.privacy-policy-declaration {
     display: flex;
     flex-direction: column;
 }
@@ -435,4 +435,12 @@
 
     box-shadow: 0 0 0 1000px rgb(49,63,72) inset;
     -webkit-box-shadow: 0 0 0 1000px rgb(49,63,72) inset;
+}
+
+.mobile-nav-arrow-up-position-wrapper {
+    display: none;
+}
+
+.mobile-contact-cta {
+    display: none;
 }

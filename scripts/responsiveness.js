@@ -2,10 +2,10 @@ let isBurgerMenuOpen = false;
 let isBurgerMenuAnimating = false;
 
 const burgerMenuFrames = [
-    "./assets/mobile/burger_menu_default.svg",
-    "./assets/mobile/burger_menu_closing_1.svg",
-    "./assets/mobile/burger_menu_closing_2.svg",
-    "./assets/mobile/burger_menu_open.svg"
+    "/assets/mobile/burger_menu_default.svg",
+    "/assets/mobile/burger_menu_closing_1.svg",
+    "/assets/mobile/burger_menu_closing_2.svg",
+    "/assets/mobile/burger_menu_open.svg"
 ];
 
 function openBurgerMenu() {
@@ -18,9 +18,13 @@ function openBurgerMenu() {
 
     isBurgerMenuAnimating = true;
 
-    const frames = isBurgerMenuOpen
-        ? [...burgerMenuFrames].reverse()
-        : burgerMenuFrames;
+    let frames;
+
+    if (isBurgerMenuOpen) {
+        frames = [...burgerMenuFrames].reverse();
+    } else {
+        frames = burgerMenuFrames;
+    }
 
     frames.forEach((frame, index) => {
         setTimeout(() => {

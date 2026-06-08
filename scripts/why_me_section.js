@@ -64,22 +64,31 @@ function updateStyledText(currentPrefix, currentDynamicText) {
 }
 
 async function typeText(item) {
-    prefix.textContent = item.prefix;
+    const fullText = item.prefix + item.dynamicText;
 
-    for (let i = 0; i <= item.dynamicText.length; i++) {
-        const currentDynamicText = item.dynamicText.slice(0, i);
+    for (let i = 0; i <= fullText.length; i++) {
+        const currentFullText = fullText.slice(0, i);
 
-        updateStyledText(item.prefix, currentDynamicText);
+        const currentPrefix = currentFullText.slice(0, item.prefix.length);
+        const currentDynamicText = currentFullText.slice(item.prefix.length);
+
+        updateStyledText(currentPrefix, currentDynamicText);
 
         await wait(70);
     }
 }
 
-async function deleteText(item) {
-    for (let i = item.dynamicText.length; i >= 0; i--) {
-        const currentDynamicText = item.dynamicText.slice(0, i);
 
-        updateStyledText(item.prefix, currentDynamicText);
+async function deleteText(item) {
+    const fullText = item.prefix + item.dynamicText;
+
+    for (let i = fullText.length; i >= 0; i--) {
+        const currentFullText = fullText.slice(0, i);
+
+        const currentPrefix = currentFullText.slice(0, item.prefix.length);
+        const currentDynamicText = currentFullText.slice(item.prefix.length);
+
+        updateStyledText(currentPrefix, currentDynamicText);
 
         await wait(40);
     }

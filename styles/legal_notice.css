@@ -48,3 +48,11 @@ p {
     line-height: 1.4;
     margin-bottom: 24px;
 }
+
+.legal-mobile-header {
+    display: none;
+}
+
+.back-to-previous-page-button {
+    display: none;
+}

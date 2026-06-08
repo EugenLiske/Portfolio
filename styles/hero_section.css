@@ -76,7 +76,8 @@
 
 /* main logo */
 
-.hero-main-logo {
+.hero-main-logo,
+.mobile-hero-main-logo {
     display: flex;
     flex-direction: column;
     align-items: center;

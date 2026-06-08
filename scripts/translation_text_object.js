@@ -78,7 +78,9 @@ const translations = {
     projectLiveTestButton: "Live Test",
     projectGithubButton: "GitHub",
 
-    referencesIntroText: "Das sagen andere über die Zusammenarbeit mit mir.",
+    referencesIntroText: "Teamplayer benötigt? Das sagen andere über die Zusammenarbeit mit mir.",
+    referencesMobileHeadline: "Teamplayer benötigt?",
+    referencesMobileSubline: "Das sagen andere über die Zusammenarbeit mit mir.",
 
     referenceProjectLabel: "Projekt",
 
@@ -99,6 +101,8 @@ const translations = {
     referenceLinkedInProfile: "LinkedIn-Profil",
 
     contactHeadline: "Kontakt",
+
+    contactMobileCTA: "Lassen Sie uns zusammenarbeiten!",
 
     contactIntroTextOne: `
             Ich freue mich über den Austausch zu Frontend-Entwicklung,
@@ -476,7 +480,10 @@ const translations = {
     projectLiveTestButton: "Live Test",
     projectGithubButton: "GitHub",
 
-    referencesIntroText: "What others say about working with me.",
+    referencesIntroText: "Need a team player? Here's what others say about working with me.",
+    referencesMobileHeadline: "Need a teamplayer?",
+    referencesMobileSubline: "Here's what others say about working with me.",
+    
 
     referenceProjectLabel: "Project",
 
@@ -497,6 +504,8 @@ const translations = {
     referenceLinkedInProfile: "LinkedIn Profile",
 
     contactHeadline: "Contact",
+
+    contactMobileCTA: "Let us work together!",
 
     contactIntroTextOne: `
             I look forward to connecting about frontend development,

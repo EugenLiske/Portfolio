@@ -89,3 +89,7 @@ footer {
 .footer-social-media-icon-wrapper:hover .footer-social-media-icon-default {
     opacity: 0;
 }
+
+.mobile-footer-content {
+    display: none;
+}
