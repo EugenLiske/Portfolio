@@ -37,7 +37,7 @@ const formTranslations = {
         emailMissing: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
         messageMissing: "Bitte geben Sie eine Nachricht ein.",
         privacyPolicyMissing: "Bitte stimmen Sie der Datenschutzerklärung zu.",
-        emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        emailInvalid: `Bitte geben Sie eine gültige <span class="no-break">E-Mail-Adresse</span> ein.`,
 
         nameDefault: "Ihr Name",
         emailDefault: "Ihre E-Mail-Adresse",
@@ -282,7 +282,7 @@ function showNameError(translationKey) {
 function showEmailError(translationKey) {
     emailInputField.classList.add("error-border");
     emailInputLabel.classList.add("error-label");
-    emailInputLabel.textContent = getFormTranslation(translationKey);
+    emailInputLabel.innerHTML = getFormTranslation(translationKey);
     emailCheckIcon.classList.remove("activated");
 }
 
@@ -565,12 +565,12 @@ function updateEmailErrorText(evaluatedFormInput) {
  */
 function setVisibleEmailErrorText(evaluatedFormInput) {
     if (!evaluatedFormInput.emailFilled) {
-        emailInputLabel.textContent = getFormTranslation("emailMissing");
+        emailInputLabel.innerHTML = getFormTranslation("emailMissing");
         return;
     }
 
     if (!evaluatedFormInput.emailFormatValid) {
-        emailInputLabel.textContent = getFormTranslation("emailInvalid");
+        emailInputLabel.innerHTML = getFormTranslation("emailInvalid");
     }
 }
 

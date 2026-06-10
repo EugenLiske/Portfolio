@@ -67,6 +67,16 @@
     transition: opacity 0.4s ease-in-out;
 }
 
+.current-learning-bg-shape-default {
+    height: 420px;
+    width: 420px;
+}
+
+.current-learning-bg-shape-hover {
+    height: 530px;
+    width: 530px;
+}
+
 .current-learning-bg-shape-hover {
     opacity: 0;
 }
