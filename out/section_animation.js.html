@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: section_animation.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: section_animation.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Observes animated sections and shows them when they enter the viewport.
+ */
+function observeAnimatedSections() {
+    const animatedSections = document.querySelectorAll(".section-slide-in");
+
+    animatedSections.forEach((section) => {
+        observeSingleSection(section);
+    });
+}
+
+/**
+ * Observes one section and adds the visible animation class.
+ * @param {Element} section - The section that should be animated.
+ */
+function observeSingleSection(section) {
+    const observer = new IntersectionObserver((entries) => {
+        handleSectionIntersection(entries);
+    }, {
+        threshold: 0.15
+    });
+
+    observer.observe(section);
+}
+
+/**
+ * Adds the visible class when the section is visible.
+ * @param {IntersectionObserverEntry[]} entries - The observed entries.
+ * @param {IntersectionObserver} observer - The observer instance.
+ */
+function handleSectionIntersection(entries) {
+    const entry = entries[0];
+
+    if (entry.isIntersecting) {
+        entry.target.classList.add("visible-section");
+    } else {
+        entry.target.classList.remove("visible-section");
+    }
+}
+
+observeAnimatedSections();</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#checkFormAndSend">checkFormAndSend</a></li><li><a href="global.html#checkIfMailIsFilledAndValid">checkIfMailIsFilledAndValid</a></li><li><a href="global.html#checkIfMessageIsFilledAndValid">checkIfMessageIsFilledAndValid</a></li><li><a href="global.html#checkIfNameIsFilledAndValid">checkIfNameIsFilledAndValid</a></li><li><a href="global.html#checkPrivacyPolicy">checkPrivacyPolicy</a></li><li><a href="global.html#clearAnimatedText">clearAnimatedText</a></li><li><a href="global.html#clearEmailError">clearEmailError</a></li><li><a href="global.html#clearFormFeedbackTimeouts">clearFormFeedbackTimeouts</a></li><li><a href="global.html#clearFormFields">clearFormFields</a></li><li><a href="global.html#clearMessageError">clearMessageError</a></li><li><a href="global.html#clearNameError">clearNameError</a></li><li><a href="global.html#deleteText">deleteText</a></li><li><a href="global.html#displayProjectContent">displayProjectContent</a></li><li><a href="global.html#evaluateFormInput">evaluateFormInput</a></li><li><a href="global.html#finishBurgerMenuAnimation">finishBurgerMenuAnimation</a></li><li><a href="global.html#focusForm">focusForm</a></li><li><a href="global.html#getBurgerMenuAnimationFrames">getBurgerMenuAnimationFrames</a></li><li><a href="global.html#getBurgerMenuElements">getBurgerMenuElements</a></li><li><a href="global.html#getFormTranslation">getFormTranslation</a></li><li><a href="global.html#getMailRequestBody">getMailRequestBody</a></li><li><a href="global.html#getMailRequestHeaders">getMailRequestHeaders</a></li><li><a href="global.html#getSavedLanguage">getSavedLanguage</a></li><li><a href="global.html#getSelectedProject">getSelectedProject</a></li><li><a href="global.html#handleSectionIntersection">handleSectionIntersection</a></li><li><a href="global.html#hideAnimatedIcon">hideAnimatedIcon</a></li><li><a href="global.html#hideFormFeedback">hideFormFeedback</a></li><li><a href="global.html#hidePrivacyPolicyError">hidePrivacyPolicyError</a></li><li><a href="global.html#isEmailValid">isEmailValid</a></li><li><a href="global.html#observeAnimatedSections">observeAnimatedSections</a></li><li><a href="global.html#observeSingleSection">observeSingleSection</a></li><li><a href="global.html#openBurgerMenu">openBurgerMenu</a></li><li><a href="global.html#postFormInput">postFormInput</a></li><li><a href="global.html#readFormInput">readFormInput</a></li><li><a href="global.html#renderEmailSubmitError">renderEmailSubmitError</a></li><li><a href="global.html#renderMessageSubmitError">renderMessageSubmitError</a></li><li><a href="global.html#renderNameSubmitError">renderNameSubmitError</a></li><li><a href="global.html#renderPrivacyPolicySubmitError">renderPrivacyPolicySubmitError</a></li><li><a href="global.html#renderSubmitErrors">renderSubmitErrors</a></li><li><a href="global.html#resetCheckIcons">resetCheckIcons</a></li><li><a href="global.html#resetCheckboxState">resetCheckboxState</a></li><li><a href="global.html#resetFormAfterSend">resetFormAfterSend</a></li><li><a href="global.html#runTypewriterCycle">runTypewriterCycle</a></li><li><a href="global.html#saveSelectedLanguage">saveSelectedLanguage</a></li><li><a href="global.html#sendValidForm">sendValidForm</a></li><li><a href="global.html#setActiveProjectNavItem">setActiveProjectNavItem</a></li><li><a href="global.html#setFormLanguage">setFormLanguage</a></li><li><a href="global.html#setProjectLanguage">setProjectLanguage</a></li><li><a href="global.html#setSendButtonState">setSendButtonState</a></li><li><a href="global.html#setTypewriterLanguage">setTypewriterLanguage</a></li><li><a href="global.html#setVisibleEmailErrorText">setVisibleEmailErrorText</a></li><li><a href="global.html#showAnimatedIcon">showAnimatedIcon</a></li><li><a href="global.html#showBurgerMenuFrame">showBurgerMenuFrame</a></li><li><a href="global.html#showEmailError">showEmailError</a></li><li><a href="global.html#showFormFeedback">showFormFeedback</a></li><li><a href="global.html#showMessageError">showMessageError</a></li><li><a href="global.html#showNameError">showNameError</a></li><li><a href="global.html#showPrivacyPolicyError">showPrivacyPolicyError</a></li><li><a href="global.html#startBurgerMenuAnimation">startBurgerMenuAnimation</a></li><li><a href="global.html#startTypewriterLoop">startTypewriterLoop</a></li><li><a href="global.html#toggleMobileMenuOverlay">toggleMobileMenuOverlay</a></li><li><a href="global.html#translatePage">translatePage</a></li><li><a href="global.html#translateSingleElement">translateSingleElement</a></li><li><a href="global.html#translateTextElements">translateTextElements</a></li><li><a href="global.html#translateToEnglish">translateToEnglish</a></li><li><a href="global.html#translateToGerman">translateToGerman</a></li><li><a href="global.html#translations">translations</a></li><li><a href="global.html#typeText">typeText</a></li><li><a href="global.html#updateActiveLanguageButton">updateActiveLanguageButton</a></li><li><a href="global.html#updateAnimatedText">updateAnimatedText</a></li><li><a href="global.html#updateDesktopProjectContent">updateDesktopProjectContent</a></li><li><a href="global.html#updateDesktopProjectImages">updateDesktopProjectImages</a></li><li><a href="global.html#updateDesktopProjectLinks">updateDesktopProjectLinks</a></li><li><a href="global.html#updateDesktopProjectTexts">updateDesktopProjectTexts</a></li><li><a href="global.html#updateDocumentLanguage">updateDocumentLanguage</a></li><li><a href="global.html#updateEmailErrorText">updateEmailErrorText</a></li><li><a href="global.html#updateFormLanguage">updateFormLanguage</a></li><li><a href="global.html#updateLanguageModules">updateLanguageModules</a></li><li><a href="global.html#updateMessageErrorText">updateMessageErrorText</a></li><li><a href="global.html#updateMobileProjectContent">updateMobileProjectContent</a></li><li><a href="global.html#updateMobileProjectImages">updateMobileProjectImages</a></li><li><a href="global.html#updateMobileProjectLinks">updateMobileProjectLinks</a></li><li><a href="global.html#updateMobileProjectTexts">updateMobileProjectTexts</a></li><li><a href="global.html#updateNameErrorText">updateNameErrorText</a></li><li><a href="global.html#updatePrivacyPolicyErrorText">updatePrivacyPolicyErrorText</a></li><li><a href="global.html#updateProjectLanguage">updateProjectLanguage</a></li><li><a href="global.html#updateSingleLanguageButton">updateSingleLanguageButton</a></li><li><a href="global.html#updateStyledText">updateStyledText</a></li><li><a href="global.html#updateTypewriterLanguage">updateTypewriterLanguage</a></li><li><a href="global.html#updateVisibleFormErrors">updateVisibleFormErrors</a></li><li><a href="global.html#validateFormInput">validateFormInput</a></li><li><a href="global.html#validateMailResponse">validateMailResponse</a></li><li><a href="global.html#wait">wait</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jun 10 2026 18:12:43 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

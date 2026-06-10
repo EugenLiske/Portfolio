@@ -48,6 +48,12 @@ const nameInputLabel = document.getElementById("name-input-label");
 const emailInputLabel = document.getElementById("email-input-label");
 const messageInputLabel = document.getElementById("message-input-label");
 
+const formFeedbackOverlay = document.getElementById("form-feedback-overlay");
+const formFeedbackMessage = document.getElementById("form-feedback-message");
+
+let formFeedbackTimeout;
+let formFeedbackFadeTimeout;
+
 
 // ---- language state ---- //
 
@@ -59,11 +65,14 @@ const formTranslations = {
         emailMissing: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
         messageMissing: "Bitte geben Sie eine Nachricht ein.",
         privacyPolicyMissing: "Bitte stimmen Sie der Datenschutzerklärung zu.",
-        emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        emailInvalid: `Bitte geben Sie eine gültige &lt;span class="no-break">E-Mail-Adresse&lt;/span> ein.`,
 
         nameDefault: "Ihr Name",
         emailDefault: "Ihre E-Mail-Adresse",
-        messageDefault: "Ihre Nachricht"
+        messageDefault: "Ihre Nachricht",
+
+        feedbackSuccess: "E-Mail erfolgreich versendet.",
+        feedbackError: "Ups, da ist etwas schiefgelaufen."
     },
 
     en: {
@@ -75,7 +84,10 @@ const formTranslations = {
 
         nameDefault: "Your name",
         emailDefault: "Your email address",
-        messageDefault: "Your message"
+        messageDefault: "Your message",
+
+        feedbackSuccess: "Email sent successfully.",
+        feedbackError: "Oops, something went wrong."
     }
 };
 
@@ -182,7 +194,7 @@ function evaluateFormInput(formInput) {
  * @returns {boolean} True if the email format is valid.
  */
 function isEmailValid(email) {
-    const regularExpression = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+    const regularExpression = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
     return regularExpression.test(email);
 }
 
@@ -202,15 +214,20 @@ function setSendButtonState(isFormValid) {
 // ---- single field validation ---- //
 
 /**
- * Updates the name check icon depending on the name input value.
+ * Updates the name check icon and shows an error when the name is empty.
  */
-function checkIfNameIsFilled() {
+function checkIfNameIsFilledAndValid() {
     const nameFilled = nameInputField.value.trim() !== "";
+
     nameCheckIcon.classList.toggle("activated", nameFilled);
+
+    if (!nameFilled) {
+        showNameError("nameMissing");
+    }
 }
 
 /**
- * Updates the email check icon and shows an error for invalid email input.
+ * Updates the email check icon and shows an error for empty or invalid email input.
  */
 function checkIfMailIsFilledAndValid() {
     const emailValue = emailInputField.value.trim();
@@ -219,17 +236,27 @@ function checkIfMailIsFilledAndValid() {
 
     emailCheckIcon.classList.toggle("activated", emailFilled &amp;&amp; emailValid);
 
-    if (emailFilled &amp;&amp; !emailValid) {
+    if (!emailFilled) {
+        showEmailError("emailMissing");
+        return;
+    }
+
+    if (!emailValid) {
         showEmailError("emailInvalid");
     }
 }
 
 /**
- * Updates the message check icon depending on the message input value.
+ * Updates the message check icon and shows an error when the message is empty.
  */
-function checkIfMessageIsFilled() {
+function checkIfMessageIsFilledAndValid() {
     const messageFilled = messageInputField.value.trim() !== "";
+
     messageCheckIcon.classList.toggle("activated", messageFilled);
+
+    if (!messageFilled) {
+        showMessageError("messageMissing");
+    }
 }
 
 
@@ -283,7 +310,7 @@ function showNameError(translationKey) {
 function showEmailError(translationKey) {
     emailInputField.classList.add("error-border");
     emailInputLabel.classList.add("error-label");
-    emailInputLabel.textContent = getFormTranslation(translationKey);
+    emailInputLabel.innerHTML = getFormTranslation(translationKey);
     emailCheckIcon.classList.remove("activated");
 }
 
@@ -391,7 +418,6 @@ async function checkFormAndSend(event) {
 /**
  * Sends a valid form input to the backend.
  * @param {Object} formInput - The validated form input values.
- * @returns {Promise&lt;boolean>} Always returns false after handling the request.
  */
 async function sendValidForm(formInput) {
     try {
@@ -400,12 +426,45 @@ async function sendValidForm(formInput) {
 
         validateMailResponse(response, result);
         resetFormAfterSend();
-
-        return false;
+        showFormFeedback("feedbackSuccess");
     } catch (error) {
         console.error(error);
-        return false;
+        showFormFeedback("feedbackError");
     }
+}
+
+/**
+ * Shows a translated form feedback message.
+ * @param {string} translationKey - The feedback translation key.
+ */
+function showFormFeedback(translationKey) {
+    clearFormFeedbackTimeouts();
+
+    formFeedbackMessage.textContent = getFormTranslation(translationKey);
+    formFeedbackOverlay.classList.remove("deactivated", "fade-out");
+    formFeedbackOverlay.classList.add("visible");
+
+    formFeedbackTimeout = setTimeout(hideFormFeedback, 2000);
+}
+
+/**
+ * Starts hiding the form feedback message.
+ */
+function hideFormFeedback() {
+    formFeedbackOverlay.classList.add("fade-out");
+
+    formFeedbackFadeTimeout = setTimeout(() => {
+        formFeedbackOverlay.classList.remove("visible", "fade-out");
+        formFeedbackOverlay.classList.add("deactivated");
+    }, 500);
+}
+
+/**
+ * Clears running form feedback timers.
+ */
+function clearFormFeedbackTimeouts() {
+    clearTimeout(formFeedbackTimeout);
+    clearTimeout(formFeedbackFadeTimeout);
 }
 
 /**
@@ -534,12 +593,12 @@ function updateEmailErrorText(evaluatedFormInput) {
  */
 function setVisibleEmailErrorText(evaluatedFormInput) {
     if (!evaluatedFormInput.emailFilled) {
-        emailInputLabel.textContent = getFormTranslation("emailMissing");
+        emailInputLabel.innerHTML = getFormTranslation("emailMissing");
         return;
     }
 
     if (!evaluatedFormInput.emailFormatValid) {
-        emailInputLabel.textContent = getFormTranslation("emailInvalid");
+        emailInputLabel.innerHTML = getFormTranslation("emailInvalid");
     }
 }
 
@@ -570,13 +629,13 @@ function updatePrivacyPolicyErrorText() {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#checkFormAndSend">checkFormAndSend</a></li><li><a href="global.html#checkIfMailIsFilledAndValid">checkIfMailIsFilledAndValid</a></li><li><a href="global.html#checkIfMessageIsFilled">checkIfMessageIsFilled</a></li><li><a href="global.html#checkIfNameIsFilled">checkIfNameIsFilled</a></li><li><a href="global.html#checkPrivacyPolicy">checkPrivacyPolicy</a></li><li><a href="global.html#clearAnimatedText">clearAnimatedText</a></li><li><a href="global.html#clearEmailError">clearEmailError</a></li><li><a href="global.html#clearFormFields">clearFormFields</a></li><li><a href="global.html#clearMessageError">clearMessageError</a></li><li><a href="global.html#clearNameError">clearNameError</a></li><li><a href="global.html#deleteText">deleteText</a></li><li><a href="global.html#displayProjectContent">displayProjectContent</a></li><li><a href="global.html#evaluateFormInput">evaluateFormInput</a></li><li><a href="global.html#finishBurgerMenuAnimation">finishBurgerMenuAnimation</a></li><li><a href="global.html#focusForm">focusForm</a></li><li><a href="global.html#getBurgerMenuAnimationFrames">getBurgerMenuAnimationFrames</a></li><li><a href="global.html#getBurgerMenuElements">getBurgerMenuElements</a></li><li><a href="global.html#getFormTranslation">getFormTranslation</a></li><li><a href="global.html#getMailRequestBody">getMailRequestBody</a></li><li><a href="global.html#getMailRequestHeaders">getMailRequestHeaders</a></li><li><a href="global.html#getSavedLanguage">getSavedLanguage</a></li><li><a href="global.html#getSelectedProject">getSelectedProject</a></li><li><a href="global.html#hideAnimatedIcon">hideAnimatedIcon</a></li><li><a href="global.html#hidePrivacyPolicyError">hidePrivacyPolicyError</a></li><li><a href="global.html#isEmailValid">isEmailValid</a></li><li><a href="global.html#openBurgerMenu">openBurgerMenu</a></li><li><a href="global.html#postFormInput">postFormInput</a></li><li><a href="global.html#readFormInput">readFormInput</a></li><li><a href="global.html#renderEmailSubmitError">renderEmailSubmitError</a></li><li><a href="global.html#renderMessageSubmitError">renderMessageSubmitError</a></li><li><a href="global.html#renderNameSubmitError">renderNameSubmitError</a></li><li><a href="global.html#renderPrivacyPolicySubmitError">renderPrivacyPolicySubmitError</a></li><li><a href="global.html#renderSubmitErrors">renderSubmitErrors</a></li><li><a href="global.html#resetCheckIcons">resetCheckIcons</a></li><li><a href="global.html#resetCheckboxState">resetCheckboxState</a></li><li><a href="global.html#resetFormAfterSend">resetFormAfterSend</a></li><li><a href="global.html#runTypewriterCycle">runTypewriterCycle</a></li><li><a href="global.html#saveSelectedLanguage">saveSelectedLanguage</a></li><li><a href="global.html#sendValidForm">sendValidForm</a></li><li><a href="global.html#setActiveProjectNavItem">setActiveProjectNavItem</a></li><li><a href="global.html#setFormLanguage">setFormLanguage</a></li><li><a href="global.html#setProjectLanguage">setProjectLanguage</a></li><li><a href="global.html#setSendButtonState">setSendButtonState</a></li><li><a href="global.html#setTypewriterLanguage">setTypewriterLanguage</a></li><li><a href="global.html#setVisibleEmailErrorText">setVisibleEmailErrorText</a></li><li><a href="global.html#showAnimatedIcon">showAnimatedIcon</a></li><li><a href="global.html#showBurgerMenuFrame">showBurgerMenuFrame</a></li><li><a href="global.html#showEmailError">showEmailError</a></li><li><a href="global.html#showMessageError">showMessageError</a></li><li><a href="global.html#showNameError">showNameError</a></li><li><a href="global.html#showPrivacyPolicyError">showPrivacyPolicyError</a></li><li><a href="global.html#startBurgerMenuAnimation">startBurgerMenuAnimation</a></li><li><a href="global.html#startTypewriterLoop">startTypewriterLoop</a></li><li><a href="global.html#toggleMobileMenuOverlay">toggleMobileMenuOverlay</a></li><li><a href="global.html#translatePage">translatePage</a></li><li><a href="global.html#translateSingleElement">translateSingleElement</a></li><li><a href="global.html#translateTextElements">translateTextElements</a></li><li><a href="global.html#translateToEnglish">translateToEnglish</a></li><li><a href="global.html#translateToGerman">translateToGerman</a></li><li><a href="global.html#translations">translations</a></li><li><a href="global.html#typeText">typeText</a></li><li><a href="global.html#updateActiveLanguageButton">updateActiveLanguageButton</a></li><li><a href="global.html#updateAnimatedText">updateAnimatedText</a></li><li><a href="global.html#updateDesktopProjectContent">updateDesktopProjectContent</a></li><li><a href="global.html#updateDesktopProjectImages">updateDesktopProjectImages</a></li><li><a href="global.html#updateDesktopProjectLinks">updateDesktopProjectLinks</a></li><li><a href="global.html#updateDesktopProjectTexts">updateDesktopProjectTexts</a></li><li><a href="global.html#updateDocumentLanguage">updateDocumentLanguage</a></li><li><a href="global.html#updateEmailErrorText">updateEmailErrorText</a></li><li><a href="global.html#updateFormLanguage">updateFormLanguage</a></li><li><a href="global.html#updateLanguageModules">updateLanguageModules</a></li><li><a href="global.html#updateMessageErrorText">updateMessageErrorText</a></li><li><a href="global.html#updateMobileProjectContent">updateMobileProjectContent</a></li><li><a href="global.html#updateMobileProjectImages">updateMobileProjectImages</a></li><li><a href="global.html#updateMobileProjectLinks">updateMobileProjectLinks</a></li><li><a href="global.html#updateMobileProjectTexts">updateMobileProjectTexts</a></li><li><a href="global.html#updateNameErrorText">updateNameErrorText</a></li><li><a href="global.html#updatePrivacyPolicyErrorText">updatePrivacyPolicyErrorText</a></li><li><a href="global.html#updateProjectLanguage">updateProjectLanguage</a></li><li><a href="global.html#updateSingleLanguageButton">updateSingleLanguageButton</a></li><li><a href="global.html#updateStyledText">updateStyledText</a></li><li><a href="global.html#updateTypewriterLanguage">updateTypewriterLanguage</a></li><li><a href="global.html#updateVisibleFormErrors">updateVisibleFormErrors</a></li><li><a href="global.html#validateFormInput">validateFormInput</a></li><li><a href="global.html#validateMailResponse">validateMailResponse</a></li><li><a href="global.html#wait">wait</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#checkFormAndSend">checkFormAndSend</a></li><li><a href="global.html#checkIfMailIsFilledAndValid">checkIfMailIsFilledAndValid</a></li><li><a href="global.html#checkIfMessageIsFilledAndValid">checkIfMessageIsFilledAndValid</a></li><li><a href="global.html#checkIfNameIsFilledAndValid">checkIfNameIsFilledAndValid</a></li><li><a href="global.html#checkPrivacyPolicy">checkPrivacyPolicy</a></li><li><a href="global.html#clearAnimatedText">clearAnimatedText</a></li><li><a href="global.html#clearEmailError">clearEmailError</a></li><li><a href="global.html#clearFormFeedbackTimeouts">clearFormFeedbackTimeouts</a></li><li><a href="global.html#clearFormFields">clearFormFields</a></li><li><a href="global.html#clearMessageError">clearMessageError</a></li><li><a href="global.html#clearNameError">clearNameError</a></li><li><a href="global.html#deleteText">deleteText</a></li><li><a href="global.html#displayProjectContent">displayProjectContent</a></li><li><a href="global.html#evaluateFormInput">evaluateFormInput</a></li><li><a href="global.html#finishBurgerMenuAnimation">finishBurgerMenuAnimation</a></li><li><a href="global.html#focusForm">focusForm</a></li><li><a href="global.html#getBurgerMenuAnimationFrames">getBurgerMenuAnimationFrames</a></li><li><a href="global.html#getBurgerMenuElements">getBurgerMenuElements</a></li><li><a href="global.html#getFormTranslation">getFormTranslation</a></li><li><a href="global.html#getMailRequestBody">getMailRequestBody</a></li><li><a href="global.html#getMailRequestHeaders">getMailRequestHeaders</a></li><li><a href="global.html#getSavedLanguage">getSavedLanguage</a></li><li><a href="global.html#getSelectedProject">getSelectedProject</a></li><li><a href="global.html#handleSectionIntersection">handleSectionIntersection</a></li><li><a href="global.html#hideAnimatedIcon">hideAnimatedIcon</a></li><li><a href="global.html#hideFormFeedback">hideFormFeedback</a></li><li><a href="global.html#hidePrivacyPolicyError">hidePrivacyPolicyError</a></li><li><a href="global.html#isEmailValid">isEmailValid</a></li><li><a href="global.html#observeAnimatedSections">observeAnimatedSections</a></li><li><a href="global.html#observeSingleSection">observeSingleSection</a></li><li><a href="global.html#openBurgerMenu">openBurgerMenu</a></li><li><a href="global.html#postFormInput">postFormInput</a></li><li><a href="global.html#readFormInput">readFormInput</a></li><li><a href="global.html#renderEmailSubmitError">renderEmailSubmitError</a></li><li><a href="global.html#renderMessageSubmitError">renderMessageSubmitError</a></li><li><a href="global.html#renderNameSubmitError">renderNameSubmitError</a></li><li><a href="global.html#renderPrivacyPolicySubmitError">renderPrivacyPolicySubmitError</a></li><li><a href="global.html#renderSubmitErrors">renderSubmitErrors</a></li><li><a href="global.html#resetCheckIcons">resetCheckIcons</a></li><li><a href="global.html#resetCheckboxState">resetCheckboxState</a></li><li><a href="global.html#resetFormAfterSend">resetFormAfterSend</a></li><li><a href="global.html#runTypewriterCycle">runTypewriterCycle</a></li><li><a href="global.html#saveSelectedLanguage">saveSelectedLanguage</a></li><li><a href="global.html#sendValidForm">sendValidForm</a></li><li><a href="global.html#setActiveProjectNavItem">setActiveProjectNavItem</a></li><li><a href="global.html#setFormLanguage">setFormLanguage</a></li><li><a href="global.html#setProjectLanguage">setProjectLanguage</a></li><li><a href="global.html#setSendButtonState">setSendButtonState</a></li><li><a href="global.html#setTypewriterLanguage">setTypewriterLanguage</a></li><li><a href="global.html#setVisibleEmailErrorText">setVisibleEmailErrorText</a></li><li><a href="global.html#showAnimatedIcon">showAnimatedIcon</a></li><li><a href="global.html#showBurgerMenuFrame">showBurgerMenuFrame</a></li><li><a href="global.html#showEmailError">showEmailError</a></li><li><a href="global.html#showFormFeedback">showFormFeedback</a></li><li><a href="global.html#showMessageError">showMessageError</a></li><li><a href="global.html#showNameError">showNameError</a></li><li><a href="global.html#showPrivacyPolicyError">showPrivacyPolicyError</a></li><li><a href="global.html#startBurgerMenuAnimation">startBurgerMenuAnimation</a></li><li><a href="global.html#startTypewriterLoop">startTypewriterLoop</a></li><li><a href="global.html#toggleMobileMenuOverlay">toggleMobileMenuOverlay</a></li><li><a href="global.html#translatePage">translatePage</a></li><li><a href="global.html#translateSingleElement">translateSingleElement</a></li><li><a href="global.html#translateTextElements">translateTextElements</a></li><li><a href="global.html#translateToEnglish">translateToEnglish</a></li><li><a href="global.html#translateToGerman">translateToGerman</a></li><li><a href="global.html#translations">translations</a></li><li><a href="global.html#typeText">typeText</a></li><li><a href="global.html#updateActiveLanguageButton">updateActiveLanguageButton</a></li><li><a href="global.html#updateAnimatedText">updateAnimatedText</a></li><li><a href="global.html#updateDesktopProjectContent">updateDesktopProjectContent</a></li><li><a href="global.html#updateDesktopProjectImages">updateDesktopProjectImages</a></li><li><a href="global.html#updateDesktopProjectLinks">updateDesktopProjectLinks</a></li><li><a href="global.html#updateDesktopProjectTexts">updateDesktopProjectTexts</a></li><li><a href="global.html#updateDocumentLanguage">updateDocumentLanguage</a></li><li><a href="global.html#updateEmailErrorText">updateEmailErrorText</a></li><li><a href="global.html#updateFormLanguage">updateFormLanguage</a></li><li><a href="global.html#updateLanguageModules">updateLanguageModules</a></li><li><a href="global.html#updateMessageErrorText">updateMessageErrorText</a></li><li><a href="global.html#updateMobileProjectContent">updateMobileProjectContent</a></li><li><a href="global.html#updateMobileProjectImages">updateMobileProjectImages</a></li><li><a href="global.html#updateMobileProjectLinks">updateMobileProjectLinks</a></li><li><a href="global.html#updateMobileProjectTexts">updateMobileProjectTexts</a></li><li><a href="global.html#updateNameErrorText">updateNameErrorText</a></li><li><a href="global.html#updatePrivacyPolicyErrorText">updatePrivacyPolicyErrorText</a></li><li><a href="global.html#updateProjectLanguage">updateProjectLanguage</a></li><li><a href="global.html#updateSingleLanguageButton">updateSingleLanguageButton</a></li><li><a href="global.html#updateStyledText">updateStyledText</a></li><li><a href="global.html#updateTypewriterLanguage">updateTypewriterLanguage</a></li><li><a href="global.html#updateVisibleFormErrors">updateVisibleFormErrors</a></li><li><a href="global.html#validateFormInput">validateFormInput</a></li><li><a href="global.html#validateMailResponse">validateMailResponse</a></li><li><a href="global.html#wait">wait</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Jun 08 2026 21:20:59 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Jun 10 2026 18:12:43 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>
