@@ -17,7 +17,27 @@
     justify-items: center;  
     align-items: center;
 
-    gap: 40px;
+    gap: 24px;
+}
+
+.single-skill-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.single-skill-wrapper img {
+    height: 80px;
+    width: auto;
+}
+
+.single-skill-wrapper span {
+    color: var(--primary-color);
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
 }
 
 /* right side with bg-shape and hover */
@@ -74,9 +94,24 @@
     gap: 16px;
 }
 
-.current-learning-skills-icons img {
-    width: 40px;
-    height: auto;
+.current-learning-skill-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.current-learning-skill-wrapper img {
+    width: auto;
+    height: 60px;
+}
+
+.current-learning-skill-wrapper span {
+    color: var(--secondary-color);
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
 }
 
 .current-learning-text {

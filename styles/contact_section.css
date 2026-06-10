@@ -444,3 +444,97 @@
 .mobile-contact-cta {
     display: none;
 }
+
+/*----- form feedback message -----*/
+
+.form-feedback-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+}
+
+.form-feedback-overlay.deactivated {
+    display: none;
+}
+
+.form-feedback-overlay.visible {
+    animation: formFeedbackOverlayFadeIn 300ms ease-in-out forwards;
+}
+
+.form-feedback-overlay.fade-out {
+    animation: formFeedbackOverlayFadeOut 500ms ease-in-out forwards;
+}
+
+.form-feedback-card {
+    min-width: 320px;
+    max-width: 520px;
+
+    padding: 32px 48px;
+
+    background-color: var(--bg-color);
+    border: 1px solid var(--project-bg-color);
+    border-radius: 24px;
+
+    text-align: center;
+
+    animation: formFeedbackMoveIn 400ms ease-in-out forwards;
+}
+
+.form-feedback-card p {
+    color: var(--secondary-color);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.form-feedback-overlay.fade-out .form-feedback-card {
+    animation: formFeedbackCardFadeOut 500ms ease-in-out forwards;
+}
+
+@keyframes formFeedbackOverlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes formFeedbackOverlayFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes formFeedbackMoveIn {
+    from {
+        opacity: 0;
+        transform: translateY(120px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes formFeedbackCardFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

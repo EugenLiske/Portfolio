@@ -229,7 +229,7 @@ const translations = {
     imprintStatusHeadline: "Stand",
     imprintStatusText: "August 2026",
 
-    privacyPolicyHeadline: `Datenschutzerklärung`,
+    privacyPolicyHeadline: "Datenschutz&shy;erklärung",
 
     privacyPolicyControllerHeadline: `Verantwortlicher`,
 
@@ -422,6 +422,9 @@ const translations = {
     Bei Fragen zum Datenschutz können Sie sich jederzeit an die oben genannte
     verantwortliche Person wenden.
 `,
+
+    feedbackSuccess: "E-Mail erfolgreich versendet.",
+    feedbackError: "Ups, da ist etwas schiefgelaufen."
   },
 
   en: {
@@ -813,5 +816,9 @@ const translations = {
     If you have any questions about data protection, you may contact the person
     responsible named above at any time.
 `,
+
+    feedbackSuccess: "Email sent successfully.",
+    feedbackError: "Oops, something went wrong."
+
   },
 };

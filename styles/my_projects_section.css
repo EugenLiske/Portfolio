@@ -14,22 +14,36 @@
 .project-nav-item {
     counter-increment: project-counter;
 
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    font-size: 30px;
-    font-weight: 500;
-
-    padding: 32px 36px;
     border-radius: 32px 32px 0 0;
 
     color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 500;
 
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.project-nav-item::before {
+.project-nav-item button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 32px 36px;
+
+    font: inherit;
+    color: inherit;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.project-nav-item button::before {
     content: counter(project-counter) ".";
 }
 
@@ -40,18 +54,6 @@
 .project-nav-item.active-project {
     color: var(--secondary-color);
     background-color: var(--project-bg-color);
-}
-
-.project-navigation-wrapper button {
-    font: inherit;
-    color: inherit;
-
-    background-color: transparent;
-    border: none;
-    padding: 0;
-
-    cursor: pointer;
-    white-space: nowrap;
 }
 
 /* project content */

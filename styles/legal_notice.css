@@ -1,9 +1,14 @@
+body {
+    background-color: var(--bg-color);
+}
+
 .imprint-header-wrapper {
     background-color: var(--primary-color);
 }
 
 main {
     background-color: var(--bg-color);
+    min-height: calc(100dvh - 104px - 220px);
 }
 
 .imprint-content {

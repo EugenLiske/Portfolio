@@ -102,3 +102,16 @@
 .lets-talk-button:hover {
     background-color: var(--button-hover-2);
 }
+
+.section-slide-in {
+    opacity: 0;
+    transform: translateX(-120px);
+    transition:
+        transform 900ms ease-in-out,
+        opacity 900ms ease-in-out;
+}
+
+.section-slide-in.visible-section {
+    opacity: 1;
+    transform: translateX(0);
+}

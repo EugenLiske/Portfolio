@@ -38,11 +38,18 @@
         padding-left: 58px;
     }
 
+    /*----- refrence section -----*/
+
+    .references-intro-text {
+        padding-inline: 64px;
+    }
+
     /*----- contact section -----*/
 
     .nav-arrow-up-position-wrapper {
         right: 64px;
     }
+
 
     /*----- legal notice page -----*/
 
@@ -316,6 +323,12 @@
         padding-inline: 48px;
     }
 
+    /*----- refrence section -----*/
+
+    .references-intro-text {
+        padding-inline: 48px;
+    }
+
     /*----- legal notice page -----*/
 
     .imprint-content {
@@ -435,6 +448,10 @@
     }
 
     .current-learning-text p {
+        font-size: 16px;
+    }
+
+    .current-learning-skill-wrapper span {
         font-size: 16px;
     }
 
@@ -559,6 +576,12 @@
     .my-skills-section {
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+
+    /*----- refrence section -----*/
+
+    .references-intro-text {
+        padding-inline: 32px;
     }
 
     /*----- my projects section -----*/
@@ -747,7 +770,7 @@
     }
 
     .single-reference-wrapper {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -1031,7 +1054,7 @@
     .my-skills-content {
         flex-direction: column;
         align-items: center;
-        gap: 32px;
+        gap: 60px;
     }
 
     .skills-overview {
@@ -1039,15 +1062,7 @@
         gap: 28px;
     }
 
-    .skills-overview img:nth-child(9) {
-        grid-column: 2;
-    }
-
-    .skills-overview img:nth-child(10) {
-        grid-column: 3;
-    }
-
-    .skills-overview img {
+    .single-skill-wrapper img {
         height: 80px;
         width: auto;
     }
@@ -1108,8 +1123,8 @@
         flex-shrink: 0;
     }
 
-    .mobile-current-learning-icons img {
-        height: 64px;
+    .mobile-current-learning-icons .current-learning-skill-wrapper img {
+        height: 60px;
         width: auto;
     }
 
@@ -1465,6 +1480,19 @@
         margin-block: 8px 0;
     }
 
+    .form-feedback-card {
+        min-width: unset;
+        width: calc(100% - 64px);
+        max-width: 420px;
+
+        padding: 28px 32px;
+        border-radius: 22px;
+    }
+
+    .form-feedback-card p {
+        font-size: 20px;
+    }
+
     /* mobile form labels inside fields */
 
     .label-and-input-wrapper,
@@ -1703,6 +1731,15 @@
     }
 }
 
+@media (max-width: 650px) {
+
+    /*----- my skilly section -----*/
+
+    .single-skill-wrapper img {
+        height: 70px;
+    }
+}
+
 @media (max-width: 600px) {
 
     /*----- references section -----*/
@@ -1717,7 +1754,7 @@
     .single-reference-wrapper {
         flex: 0 0 340px;
 
-        font-size: 15px;
+        font-size: 16px;
         padding: 44px 36px;
     }
 
@@ -1800,12 +1837,20 @@
 
     .skills-overview {
         grid-template-columns: repeat(4, 1fr);
-        gap: 22px;
+        gap: 14px;
     }
 
-    .skills-overview img {
+    .single-skill-wrapper img {
         height: 60px;
         width: auto;
+    }
+
+    .single-skill-wrapper span {
+        font-size: 16px;
+    }
+
+    .current-learning-skill-wrapper span {
+        font-size: 16px;
     }
 
     .mobile-current-learning-content {
@@ -1826,8 +1871,9 @@
         height: 140px;
     }
 
-    .mobile-current-learning-icons img {
-        width: 38px;
+    .mobile-current-learning-icons .current-learning-skill-wrapper img {
+        height: 44px;
+        width: auto;
     }
 
     /*----- my projects section -----*/
@@ -1908,12 +1954,12 @@
 
     .input-field {
         height: 52px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .message-field {
         min-height: 150px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .mobile-nav-arrow-up-position-wrapper {
@@ -1927,6 +1973,16 @@
     }
 
     .mobile-contact-cta {
+        font-size: 18px;
+    }
+
+    .form-feedback-card {
+        width: calc(100% - 40px);
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .form-feedback-card p {
         font-size: 18px;
     }
 
@@ -1950,7 +2006,7 @@
     /*----- my skills section -----*/
 
     .mobile-current-learning-text p {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .mobile-current-learning-icons {
@@ -1960,6 +2016,11 @@
 
     .mobile-current-learning-icons img {
         width: 34px;
+    }
+
+    .skills-overview {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
     }
 
     /*----- reference section -----*/
@@ -1983,7 +2044,7 @@
     .single-reference-wrapper {
         flex: 0 0 300px;
 
-        font-size: 14px;
+        font-size: 16px;
         padding: 34px 24px;
     }
 
@@ -2014,13 +2075,13 @@
     }
 
     .personal-information {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /*----- my skills section -----*/
 
     .mobile-current-learning-text p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .mobile-current-learning-icons {
@@ -2032,11 +2093,16 @@
         width: 30px;
     }
 
+    .mobile-current-learning-icons .current-learning-skill-wrapper img {
+        height: 36px;
+        width: auto;
+    }
+
     /*----- my projects section -----*/
 
     .mobile-project-meta p,
     .mobile-project-info-single-bulletpoint p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .mobile-project-info-single-bulletpoint h4 {
@@ -2142,7 +2208,7 @@
     }
 
     .mobile-project-nav-item {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
@@ -2160,6 +2226,12 @@
     .animated-information-wrapper {
         gap: 2px;
     }
+
+    /*----- my skills section -----*/
+
+    .single-skill-wrapper img {
+        height: 54px;
+    }
 }
 
 @media (max-width: 330px) {
@@ -2176,7 +2248,7 @@
     .single-reference-wrapper {
         flex: 0 0 268px;
 
-        font-size: 14px;
+        font-size: 15px;
         padding: 28px 18px;
     }
 

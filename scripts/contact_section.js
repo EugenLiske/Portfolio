@@ -20,6 +20,12 @@ const nameInputLabel = document.getElementById("name-input-label");
 const emailInputLabel = document.getElementById("email-input-label");
 const messageInputLabel = document.getElementById("message-input-label");
 
+const formFeedbackOverlay = document.getElementById("form-feedback-overlay");
+const formFeedbackMessage = document.getElementById("form-feedback-message");
+
+let formFeedbackTimeout;
+let formFeedbackFadeTimeout;
+
 
 // ---- language state ---- //
 
@@ -35,7 +41,10 @@ const formTranslations = {
 
         nameDefault: "Ihr Name",
         emailDefault: "Ihre E-Mail-Adresse",
-        messageDefault: "Ihre Nachricht"
+        messageDefault: "Ihre Nachricht",
+
+        feedbackSuccess: "E-Mail erfolgreich versendet.",
+        feedbackError: "Ups, da ist etwas schiefgelaufen."
     },
 
     en: {
@@ -47,7 +56,10 @@ const formTranslations = {
 
         nameDefault: "Your name",
         emailDefault: "Your email address",
-        messageDefault: "Your message"
+        messageDefault: "Your message",
+
+        feedbackSuccess: "Email sent successfully.",
+        feedbackError: "Oops, something went wrong."
     }
 };
 
@@ -154,7 +166,7 @@ function evaluateFormInput(formInput) {
  * @returns {boolean} True if the email format is valid.
  */
 function isEmailValid(email) {
-    const regularExpression = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+    const regularExpression = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
     return regularExpression.test(email);
 }
 
@@ -174,15 +186,20 @@ function setSendButtonState(isFormValid) {
 // ---- single field validation ---- //
 
 /**
- * Updates the name check icon depending on the name input value.
+ * Updates the name check icon and shows an error when the name is empty.
  */
-function checkIfNameIsFilled() {
+function checkIfNameIsFilledAndValid() {
     const nameFilled = nameInputField.value.trim() !== "";
+
     nameCheckIcon.classList.toggle("activated", nameFilled);
+
+    if (!nameFilled) {
+        showNameError("nameMissing");
+    }
 }
 
 /**
- * Updates the email check icon and shows an error for invalid email input.
+ * Updates the email check icon and shows an error for empty or invalid email input.
  */
 function checkIfMailIsFilledAndValid() {
     const emailValue = emailInputField.value.trim();
@@ -191,17 +208,27 @@ function checkIfMailIsFilledAndValid() {
 
     emailCheckIcon.classList.toggle("activated", emailFilled && emailValid);
 
-    if (emailFilled && !emailValid) {
+    if (!emailFilled) {
+        showEmailError("emailMissing");
+        return;
+    }
+
+    if (!emailValid) {
         showEmailError("emailInvalid");
     }
 }
 
 /**
- * Updates the message check icon depending on the message input value.
+ * Updates the message check icon and shows an error when the message is empty.
  */
-function checkIfMessageIsFilled() {
+function checkIfMessageIsFilledAndValid() {
     const messageFilled = messageInputField.value.trim() !== "";
+
     messageCheckIcon.classList.toggle("activated", messageFilled);
+
+    if (!messageFilled) {
+        showMessageError("messageMissing");
+    }
 }
 
 
@@ -363,7 +390,6 @@ async function checkFormAndSend(event) {
 /**
  * Sends a valid form input to the backend.
  * @param {Object} formInput - The validated form input values.
- * @returns {Promise<boolean>} Always returns false after handling the request.
  */
 async function sendValidForm(formInput) {
     try {
@@ -372,12 +398,45 @@ async function sendValidForm(formInput) {
 
         validateMailResponse(response, result);
         resetFormAfterSend();
-
-        return false;
+        showFormFeedback("feedbackSuccess");
     } catch (error) {
         console.error(error);
-        return false;
+        showFormFeedback("feedbackError");
     }
+}
+
+/**
+ * Shows a translated form feedback message.
+ * @param {string} translationKey - The feedback translation key.
+ */
+function showFormFeedback(translationKey) {
+    clearFormFeedbackTimeouts();
+
+    formFeedbackMessage.textContent = getFormTranslation(translationKey);
+    formFeedbackOverlay.classList.remove("deactivated", "fade-out");
+    formFeedbackOverlay.classList.add("visible");
+
+    formFeedbackTimeout = setTimeout(hideFormFeedback, 2000);
+}
+
+/**
+ * Starts hiding the form feedback message.
+ */
+function hideFormFeedback() {
+    formFeedbackOverlay.classList.add("fade-out");
+
+    formFeedbackFadeTimeout = setTimeout(() => {
+        formFeedbackOverlay.classList.remove("visible", "fade-out");
+        formFeedbackOverlay.classList.add("deactivated");
+    }, 500);
+}
+
+/**
+ * Clears running form feedback timers.
+ */
+function clearFormFeedbackTimeouts() {
+    clearTimeout(formFeedbackTimeout);
+    clearTimeout(formFeedbackFadeTimeout);
 }
 
 /**

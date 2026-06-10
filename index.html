@@ -24,6 +24,15 @@
     <link rel="stylesheet" href="./styles/responsiveness.css" />
   </head>
   <body>
+    <div
+      id="form-feedback-overlay"
+      class="form-feedback-overlay deactivated"
+      aria-live="polite"
+    >
+      <div class="form-feedback-card">
+        <p id="form-feedback-message"></p>
+      </div>
+    </div>
     <section class="hero-section" id="hero-section-ID">
       <div class="hero-content">
         <div class="hero-img-wrapper">
@@ -63,10 +72,9 @@
             </div>
 
             <div class="hero-social-media-icons">
-              <button
-                type="button"
+              <a
+                href="mailto:eugen.liske@yahoo.de"
                 class="social-media-icon-wrapper"
-                onclick="focusForm()"
               >
                 <img
                   class="social-media-icon-default"
@@ -76,7 +84,7 @@
                   class="social-media-icon-hover"
                   src="./assets/icons/hero_section/mail_icon_hover.svg"
                 />
-              </button>
+              </a>
 
               <a
                 href="https://github.com/EugenLiske"
@@ -305,7 +313,7 @@
       <section class="why-me-section" id="why-me-section-ID">
         <h2 data-i18n="aboutHeadline">Über mich</h2>
 
-        <div class="why-me-content">
+        <div class="why-me-content section-slide-in">
           <div class="animated-information-wrapper">
             <img
               class="animated-info-icon"
@@ -357,48 +365,95 @@
       <section class="my-skills-section" id="my-skills-section-ID">
         <h2 data-i18n="skillsHeadline">Meine Fähigkeiten</h2>
 
-        <div class="my-skills-content">
+        <div class="my-skills-content section-slide-in">
           <div class="skills-overview">
-            <img
-              src="./assets/icons/my_skills_section/angular_icon.svg"
-              alt="angular_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/typescript_icon.svg"
-              alt="typescript_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/javascript_icon.svg"
-              alt="javascript_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/html_icon.svg"
-              alt="html_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/css_icon.svg"
-              alt="css_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/rest_api_icon.svg"
-              alt="rest_api_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/supabase_icon.svg"
-              alt="supabase_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/git_icon.svg"
-              alt="git_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/material_design_icon.svg"
-              alt="material_design_icon"
-            />
-            <img
-              src="./assets/icons/my_skills_section/scrum_icon.svg"
-              alt="scrum_icon"
-            />
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/angular_icon.svg"
+                alt="Angular icon"
+              />
+              <span>Angular</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/typescript_icon.svg"
+                alt="TypeScript icon"
+              />
+              <span>TypeScript</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/javascript_icon.svg"
+                alt="JavaScript icon"
+              />
+              <span>JavaScript</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/html_icon.svg"
+                alt="HTML icon"
+              />
+              <span>HTML</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/css_icon.svg"
+                alt="CSS icon"
+              />
+              <span>CSS</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/rest_api_icon.svg"
+                alt="REST API icon"
+              />
+              <span>Rest-Api</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/supabase_icon.svg"
+                alt="Supabase icon"
+              />
+              <span>Supabase</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/firebase_icon.svg"
+                alt="Firebase icon"
+              />
+              <span>Firebase</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/git_icon.svg"
+                alt="Git icon"
+              />
+              <span>GIT</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/material_design_icon.svg"
+                alt="Material Design icon"
+              />
+              <span>Material Design</span>
+            </div>
+
+            <div class="single-skill-wrapper">
+              <img
+                src="./assets/icons/my_skills_section/icons_without_title/scrum_icon.svg"
+                alt="Scrum icon"
+              />
+              <span>Scrum</span>
+            </div>
           </div>
 
           <div class="current-learning-wrapper">
@@ -422,15 +477,21 @@
             </p>
 
             <div class="current-learning-skills-icons">
-              <img
-                src="./assets/icons/my_skills_section/react_icon.svg"
-                alt="react_icon"
-              />
+              <div class="current-learning-skill-wrapper">
+                <img
+                  src="./assets/icons/my_skills_section/icons_without_title/react_icon.svg"
+                  alt="React icon"
+                />
+                <span>React</span>
+              </div>
 
-              <img
-                src="./assets/icons/my_skills_section/vue_js_icon.svg"
-                alt="vue_js_icon"
-              />
+              <div class="current-learning-skill-wrapper">
+                <img
+                  src="./assets/icons/my_skills_section/icons_without_title/vue_js_icon.svg"
+                  alt="Vue Js icon"
+                />
+                <span>Vue Js</span>
+              </div>
             </div>
 
             <div class="current-learning-text">
@@ -468,14 +529,21 @@
               </div>
 
               <div class="mobile-current-learning-icons">
-                <img
-                  src="./assets/icons/my_skills_section/vue_js_icon.svg"
-                  alt="vue_js_icon"
-                />
-                <img
-                  src="./assets/icons/my_skills_section/react_icon.svg"
-                  alt="react_icon"
-                />
+                <div class="current-learning-skill-wrapper">
+                  <img
+                    src="./assets/icons/my_skills_section/icons_without_title/vue_js_icon.svg"
+                    alt="Vue Js icon"
+                  />
+                  <span>Vue Js</span>
+                </div>
+
+                <div class="current-learning-skill-wrapper">
+                  <img
+                    src="./assets/icons/my_skills_section/icons_without_title/react_icon.svg"
+                    alt="React icon"
+                  />
+                  <span>React</span>
+                </div>
               </div>
             </div>
 
@@ -493,7 +561,7 @@
       <section class="my-projects-section" id="my-projects-section-ID">
         <h2 data-i18n="projectsHeadline">Meine Projekte</h2>
 
-        <ol class="project-navigation-wrapper">
+        <ol class="project-navigation-wrapper section-slide-in">
           <li class="project-nav-item active-project">
             <button
               onclick="displayProjectContent(0)"
@@ -523,7 +591,7 @@
         </ol>
 
         <div class="project-outer-content-wrapper">
-          <div class="project-inner-content-wrapper">
+          <div class="project-inner-content-wrapper section-slide-in">
             <ul class="project-information-wrapper">
               <li>
                 <div class="project-info-single-bulletpoint">
@@ -641,7 +709,7 @@
         </div>
 
         <div class="mobile-projects-wrapper">
-          <ol class="mobile-project-navigation-wrapper">
+          <ol class="mobile-project-navigation-wrapper section-slide-in">
             <li class="mobile-project-nav-item active-project">
               <button
                 onclick="displayProjectContent(0)"
@@ -670,7 +738,7 @@
             </li>
           </ol>
 
-          <div class="mobile-project-card">
+          <div class="mobile-project-card section-slide-in">
             <h3 id="mobileProjectTitleID">El Pollo Loco</h3>
 
             <div class="mobile-project-meta">
@@ -767,7 +835,7 @@
           </span>
         </div>
 
-        <div class="references-content">
+        <div class="references-content section-slide-in">
           <div class="single-reference-wrapper">
             <header class="reference-card-header">
               <h2>Anne Sanewski</h2>
@@ -846,7 +914,7 @@
       <section class="contact-section" id="contact-section-ID">
         <h2 data-i18n="contactHeadline">Kontakt</h2>
 
-        <div class="contact-content">
+        <div class="contact-content section-slide-in">
           <a href="#hero-section-ID" class="nav-arrow-up-position-wrapper">
             <div class="nav-arrow-up-img-wrapper">
               <img
@@ -883,11 +951,7 @@
             </div>
 
             <div class="contact-links-wrapper">
-              <button
-                type="button"
-                class="single-link-wrapper"
-                onclick="focusForm()"
-              >
+              <a href="mailto:eugen.liske@yahoo.de" class="single-link-wrapper">
                 <div class="link-icon-wrapper">
                   <img
                     class="link-icon-default"
@@ -904,7 +968,7 @@
                 <span data-i18n="contactEmailLabel"
                   >E-mail: eugen.liske@yahoo.de</span
                 >
-              </button>
+              </a>
 
               <a href="tel:017663452473" class="single-link-wrapper">
                 <div class="link-icon-wrapper">
@@ -950,7 +1014,7 @@
                 <div class="input-wrapper" id="name-input-wrapper">
                   <input
                     oninput="validateFormInput()"
-                    onblur="checkIfNameIsFilled()"
+                    onblur="checkIfNameIsFilledAndValid()"
                     onfocus="clearNameError()"
                     type="text"
                     class="input-field"
@@ -1011,7 +1075,7 @@
               <div class="message-wrapper" id="message-input-wrapper">
                 <textarea
                   oninput="validateFormInput()"
-                  onblur="checkIfMessageIsFilled()"
+                  onblur="checkIfMessageIsFilledAndValid()"
                   onfocus="clearMessageError()"
                   class="message-field"
                   name="message"
@@ -1149,9 +1213,9 @@
             />
           </a>
 
-          <button
+          <a
+            href="mailto:eugen.liske@yahoo.de"
             class="footer-social-media-icon-wrapper"
-            onclick="focusForm()"
           >
             <img
               class="footer-social-media-icon-default"
@@ -1163,7 +1227,7 @@
               src="./assets/icons/footer/footer_email_icon_hover.svg"
               alt="footer_email_icon_hover"
             />
-          </button>
+          </a>
 
           <a
             href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
@@ -1213,10 +1277,9 @@
             />
           </a>
 
-          <button
-            type="button"
+          <a
+            href="mailto:eugen.liske@yahoo.de"
             class="mobile-footer-social-media-icon-wrapper"
-            onclick="focusForm()"
           >
             <img
               class="mobile-footer-social-media-icon-default"
@@ -1228,7 +1291,7 @@
               src="./assets/mobile/mobile_footer_email_icon_active.svg"
               alt="email_icon_active"
             />
-          </button>
+          </a>
 
           <a
             href="https://www.linkedin.com/in/eugen-liske-14949a11a/"
@@ -1268,5 +1331,6 @@
     <script src="./scripts/contact_section.js"></script>
     <script src="./scripts/translate.js"></script>
     <script src="./scripts/responsiveness.js"></script>
+    <script src="./scripts/section_animation.js"></script>
   </body>
 </html>
